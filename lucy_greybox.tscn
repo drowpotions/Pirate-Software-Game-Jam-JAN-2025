@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7qiki3o4vtq4"]
+[gd_scene load_steps=8 format=3 uid="uid://b7qiki3o4vtq4"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_mb8yd"]
 
@@ -17,6 +17,12 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf2n7"]
 albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f262c"]
+albedo_color = Color(0.645309, 0.00146709, 1.44392e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3n6i"]
+albedo_color = Color(0.619247, 0.0365918, 0, 1)
 
 [node name="LucyGreybox" type="Node3D"]
 
@@ -106,3 +112,15 @@ spot_range = 8.0
 
 [node name="Player" parent="." instance=ExtResource("1_mb8yd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.2118, 20.7272, -2.56729)
+
+[node name="Target" type="CSGSphere3D" parent="." groups=["target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.3305, 29.738, -20.9999)
+use_collision = true
+material = SubResource("StandardMaterial3D_f262c")
+
+[node name="Target2" type="CSGSphere3D" parent="." groups=["target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4067, 29.738, -20.9999)
+use_collision = true
+material = SubResource("StandardMaterial3D_g3n6i")
+
+[editable path="Player"]

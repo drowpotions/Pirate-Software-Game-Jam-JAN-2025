@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://bekmbyokqyu10"]
+
+[ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pa5p5")
+
+[node name="LucyButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lucy Greybox"
+
+[node name="CharlieButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = 22.0
+offset_right = 57.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Charlie Greybox"
+
+[node name="WorldButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = 60.0
+offset_right = 66.5
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main World"
+
+[connection signal="pressed" from="LucyButton" to="." method="_on_lucy_button_pressed"]
+[connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]
+[connection signal="pressed" from="WorldButton" to="." method="_on_world_button_pressed"]

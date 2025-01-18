@@ -165,7 +165,7 @@ offset_left = 300.0
 offset_top = 255.0
 offset_right = 340.0
 offset_bottom = 278.0
-text = "HIT!"
+text = "Hit!"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.18429, 0, 1, -8.05559e-09, 0, 0.353293, -0.220129)

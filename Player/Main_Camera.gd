@@ -32,6 +32,13 @@ func get_camera_collision():
 	if result and result.has("collider"):
 		print(result.collider.name)
 		Hit_Label.show()
+		if result.collider.is_in_group("target"):
+			Hit_Label.text = "Target Hit!"
+			result.collider.material.albedo_color = Color.GREEN
+			await get_tree().create_timer(3).timeout
+			result.collider.material.albedo_color = Color.RED
+		else:
+			Hit_Label.text = "Hit!"
 		await get_tree().create_timer(.5).timeout
 		Hit_Label.hide()
 	else:
