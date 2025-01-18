@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=17 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -83,22 +83,6 @@ tracks/1/keys = {
 "values": [Vector3(0.0302766, -0.0202211, -0.075)]
 }
 
-[sub_resource type="Animation" id="Animation_8fvnp"]
-resource_name = "cam_shake_shoot"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("head/Camera Holder/Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.133333, 0.233333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_ikm84"]
 resource_name = "cam_jump_shake"
 length = 0.4
@@ -115,12 +99,31 @@ tracks/0/keys = {
 "values": [Vector3(0.0302766, -0.0202211, -0.075), Vector3(0.03, -0.022, -0.075), Vector3(0.0302766, -0.0202211, -0.075), Vector3(0.0302766, -0.0202211, -0.075)]
 }
 
+[sub_resource type="Animation" id="Animation_8fvnp"]
+resource_name = "cam_shake_shoot"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Camera Holder/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvc46"]
 _data = {
 "RESET": SubResource("Animation_6dtan"),
 "cam_jump_shake": SubResource("Animation_ikm84"),
 "cam_shake_shoot": SubResource("Animation_8fvnp")
 }
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
+length = 0.147143
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
@@ -198,3 +201,7 @@ text = "Hit!"
 libraries = {
 "": SubResource("AnimationLibrary_yvc46")
 }
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, -0.239421)
+shape = SubResource("SeparationRayShape3D_umimj")
