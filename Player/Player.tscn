@@ -1,12 +1,61 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=14 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Player/Crosshair.png" id="3_6pp65"]
 [ext_resource type="Texture2D" uid="uid://dtjvtdqj1o24j" path="res://Player/Test FPS.png" id="3_eqtrx"]
+[ext_resource type="Texture2D" uid="uid://cqe3mwchxgv74" path="res://Player/sprite_sheet.png" id="4_nfp6s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.19437
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6iem"]
+atlas = ExtResource("4_nfp6s")
+region = Rect2(69, 0, 91, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjwg7"]
+atlas = ExtResource("4_nfp6s")
+region = Rect2(69, 0, 91, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33m08"]
+atlas = ExtResource("4_nfp6s")
+region = Rect2(160, 0, 91, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc4bs"]
+atlas = ExtResource("4_nfp6s")
+region = Rect2(251, 0, 91, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_labrg"]
+atlas = ExtResource("4_nfp6s")
+region = Rect2(342, 0, 91, 123)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cd8s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6iem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjwg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33m08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc4bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_labrg")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 16.0
+}]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_lajmx"]
 length = 1.84227
@@ -38,8 +87,14 @@ collision_mask = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="head/Weapon_Holder"]
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
+visible = false
 texture_filter = 0
 texture = ExtResource("3_eqtrx")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_cd8s5")
 
 [node name="Leg" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)

@@ -1,10 +1,12 @@
 extends Camera3D
 
 @onready var Hit_Label = $"../../../CanvasLayer/Control/Hit_Label"
+@onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 var ray_range = 2000
 
 func _input(_event):
 	if Input.is_action_just_pressed("Fire"):
+		shoot_anim()
 		get_camera_collision()
 
 func get_camera_collision():
@@ -28,3 +30,8 @@ func get_camera_collision():
 	else:
 		print("nothing")
 		Hit_Label.hide()
+
+func shoot_anim():
+	shoot_anim_sprite.play("shoot")
+	await shoot_anim_sprite.animation_finished
+	shoot_anim_sprite.play("default")
