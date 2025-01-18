@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=16 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Player/Crosshair.png" id="3_6pp65"]
-[ext_resource type="Texture2D" uid="uid://dtjvtdqj1o24j" path="res://Player/Test FPS.png" id="3_eqtrx"]
 [ext_resource type="Texture2D" uid="uid://cqe3mwchxgv74" path="res://Player/sprite_sheet.png" id="4_nfp6s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
@@ -60,6 +59,43 @@ animations = [{
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_lajmx"]
 length = 1.84227
 
+[sub_resource type="Animation" id="Animation_8fvnp"]
+resource_name = "cam_shake_shoot"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Camera Holder/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6dtan"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("head/Camera Holder/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yvc46"]
+_data = {
+"RESET": SubResource("Animation_6dtan"),
+"cam_shake_shoot": SubResource("Animation_8fvnp")
+}
+
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
 script = ExtResource("1_4bpwi")
@@ -84,12 +120,6 @@ visible = false
 collision_mask = 2
 
 [node name="Weapon_Holder" type="Node3D" parent="head"]
-
-[node name="Sprite3D" type="Sprite3D" parent="head/Weapon_Holder"]
-transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
-visible = false
-texture_filter = 0
-texture = ExtResource("3_eqtrx")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
@@ -140,3 +170,8 @@ text = "HIT!"
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.18429, 0, 1, -8.05559e-09, 0, 0.353293, -0.220129)
 shape = SubResource("SeparationRayShape3D_lajmx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yvc46")
+}
