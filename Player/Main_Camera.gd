@@ -32,6 +32,8 @@ func get_camera_collision():
 	if result and result.has("collider"):
 		print(result.collider.name)
 		Hit_Label.show()
+		await get_tree().create_timer(.5).timeout
+		Hit_Label.hide()
 	else:
 		print("nothing")
 		Hit_Label.hide()
