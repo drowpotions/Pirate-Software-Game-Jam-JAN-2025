@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtjvtdqj1o24j"
-path.s3tc="res://.godot/imported/Test FPS.png-3d272fe416d8a3e8604d0c6345ab78ae.s3tc.ctex"
+path.s3tc="res://.godot/imported/Test FPS.png-cccec1daa229c12649aab53e8a637837.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Test FPS.png"
-dest_files=["res://.godot/imported/Test FPS.png-3d272fe416d8a3e8604d0c6345ab78ae.s3tc.ctex"]
+source_file="res://Player/Test FPS.png"
+dest_files=["res://.godot/imported/Test FPS.png-cccec1daa229c12649aab53e8a637837.s3tc.ctex"]
 
 [params]
 
