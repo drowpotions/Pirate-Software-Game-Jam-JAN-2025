@@ -140,7 +140,6 @@ func weapon_sway(delta):
 	weapon_holder.rotation.y = lerp(weapon_holder.rotation.y, mouse_input.x * mouse_rotation_amount,10*delta)
 	weapon_holder.rotation.z = lerp(weapon_holder.rotation.z, mouse_input.x * 0.005,10*delta)
 	
-
 #menu interaction
 func menu_features():
 	if Input.is_action_pressed("esc"):

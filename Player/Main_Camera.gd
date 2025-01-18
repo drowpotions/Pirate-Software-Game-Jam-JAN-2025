@@ -13,6 +13,7 @@ func _input(_event):
 		shoot_sound()
 		shoot_anim()
 		get_camera_collision()
+	jump_shake()
 
 func get_camera_collision():
 	# Get the updated viewport size
@@ -52,6 +53,10 @@ func shoot_anim():
 	await shoot_anim_sprite.animation_finished
 	shooting = false
 	shoot_anim_sprite.play("default")
+
+func jump_shake():
+	if Input.is_action_pressed("jump"):
+		cam_anim.play("cam_jump_shake")
 
 func shoot_sound():
 	if shooting == false:
