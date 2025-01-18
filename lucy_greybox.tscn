@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7qiki3o4vtq4"]
+
+[ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_mb8yd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_irpd5"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_lud5l"]
+sky_material = SubResource("ProceduralSkyMaterial_irpd5")
+
+[sub_resource type="Environment" id="Environment_7ugrt"]
+background_mode = 2
+sky = SubResource("Sky_lud5l")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf2n7"]
+albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[node name="LucyGreybox" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ugrt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2572, 19.8664, 0)
+use_collision = true
+size = Vector3(176.514, 40.0371, 100)
+material = SubResource("StandardMaterial3D_rf2n7")
+
+[node name="Hollow" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4283, 13.9211, -22.3972)
+operation = 2
+size = Vector3(50.1151, 28.8423, 52.626)
+
+[node name="Hallway" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.6494, -0.173576, 7.01709)
+operation = 2
+size = Vector3(38.6992, 8.78061, 16.2924)
+
+[node name="Hallway2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.3505, 1.85815, -3.61538)
+operation = 2
+size = Vector3(9.06848, 4.71716, 2.0459)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGBox3D"]
+transform = Transform3D(3.92309e-15, 4.71926e-07, -39.8819, 2.05324, -4.71926e-07, 0, -8.97498e-08, -10.7964, -1.74329e-06, 21.7069, -0.521385, -24.0564)
+polygon = PackedVector2Array(0, 0, 0.0204859, 1.00378, 1, 1)
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGBox3D"]
+transform = Transform3D(-8.97498e-08, -10.7964, 0, 2.05324, -4.71926e-07, 0, 0, 0, 39.8819, 21.7818, -0.521385, 15.9489)
+polygon = PackedVector2Array(0, 0, 0.0204859, 1.00378, 1, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74677, 0.497559, -22.2848)
+size = Vector3(12.8265, 1.99512, 53.1584)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.8316, 0.497559, -41.7839)
+size = Vector3(13.8818, 1.99512, 37.2386)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2611, 0.497559, -29.4419)
+size = Vector3(11.1204, 1.99512, 11.1243)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.8016, -2.5203, 1.39563)
+size = Vector3(38.8897, 4.09326, 5.09302)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2432, -2.5203, 12.6678)
+size = Vector3(39.9764, 4.09326, 5.09302)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.2432, -3.89622, 7.07807)
+size = Vector3(39.9764, 4.09326, 6.38751)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 94.5036, 24.5156, 0)
+spot_range = 8.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 107.551, 24.5156, 0)
+spot_range = 8.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 121.249, 24.5156, 0)
+spot_range = 8.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 94.5036, 24.5156, 14.6935)
+spot_range = 8.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 107.551, 24.5156, 14.6935)
+spot_range = 8.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 121.249, 24.5156, 14.6935)
+spot_range = 8.0
+
+[node name="Player" parent="." instance=ExtResource("1_mb8yd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.2118, 20.7272, -2.56729)

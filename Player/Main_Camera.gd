@@ -3,7 +3,7 @@ extends Camera3D
 @onready var Hit_Label = $"../../../CanvasLayer/Control/Hit_Label"
 var ray_range = 2000
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("Fire"):
 		get_camera_collision()
 
