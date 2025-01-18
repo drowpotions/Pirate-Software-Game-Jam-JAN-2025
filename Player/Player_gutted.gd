@@ -14,9 +14,10 @@ var cam_rotation_amount : float = 0.04
 
 var mouse_rotation_amount :float = 0.01
 
-#variables for headbob
+#variables for breathing
 var head_node: Node3D
-var amplitude: float = 0.0003  # Maximum distance (in meters) the head moves
+var head_amplitude: float = 0.0003  # Maximum distance (in meters) the head moves
+var weapon_amplitude: float = 0.00003 # Maximum distance (in meters) the head moves
 var frequency: float = 0.1  # Breathing cycle frequency (cycles per second)
 var time_elapsed: float = 0.0  # Tracks elapsed time
 
@@ -71,7 +72,7 @@ func _physics_process(delta):
 	if head:
 		time_elapsed += delta
 		# Calculate the breathing offset
-		var offset_y = sin(time_elapsed * frequency * TAU) * amplitude
+		var offset_y = sin(time_elapsed * frequency * TAU) * head_amplitude
 		# Apply the offset to the head node
 		head.position.y += offset_y
 
@@ -96,6 +97,7 @@ func _physics_process(delta):
 	camera_movement(input_dir, delta)
 	weapon_sway(delta)
 	weapon_crouch_movement(delta)
+	weapon_holder_breathing(delta)
 
 #crouching function
 @onready var original_capsule_height = player_collider.shape.height
@@ -111,10 +113,18 @@ func crouch(delta):
 	$CollisionShape3D.position.y = $CollisionShape3D.shape.height / 2
 
 
+func weapon_holder_breathing(delta):
+	if weapon_holder:
+		time_elapsed += delta
+		# Calculate the breathing offset
+		var offset_y = sin(time_elapsed * frequency * TAU) * weapon_amplitude
+		# Apply the offset to the head node
+		weapon_holder.position.y += offset_y
+
 #Weapon crouch animation
 func weapon_crouch_movement(delta):
 	if crouching == true:
-		weapon_holder.position.y = lerp(weapon_holder.position.y,-0.065, 10 * delta)
+		weapon_holder.position.y = lerp(weapon_holder.position.y,-0.0065, 10 * delta)
 	else:
 		weapon_holder.position.y = lerp(weapon_holder.position.y,0.0, 10 * delta)
 
