@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="viewport"
@@ -68,4 +69,4 @@ Fire={
 
 [physics]
 
-common/physics_ticks_per_second=180
+common/physics_ticks_per_second=260

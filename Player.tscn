@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=7 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Main_Camera.gd" id="2_0mfow"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Crosshair.png" id="3_6pp65"]
+[ext_resource type="Texture2D" uid="uid://dtjvtdqj1o24j" path="res://Test FPS.png" id="3_eqtrx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.19437
@@ -35,6 +36,11 @@ collision_mask = 2
 
 [node name="Weapon_Holder" type="Node3D" parent="head"]
 
+[node name="Sprite3D" type="Sprite3D" parent="head/Weapon_Holder"]
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
+texture_filter = 0
+texture = ExtResource("3_eqtrx")
+
 [node name="Leg" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
@@ -66,6 +72,15 @@ scale = Vector2(0.0988336, 0.0988336)
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("3_6pp65")
 stretch_mode = 3
+
+[node name="Hit_Label" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 255.0
+offset_right = 340.0
+offset_bottom = 278.0
+text = "HIT!"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.18429, 0, 1, -8.05559e-09, 0, 0.353293, -0.220129)
