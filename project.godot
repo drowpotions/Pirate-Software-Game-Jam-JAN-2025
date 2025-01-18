@@ -69,4 +69,4 @@ Fire={
 
 [physics]
 
-common/physics_ticks_per_second=260
+common/physics_ticks_per_second=200
