@@ -143,4 +143,4 @@ func weapon_sway(delta):
 #menu interaction
 func menu_features():
 	if Input.is_action_pressed("esc"):
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
