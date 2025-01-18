@@ -22,7 +22,7 @@ var frequency: float = 0.1  # Breathing cycle frequency (cycles per second)
 var time_elapsed: float = 0.0  # Tracks elapsed time
 
 #movement variables
-var jump_velocity = 5.0 
+var jump_velocity = 11.0 
 var walk_speed = 9.0
 var lerp_speed = 25.0
 
@@ -138,6 +138,7 @@ func weapon_sway(delta):
 	mouse_input = lerp(mouse_input,Vector2.ZERO,10*delta)
 	weapon_holder.rotation.x = lerp(weapon_holder.rotation.x, mouse_input.y * mouse_rotation_amount,10*delta)
 	weapon_holder.rotation.y = lerp(weapon_holder.rotation.y, mouse_input.x * mouse_rotation_amount,10*delta)
+	weapon_holder.rotation.z = lerp(weapon_holder.rotation.z, mouse_input.x * 0.005,10*delta)
 	
 
 #menu interaction

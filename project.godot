@@ -74,3 +74,4 @@ Fire={
 [physics]
 
 common/physics_ticks_per_second=200
+3d/default_gravity=50.0
