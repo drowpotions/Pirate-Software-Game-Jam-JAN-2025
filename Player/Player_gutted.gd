@@ -21,7 +21,7 @@ var frequency: float = 0.1  # Breathing cycle frequency (cycles per second)
 var time_elapsed: float = 0.0  # Tracks elapsed time
 
 #movement variables
-var jump_velocity = 2.5
+var jump_velocity = 5.0 
 var walk_speed = 9.0
 var lerp_speed = 25.0
 
