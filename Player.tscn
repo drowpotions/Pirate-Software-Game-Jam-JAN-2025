@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=6 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Main_Camera.gd" id="2_0mfow"]
+[ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Crosshair.png" id="3_6pp65"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.19437
@@ -29,6 +30,7 @@ script = ExtResource("2_0mfow")
 
 [node name="interaction" type="RayCast3D" parent="head/Camera Holder/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, -8.31635e-08, -1, 0, 1.90256, -4.37114e-08, 0, 0, 0)
+visible = false
 collision_mask = 2
 
 [node name="Weapon_Holder" type="Node3D" parent="head"]
@@ -62,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.0988336, 0.0988336)
 pivot_offset = Vector2(20, 20)
+texture = ExtResource("3_6pp65")
 stretch_mode = 3
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
