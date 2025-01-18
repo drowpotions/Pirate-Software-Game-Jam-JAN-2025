@@ -113,6 +113,9 @@ spot_range = 8.0
 [node name="Player" parent="." instance=ExtResource("1_mb8yd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.2118, 20.7272, -2.56729)
 
+[node name="Hit_Label" parent="Player/CanvasLayer/Control" index="1"]
+text = "HIT!"
+
 [node name="Target" type="CSGSphere3D" parent="." groups=["target"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.3305, 29.738, -20.9999)
 use_collision = true

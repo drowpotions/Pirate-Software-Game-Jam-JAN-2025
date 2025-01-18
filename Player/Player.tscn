@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=15 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -56,9 +56,6 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_lajmx"]
-length = 1.84227
-
 [sub_resource type="Animation" id="Animation_6dtan"]
 length = 0.001
 tracks/0/type = "value"
@@ -99,6 +96,7 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
 script = ExtResource("1_4bpwi")
+mouse_sens = 0.2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -166,10 +164,6 @@ offset_top = 255.0
 offset_right = 340.0
 offset_bottom = 278.0
 text = "Hit!"
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.18429, 0, 1, -8.05559e-09, 0, 0.353293, -0.220129)
-shape = SubResource("SeparationRayShape3D_lajmx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
