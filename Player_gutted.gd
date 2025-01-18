@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @onready var head = $head
 @onready var interaction = $"head/Camera Holder/Camera3D/interaction"
-@onready var joint = $"head/Camera Holder/Camera3D/Generic6DOFJoint3D"
 @onready var player_collider = $CollisionShape3D
 @onready var player_camera = $"head/Camera Holder/Camera3D"
 @onready var weapon_holder = $head/Weapon_Holder
@@ -11,7 +10,7 @@ extends CharacterBody3D
 
 #cam rotation variables
 var cam_rotation_amount : float = 0.04
-var input_dir = Input.get_vector("left","right","forwards","backwards")
+
 
 var mouse_rotation_amount :float = 0.01
 
@@ -27,7 +26,7 @@ var walk_speed = 9.0
 var lerp_speed = 25.0
 
 #mouse variables
-var mouse_sens = 0.2
+@export var mouse_sens = 0.4
 var mouse_input = Vector2()
 var direction = Vector3.ZERO
 
@@ -40,7 +39,7 @@ var Default_FOV = 60
 var FOV_Zoom = 50
 
 #crouch variables
-const crouch_translate = -1
+const crouch_translate := -1.0
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -58,8 +57,6 @@ func _input(event):
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
 		mouse_input = event.relative
-
-
 
 func _physics_process(delta):
 	# Add the gravity.
