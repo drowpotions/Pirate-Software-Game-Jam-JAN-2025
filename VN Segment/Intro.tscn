@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1s41gbqy0feb"]
+
+[ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_8xf03"]
+[ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_fdsk4"]
+
+[node name="Intro" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8xf03")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0189819, 0)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(2.80688, 0.0496826, 11.2256)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8995, 0)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(2.80688, 0.0496826, 11.2256)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.89116, 0, 0, 0, 1, -1.39653, 0.873432, 0)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(0.138672, 1.11285, 11.2256)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.89116, 0, 0, 0, 1, 1.32246, 0.873432, 0)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(0.138672, 1.11285, 11.2256)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.89116, 0, 1, 0, -4.37114e-08, 0, 1, 5.50394)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(0.138672, 1.11285, 2.78906)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.89116, 0, 1, 0, -4.37114e-08, 0, 1, -5.49606)
+material_override = ExtResource("2_fdsk4")
+use_collision = true
+size = Vector3(0.138672, 1.11285, 2.78906)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.98269, 1.02437, 0.279725, 0)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D7"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.98269, 1.02437, 0.279725, -4)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D9"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 1.73333e-07, 0, 1, 0, -8.74228e-08, 0, -1.98269, -1.10125, 0.279725, -4)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D10"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 1.73333e-07, 0, 1, 0, -8.74228e-08, 0, -1.98269, -1.10125, 0.279725, 0)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D11"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, 1.73333e-07, 0, 1, 0, -8.74228e-08, 0, -1.98269, -1.10125, 0.279725, 4)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D12"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.98269, 1.02437, 0.279725, 4)
+size = Vector3(0.469727, 0.104004, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGBox3D8"]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0.230091, 0.22134, 0)
+size = Vector3(0.469727, 0.188721, 1)
