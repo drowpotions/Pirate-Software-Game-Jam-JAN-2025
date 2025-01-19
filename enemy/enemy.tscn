@@ -9,8 +9,8 @@ albedo_color = Color(1, 0.00392157, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0d3uo"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_p4qnp"]
-radius = 19.0874
+[sub_resource type="BoxShape3D" id="BoxShape3D_42l8c"]
+size = Vector3(4.54845, 2.60498, 20.375)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
@@ -32,7 +32,8 @@ collision_layer = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_p4qnp")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0438004, 0.80249, -9.6875)
+shape = SubResource("BoxShape3D_42l8c")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.23463e-15, 3.62595e-09, 0.609612, 0.64617, -3.62595e-09, 0, 2.8245e-08, 0.0829521, -2.6647e-08, -0.00121987, 0.487905, -0.443301)
