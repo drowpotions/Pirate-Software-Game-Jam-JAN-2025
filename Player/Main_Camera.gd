@@ -31,6 +31,12 @@ func _input(_event):
 			reload_anim()
 		else:
 			print("This should never appear, if it does something is wrong")
+	
+	if Input.is_action_just_pressed("reload") and shooting == false:
+		if ammo < 8:
+			reload_anim()
+		elif ammo == 8:
+			print("Ammo full!")
 		
 	jump_shake()
 
