@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7qiki3o4vtq4"]
+[gd_scene load_steps=10 format=3 uid="uid://b7qiki3o4vtq4"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_mb8yd"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_2iopr"]
@@ -18,6 +18,9 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf2n7"]
 albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
+length = 0.158376
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f262c"]
 albedo_color = Color(0.645309, 0.00146709, 1.44392e-07, 1)
@@ -114,8 +117,23 @@ spot_range = 8.0
 [node name="Player" parent="." instance=ExtResource("1_mb8yd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94.2118, 20.7272, -2.56729)
 
+[node name="AnimatedSprite3D" parent="Player/head/Weapon_Holder" index="0"]
+animation = &"default"
+
 [node name="Hit_Label" parent="Player/CanvasLayer/Control" index="1"]
 text = "HIT!"
+
+[node name="CollisionShape3D3" parent="Player" index="5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, 0.269019)
+shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="CollisionShape3D4" parent="Player" index="6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.254387, 0.113526, 0.000730038)
+shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="CollisionShape3D5" parent="Player" index="7"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.264335, 0.113526, 0.000730038)
+shape = SubResource("SeparationRayShape3D_umimj")
 
 [node name="Target" type="CSGSphere3D" parent="." groups=["target"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.3305, 29.738, -20.9999)
