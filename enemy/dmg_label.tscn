@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dtgw4agg7mjd6"]
+
+[node name="DmgLabel" type="Label3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+text = "-1"
+font_size = 100

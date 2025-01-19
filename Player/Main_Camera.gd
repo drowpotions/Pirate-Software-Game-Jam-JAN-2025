@@ -4,12 +4,18 @@ extends Camera3D
 @onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 @onready var cam_anim = $"../../../AnimationPlayer"
 
-var shooting = false
+@export var shooting = false
 
 var ray_range = 2000
 
+#weapon vars
+@export var fire_rate := 16.0
+@export var damage := 1
+
+
 func _input(_event):
-	if Input.is_action_just_pressed("Fire"):
+	if Input.is_action_just_pressed("Fire") and shooting == false:
+		shooting = true
 		shoot_sound()
 		shoot_anim()
 		get_camera_collision()
@@ -38,6 +44,10 @@ func get_camera_collision():
 			result.collider.material.albedo_color = Color.GREEN
 			await get_tree().create_timer(3).timeout
 			result.collider.material.albedo_color = Color.RED
+		elif result.collider.is_in_group("enemy"):
+			Hit_Label.text = "Enemy Hit!"
+			result.collider.hit(damage)
+			print("Enemy has " + str(result.collider.health) + " remaining")
 		else:
 			Hit_Label.text = "Hit!"
 		await get_tree().create_timer(.5).timeout
@@ -47,9 +57,9 @@ func get_camera_collision():
 		Hit_Label.hide()
 
 func shoot_anim():
+	shoot_anim_sprite.get_sprite_frames().set_animation_speed("shoot", fire_rate)
 	shoot_anim_sprite.play("shoot")
 	cam_anim.play("cam_shake_shoot")
-	shooting = true
 	await shoot_anim_sprite.animation_finished
 	shooting = false
 	shoot_anim_sprite.play("default")
@@ -59,13 +69,13 @@ func jump_shake():
 		cam_anim.play("cam_jump_shake")
 
 func shoot_sound():
-	if shooting == false:
-		var audio_stream_player := AudioStreamPlayer.new()
-		audio_stream_player.stream = load("res://Player/PH_shoot.wav")
-		audio_stream_player.bus = "Sound"
-		audio_stream_player.volume_db = linear_to_db(1)
-		get_parent().add_child(audio_stream_player)
-		audio_stream_player.play()
-		audio_stream_player.finished.connect(func():
-			audio_stream_player.queue_free()
-		)
+	#if shooting == false:
+	var audio_stream_player := AudioStreamPlayer.new()
+	audio_stream_player.stream = load("res://Player/PH_shoot.wav")
+	audio_stream_player.bus = "Sound"
+	audio_stream_player.volume_db = linear_to_db(1)
+	get_parent().add_child(audio_stream_player)
+	audio_stream_player.play()
+	audio_stream_player.finished.connect(func():
+		audio_stream_player.queue_free()
+	)

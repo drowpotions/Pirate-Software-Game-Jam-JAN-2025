@@ -7,7 +7,6 @@ extends CharacterBody3D
 @onready var weapon_holder = $head/Weapon_Holder
 @onready var cam_holder = $"head/Camera Holder"
 
-
 #cam rotation variables
 var cam_rotation_amount : float = 0.04
 

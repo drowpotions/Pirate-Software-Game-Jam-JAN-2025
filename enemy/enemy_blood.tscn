@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dne5vapailyys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dy7dh"]
+albedo_color = Color(1, 0.00392157, 0, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ydeyl"]
+emission_shape = 1
+emission_sphere_radius = 0.1
+angle_min = -513.1
+angle_max = 215.2
+spread = 3.795
+flatness = 0.096
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, -5, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 6.89
+collision_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_ah3ud"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="EnemyBlood" type="GPUParticles3D"]
+material_override = SubResource("StandardMaterial3D_dy7dh")
+emitting = false
+amount = 15
+interp_to_end = 1.0
+one_shot = true
+explosiveness = 0.68
+randomness = 0.09
+collision_base_size = 9.06
+process_material = SubResource("ParticleProcessMaterial_ydeyl")
+draw_pass_1 = SubResource("BoxMesh_ah3ud")
