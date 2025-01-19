@@ -5,15 +5,21 @@ extends CharacterBody3D
 
 var following := false
 var speed := .01
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var player: CharacterBody3D
 @export var health := 10
 
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
 	if following == true:
-		look_at(player.position)
-		move_and_slide()
+		pass
+		#look_at(player.position)
+	
+	move_and_slide()
 
 
 func hit(damage):
