@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=11 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pnr0j"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_ge1hb"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_kaj5v"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="4_mdp8e"]
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_38b48"]
+[ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://GAMEJAM CONCEPT TRACK 2.wav" id="6_d3y1x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -512,3 +513,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09076, -17)
 material_override = ExtResource("3_kaj5v")
 use_collision = true
 size = Vector3(1, 5.18152, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_d3y1x")
+volume_db = -15.0

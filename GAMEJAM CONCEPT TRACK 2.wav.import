@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1lx0y6boud1b"
+path="res://.godot/imported/GAMEJAM CONCEPT TRACK 2.wav-e0494741f454dd58fe20e1279c27f349.sample"
+
+[deps]
+
+source_file="res://GAMEJAM CONCEPT TRACK 2.wav"
+dest_files=["res://.godot/imported/GAMEJAM CONCEPT TRACK 2.wav-e0494741f454dd58fe20e1279c27f349.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

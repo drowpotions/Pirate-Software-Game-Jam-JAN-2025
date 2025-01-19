@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=19 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Player/Crosshair.png" id="3_6pp65"]
 [ext_resource type="Texture2D" uid="uid://cqe3mwchxgv74" path="res://Player/sprite_sheet.png" id="4_nfp6s"]
+[ext_resource type="Texture2D" uid="uid://bfeemk8l4rb1s" path="res://theboy.png" id="5_uj2am"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.19437
@@ -115,11 +116,15 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_g2ofn"]
+resource_name = "hud_testing"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvc46"]
 _data = {
 "RESET": SubResource("Animation_6dtan"),
 "cam_jump_shake": SubResource("Animation_ikm84"),
-"cam_shake_shoot": SubResource("Animation_8fvnp")
+"cam_shake_shoot": SubResource("Animation_8fvnp"),
+"hud_testing": SubResource("Animation_g2ofn")
 }
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
@@ -197,6 +202,101 @@ offset_top = 255.0
 offset_right = 340.0
 offset_bottom = 278.0
 text = "Hit!"
+
+[node name="Control2" type="Control" parent="CanvasLayer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 233.0
+offset_top = 405.0
+offset_right = 367.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.576471, 0.576471, 0.576471, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 236.0
+offset_top = 388.0
+offset_right = 364.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.804743, 0.804743, 0.804743, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 405.0
+offset_right = 471.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.803922, 0.803922, 0.803922, 0.494118)
+
+[node name="Control" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Control"]
+layout_mode = 0
+offset_left = -12.9756
+offset_top = 10.0317
+offset_right = 723.024
+offset_bottom = 874.032
+scale = Vector2(0.194192, 0.194192)
+pivot_offset = Vector2(328.921, 412.224)
+texture = ExtResource("5_uj2am")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 159.0
+offset_top = 451.0
+offset_right = 243.0
+offset_bottom = 474.0
+text = "/\\/\\ /\\/\\ /\\/\\"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 391.0
+offset_top = 451.0
+offset_right = 442.0
+offset_bottom = 474.0
+text = "Ammo"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 454.0
+offset_top = 451.0
+offset_right = 494.0
+offset_bottom = 474.0
+text = "?/?"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
