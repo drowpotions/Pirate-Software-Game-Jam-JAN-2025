@@ -206,3 +206,15 @@ libraries = {
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, -0.239421)
 shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, 0.269019)
+shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.254387, 0.113526, 0.000730038)
+shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.264335, 0.113526, 0.000730038)
+shape = SubResource("SeparationRayShape3D_umimj")
