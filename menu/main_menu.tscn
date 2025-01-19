@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=7 format=3 uid="uid://bekmbyokqyu10"]
 
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
+[ext_resource type="Texture2D" uid="uid://v8g0vmlg2mmw" path="res://grey2.png" id="2_0s6du"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_ls86s"]
-[ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://Main Menu Demo.wav" id="2_rswmq"]
+[ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://menu/Main Menu Demo.wav" id="2_rswmq"]
+[ext_resource type="Texture2D" uid="uid://cvbix4k5h2fjs" path="res://grey1.png" id="3_8nd4s"]
 [ext_resource type="Script" path="res://menu/parallax_background.gd" id="4_vbhxg"]
 
 [node name="MainMenu" type="Control"]
@@ -13,6 +15,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pa5p5")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_right = 771.0
+offset_bottom = 742.0
+scale = Vector2(0.639343, 0.639343)
+texture = ExtResource("2_0s6du")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_right = 757.0
+offset_bottom = 742.0
+scale = Vector2(0.639343, 0.639343)
+texture = ExtResource("3_8nd4s")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

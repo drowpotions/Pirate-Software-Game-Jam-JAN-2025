@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=8 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
+[ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
 
@@ -21,6 +22,7 @@ script = ExtResource("1_3rhhp")
 shape = SubResource("CapsuleShape3D_l5boi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_tdbop")
 mesh = SubResource("CapsuleMesh_0d3uo")
 
@@ -37,7 +39,14 @@ shape = SubResource("BoxShape3D_42l8c")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.23463e-15, 3.62595e-09, 0.609612, 0.64617, -3.62595e-09, 0, 2.8245e-08, 0.0829521, -2.6647e-08, -0.00121987, 0.487905, -0.443301)
+visible = false
 mesh = SubResource("CylinderMesh_5lwvn")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.295373, 0, 0, 0, 0.295373, 0, 0, 0, 1, 0, 0, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("2_0imka")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

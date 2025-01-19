@@ -10,7 +10,7 @@ func _on_lucy_button_pressed() -> void:
 
 
 func _on_charlie_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Charlie Grey Box.tscn")
+	get_tree().change_scene_to_file("res://Charlie Greybox/Charlie Grey Box.tscn")
 
 
 func _on_world_button_pressed() -> void:
