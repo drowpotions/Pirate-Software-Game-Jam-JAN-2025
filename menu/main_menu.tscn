@@ -67,6 +67,22 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Demo Scene"
 
+[node name="Intro" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = 97.0
+offset_right = 67.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Intro
+"
+
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -75,9 +91,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.5
-offset_top = 98.0
+offset_top = 134.0
 offset_right = 66.5
-offset_bottom = 129.0
+offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
@@ -136,4 +152,5 @@ uppercase = true
 [connection signal="pressed" from="LucyButton" to="." method="_on_lucy_button_pressed"]
 [connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]
 [connection signal="pressed" from="WorldButton" to="." method="_on_world_button_pressed"]
+[connection signal="pressed" from="Intro" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
