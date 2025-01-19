@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var dmg_pos: Marker3D = $Marker3D
 @onready var detection_area: Area3D = $Area3D
+@onready var los: RayCast3D = $LoS
 
 var following := false
 var speed := 5.0
@@ -11,6 +12,10 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var player: Node3D
 @export var health := 10
 @export var los_distance: float = 20.0
+
+
+func _ready() -> void:
+	los.target_position = Vector3(0,0,-los_distance)
 
 
 func _physics_process(delta: float) -> void:
@@ -23,10 +28,16 @@ func _physics_process(delta: float) -> void:
 		var direction = (player.global_transform.origin - global_transform.origin)
 		var distance = direction.length()
 		
+		#stop following when within stopping distance of player
 		if distance > stop_distance:
 			direction = direction.normalized()
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
+		#stop following when player is out of LoS range
+		elif distance > los_distance:
+			velocity.x = 0
+			velocity.z = 0
+			following = false
 		else:
 			velocity.x = 0
 			velocity.z = 0
@@ -66,26 +77,20 @@ func show_particles():
 	particles.queue_free()
 
 
-func move_to_player():
-	var direction = (player.global_transform.origin - global_transform.origin)
-	var distance = direction.length()
-	
-	if distance > stop_distance:
-		direction = direction.normalized()
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = 0
-		velocity.z = 0
-		
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		following = true
-
-
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		following = false
-		velocity.x = 0
-		velocity.z = 0
+func _on_los_timer_timeout() -> void:
+	var overlaps = detection_area.get_overlapping_bodies()
+	if overlaps.size() > 0:
+		for overlap in overlaps:
+			if overlap.is_in_group("player"):
+				var player_pos = player.global_transform.origin
+				los.look_at(player_pos, Vector3.UP)
+				los.force_raycast_update()
+				
+				if los.is_colliding():
+					var collider = los.get_collider()
+					
+					if collider.is_in_group("player"):
+						los.debug_shape_custom_color = Color.GREEN
+						following = true
+					else:
+						los.debug_shape_custom_color = Color.RED

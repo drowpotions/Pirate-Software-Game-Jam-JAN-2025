@@ -32,6 +32,7 @@ func _input(_event):
 		else:
 			print("This should never appear, if it does something is wrong")
 	
+	#manual reload input, only reload if ammo is not full
 	if Input.is_action_just_pressed("reload") and shooting == false:
 		if ammo < 8:
 			reload_anim()

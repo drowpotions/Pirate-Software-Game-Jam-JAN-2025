@@ -123,9 +123,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="head" parent="Player" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="AnimatedSprite3D" parent="Player/head/Weapon_Holder" index="0"]
-animation = &"default"
-
 [node name="Hit_Label" parent="Player/CanvasLayer/Control" index="1"]
 text = "HIT!"
 
@@ -156,3 +153,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4072, 20.5799, -4.75214)
 player = NodePath("../Player")
 
 [editable path="Player"]
+[editable path="Enemy"]

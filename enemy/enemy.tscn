@@ -10,8 +10,8 @@ albedo_color = Color(1, 0.00392157, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0d3uo"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_42l8c"]
-size = Vector3(4.54845, 2.60498, 20.375)
+[sub_resource type="SphereShape3D" id="SphereShape3D_odaac"]
+radius = 7.93794
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
@@ -34,8 +34,7 @@ collision_layer = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0438004, 0.80249, -9.6875)
-shape = SubResource("BoxShape3D_42l8c")
+shape = SubResource("SphereShape3D_odaac")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.23463e-15, 3.62595e-09, 0.609612, 0.64617, -3.62595e-09, 0, 2.8245e-08, 0.0829521, -2.6647e-08, -0.00121987, 0.487905, -0.443301)
@@ -48,5 +47,12 @@ billboard = 2
 shaded = true
 texture = ExtResource("2_0imka")
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="LosTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="LoS" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406405, 0)
+target_position = Vector3(0, 0, -20)
+
+[connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
