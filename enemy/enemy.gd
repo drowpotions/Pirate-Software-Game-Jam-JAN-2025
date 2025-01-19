@@ -23,9 +23,12 @@ func _physics_process(delta: float) -> void:
 		
 		if distance > stop_distance:
 			direction = direction.normalized()
-			velocity = direction * speed
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
 		else:
-			velocity = Vector3.ZERO
+			velocity.x = 0
+			velocity.z = 0
+			
 	
 	move_and_slide()
 
