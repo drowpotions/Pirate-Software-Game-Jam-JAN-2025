@@ -16,8 +16,9 @@ var ray_range = 2000
 
 
 func _input(_event):
-	if Input.is_action_just_pressed("Fire"):
-		if shooting == false and ammo != 0:
+	if Input.is_action_just_pressed("Fire") and shooting == false:
+		#weapon fires if ammo is not 0
+		if ammo != 0:
 			shooting = true
 			ammo -= 1
 			ammo_label.text = "Ammo: " + str(ammo) + "/8"
@@ -25,8 +26,11 @@ func _input(_event):
 			shoot_anim()
 			get_camera_collision()
 			print("Ammo left: " + str(ammo))
-		elif shooting == false and ammo == 0:
+		#weapon reloads if ammo is 0
+		elif ammo == 0:
 			reload_anim()
+		else:
+			print("This should never appear, if it does something is wrong")
 		
 	jump_shake()
 
@@ -45,26 +49,33 @@ func get_camera_collision():
 	var space_state = get_world_3d().direct_space_state
 	var result = space_state.intersect_ray(query)
 	
+	#check for collider
 	if result and result.has("collider"):
 		print(result.collider.name)
 		Hit_Label.show()
+		#if collider is a target, change its properties
 		if result.collider.is_in_group("target"):
 			Hit_Label.text = "Target Hit!"
 			result.collider.material.albedo_color = Color.GREEN
 			await get_tree().create_timer(3).timeout
 			result.collider.material.albedo_color = Color.RED
+		#if collider is an enemy, damage its health
 		elif result.collider.is_in_group("enemy"):
 			Hit_Label.text = "Enemy Hit!"
 			result.collider.hit(damage)
 			print("Enemy has " + str(result.collider.health) + " remaining")
+		#every other case
 		else:
 			Hit_Label.text = "Hit!"
 		await get_tree().create_timer(.5).timeout
 		Hit_Label.hide()
 	else:
+		#no colliders
 		print("nothing")
 		Hit_Label.hide()
 
+
+#wait for shoot anim to finish before shooting again
 func shoot_anim():
 	shoot_anim_sprite.get_sprite_frames().set_animation_speed("shoot", fire_rate)
 	shoot_anim_sprite.play("shoot")
@@ -74,6 +85,7 @@ func shoot_anim():
 	shoot_anim_sprite.play("default")
 
 
+#wait for reload anim to finish before shooting again
 func reload_anim():
 	shooting = true
 	shoot_anim_sprite.modulate = Color.BLACK
@@ -84,9 +96,11 @@ func reload_anim():
 	shooting = false
 	shoot_anim_sprite.modulate = Color.WHITE
 
+
 func jump_shake():
 	if Input.is_action_pressed("jump"):
 		cam_anim.play("cam_jump_shake")
+
 
 func shoot_sound():
 	#if shooting == false:
