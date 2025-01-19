@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(damage):
 	if player.player_camera.shooting == true:
+		following = true
 		look_at(player.global_position)
 		#show_hit_label(damage)
 		show_particles()
@@ -64,6 +65,19 @@ func show_particles():
 	await particles.finished
 	particles.queue_free()
 
+
+func move_to_player():
+	var direction = (player.global_transform.origin - global_transform.origin)
+	var distance = direction.length()
+	
+	if distance > stop_distance:
+		direction = direction.normalized()
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = 0
+		velocity.z = 0
+		
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
