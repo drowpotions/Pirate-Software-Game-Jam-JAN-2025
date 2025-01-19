@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=4 format=3 uid="uid://bekmbyokqyu10"]
 
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
+[ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_ls86s"]
 [ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://Main Menu Demo.wav" id="2_rswmq"]
 
 [node name="MainMenu" type="Control"]
@@ -11,6 +12,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pa5p5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 293.0
+offset_right = 743.0
+offset_bottom = 742.0
+scale = Vector2(0.639343, 0.639343)
+texture = ExtResource("2_ls86s")
 
 [node name="LucyButton" type="Button" parent="."]
 layout_mode = 1
@@ -76,6 +85,45 @@ text = "Quit"
 stream = ExtResource("2_rswmq")
 volume_db = -25.0
 autoplay = true
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="Label3" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+offset_left = 18.0
+offset_top = 32.0
+offset_right = 5492.0
+offset_bottom = 2845.0
+scale = Vector2(0.0472269, 0.0472269)
+theme_override_colors/font_color = Color(0.44291, 0.442911, 0.442911, 1)
+theme_override_font_sizes/font_size = 1031
+text = "P L A C E 
+H O L D E R"
+uppercase = true
+
+[node name="Label2" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+offset_left = 21.0
+offset_top = 33.0
+offset_right = 5495.0
+offset_bottom = 2846.0
+scale = Vector2(0.0531993, 0.0531993)
+theme_override_colors/font_color = Color(0.678944, 0.678944, 0.678944, 1)
+theme_override_font_sizes/font_size = 1031
+text = "P L A C E 
+H O L D E R"
+uppercase = true
+
+[node name="Label" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+offset_left = 23.0
+offset_top = 34.0
+offset_right = 5497.0
+offset_bottom = 2847.0
+scale = Vector2(0.0581068, 0.0581068)
+theme_override_font_sizes/font_size = 1031
+text = "P L A C E 
+H O L D E R"
+uppercase = true
 
 [connection signal="pressed" from="LucyButton" to="." method="_on_lucy_button_pressed"]
 [connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]
