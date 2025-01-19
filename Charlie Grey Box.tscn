@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=9 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pnr0j"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_ge1hb"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_kaj5v"]
+[ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="4_mdp8e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -29,7 +30,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_pnr0j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96772, 0.0292211, 14)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34912, 2.64752, 25.3293)
@@ -65,6 +66,16 @@ size = Vector3(7.25323, 37.792, 1)
 transform = Transform3D(1, 0, 0, 0, 0.729924, -0.683529, 0, 0.683529, 0.729924, 10.577, -0.254849, 14.7861)
 operation = 2
 size = Vector3(3.95996, 3.57162, 22.5825)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.32809, -0.60278, 7.9875)
+operation = 2
+size = Vector3(6.20715, 4.03296, 4.74341)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45406, -0.644303, 8.00974)
+operation = 2
+size = Vector3(6.20215, 4.26981, 4.79358)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(12.6364, 0, 0, 0, 0.0216317, 0, 0, 0, 17.6156, -6.31821, -0.861077, 0)
@@ -230,3 +241,26 @@ polygon = PackedVector2Array(0, 0, 0.010613, 11.4789, 7.53164, 11.4561)
 [node name="CSGBox3D24" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2859, 0, 0)
 material = ExtResource("2_ge1hb")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_mdp8e")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -16.0274, 9.08862, -22.4573)
+player = NodePath("../Player")
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_mdp8e")]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -16.8372, 0.994032, -18.4185)
+player = NodePath("../Player")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06711, 1.78284, 0)
+material_override = ExtResource("3_kaj5v")
+size = Vector3(3.84937, 4.56567, 22.04)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06711, 1.78284, 23)
+material_override = ExtResource("3_kaj5v")
+size = Vector3(3.84937, 4.56567, 22.04)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06711, 1.78284, -23)
+material_override = ExtResource("3_kaj5v")
+size = Vector3(3.84937, 4.56567, 22.04)
