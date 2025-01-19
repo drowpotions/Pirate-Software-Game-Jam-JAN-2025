@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=5 format=3 uid="uid://bekmbyokqyu10"]
 
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_ls86s"]
 [ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://Main Menu Demo.wav" id="2_rswmq"]
+[ext_resource type="Script" path="res://menu/parallax_background.gd" id="4_vbhxg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -86,11 +87,12 @@ stream = ExtResource("2_rswmq")
 volume_db = -25.0
 autoplay = true
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("4_vbhxg")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Label3" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+[node name="Label3" type="Label" parent="ParallaxBackground/ParallaxLayer"]
 offset_left = 18.0
 offset_top = 32.0
 offset_right = 5492.0
@@ -102,7 +104,10 @@ text = "P L A C E
 H O L D E R"
 uppercase = true
 
-[node name="Label2" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.25, 1.25)
+
+[node name="Label2" type="Label" parent="ParallaxBackground/ParallaxLayer2"]
 offset_left = 21.0
 offset_top = 33.0
 offset_right = 5495.0
@@ -114,7 +119,10 @@ text = "P L A C E
 H O L D E R"
 uppercase = true
 
-[node name="Label" type="Label" parent="ParallaxBackground2/ParallaxLayer"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
 offset_left = 23.0
 offset_top = 34.0
 offset_right = 5497.0
