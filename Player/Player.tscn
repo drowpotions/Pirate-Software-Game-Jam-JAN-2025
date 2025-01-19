@@ -188,7 +188,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.0988336, 0.0988336)
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("3_6pp65")
 stretch_mode = 3

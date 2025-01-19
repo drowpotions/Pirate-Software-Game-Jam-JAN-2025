@@ -133,11 +133,11 @@ transform = Transform3D(0.0791364, 0, 0, 0, 46.2285, 0, 0, 0, 0.113241, 0.053162
 size = Vector3(0.292847, 0.331543, 36.9512)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Meshes/CSGBox3D"]
-transform = Transform3D(0.0791364, 0, 0, 0, 46.2285, 0, 0, 0, 0.113241, -0.263383, -21.8731, 0)
+transform = Transform3D(0.0791364, 0, 0, 0, 46.2285, 0, 0, 0, 0.113241, -0.318995, -21.8731, 0)
 size = Vector3(0.292847, 0.331543, 36.9512)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Meshes/CSGBox3D"]
-transform = Transform3D(0.0791364, 0, 0, 0, 46.2285, 0, 0, 0, 0.113241, -0.500792, -21.8731, 0)
+transform = Transform3D(0.0791364, 0, 0, 0, 46.2285, 0, 0, 0, 0.113241, -0.556404, -21.8731, 0)
 size = Vector3(0.292847, 0.331543, 36.9512)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Meshes"]
@@ -544,22 +544,22 @@ material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(1, 5.18152, 1)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ndevj")
-volume_db = -15.0
-autoplay = true
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.56749, 0.531529, 12.4622)
 material_override = ExtResource("5_174pq")
 height = 1.09261
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0683782, 0.531529, 2.16366)
 material_override = ExtResource("5_174pq")
 height = 1.09261
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52046, 0.531529, -20.5672)
 material_override = ExtResource("5_174pq")
 height = 1.09261
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ndevj")
+volume_db = -15.0
+autoplay = true
