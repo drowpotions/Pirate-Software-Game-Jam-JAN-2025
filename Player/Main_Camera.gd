@@ -11,14 +11,22 @@ var ray_range = 2000
 #weapon vars
 @export var fire_rate := 16.0
 @export var damage := 1
+@export var ammo := 8
 
 
 func _input(_event):
-	if Input.is_action_just_pressed("Fire") and shooting == false:
-		shooting = true
-		shoot_sound()
-		shoot_anim()
-		get_camera_collision()
+	if Input.is_action_just_pressed("Fire"):
+		if shooting == false and ammo != 0:
+			shooting = true
+			ammo -= 1
+			shoot_sound()
+			shoot_anim()
+			get_camera_collision()
+			print("Ammo left: " + str(ammo))
+		elif shooting == false and ammo == 0:
+			reload_anim()
+			ammo = 8
+		
 	jump_shake()
 
 func get_camera_collision():
@@ -63,6 +71,12 @@ func shoot_anim():
 	await shoot_anim_sprite.animation_finished
 	shooting = false
 	shoot_anim_sprite.play("default")
+
+
+func reload_anim():
+	shooting = true
+	await get_tree().create_timer(3).timeout
+	shooting = false
 
 func jump_shake():
 	if Input.is_action_pressed("jump"):
