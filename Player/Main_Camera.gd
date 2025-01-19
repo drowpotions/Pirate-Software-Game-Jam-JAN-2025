@@ -3,6 +3,7 @@ extends Camera3D
 @onready var Hit_Label = $"../../../CanvasLayer/Control/Hit_Label"
 @onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 @onready var cam_anim = $"../../../AnimationPlayer"
+@onready var ammo_label: Label = $"../../../CanvasLayer/Control/AmmoLabel"
 
 @export var shooting = false
 
@@ -19,13 +20,13 @@ func _input(_event):
 		if shooting == false and ammo != 0:
 			shooting = true
 			ammo -= 1
+			ammo_label.text = "Ammo: " + str(ammo) + "/8"
 			shoot_sound()
 			shoot_anim()
 			get_camera_collision()
 			print("Ammo left: " + str(ammo))
 		elif shooting == false and ammo == 0:
 			reload_anim()
-			ammo = 8
 		
 	jump_shake()
 
@@ -75,8 +76,13 @@ func shoot_anim():
 
 func reload_anim():
 	shooting = true
-	await get_tree().create_timer(3).timeout
+	shoot_anim_sprite.modulate = Color.BLACK
+	ammo_label.text = "Reloading..."
+	await get_tree().create_timer(2).timeout
+	ammo = 8
+	ammo_label.text = "Ammo: " + str(ammo) + "/8"
 	shooting = false
+	shoot_anim_sprite.modulate = Color.WHITE
 
 func jump_shake():
 	if Input.is_action_pressed("jump"):
