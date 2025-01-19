@@ -8,13 +8,15 @@ var speed := 5.0
 var stop_distance = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@export var player: CharacterBody3D
+@export var player: Node3D
 @export var health := 10
+@export var los_distance: float = 20.0
 
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 		
 	if following == true:
 		look_at(player.global_position)
@@ -35,6 +37,7 @@ func _physics_process(delta: float) -> void:
 
 func hit(damage):
 	if player.player_camera.shooting == true:
+		look_at(player.global_position)
 		#show_hit_label(damage)
 		show_particles()
 		health -= damage
@@ -70,3 +73,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		following = false
+		velocity.x = 0
+		velocity.z = 0
