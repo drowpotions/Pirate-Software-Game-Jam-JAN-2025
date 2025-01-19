@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=3 format=3 uid="uid://bekmbyokqyu10"]
 
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
+[ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://Main Menu Demo.wav" id="2_rswmq"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -70,6 +71,11 @@ offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rswmq")
+volume_db = -25.0
+autoplay = true
 
 [connection signal="pressed" from="LucyButton" to="." method="_on_lucy_button_pressed"]
 [connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]

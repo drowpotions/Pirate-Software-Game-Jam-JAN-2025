@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_kaj5v"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="4_mdp8e"]
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_38b48"]
-[ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://GAMEJAM CONCEPT TRACK 2.wav" id="6_d3y1x"]
+[ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://In Game Demo.wav" id="6_d3y1x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -517,3 +517,4 @@ size = Vector3(1, 5.18152, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_d3y1x")
 volume_db = -15.0
+autoplay = true

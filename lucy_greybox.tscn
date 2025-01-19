@@ -132,19 +132,6 @@ animation = &"default"
 [node name="Hit_Label" parent="Player/CanvasLayer/Control" index="1"]
 text = "HIT!"
 
-[node name="ColorRect3" parent="Player/CanvasLayer/Control/Control2" index="0"]
-color = Color(0.576471, 0.576471, 0.576471, 1)
-
-[node name="ColorRect" parent="Player/CanvasLayer/Control/Control2" index="1"]
-color = Color(0.804743, 0.804743, 0.804743, 1)
-
-[node name="ColorRect2" parent="Player/CanvasLayer/Control/Control2" index="2"]
-color = Color(0.803922, 0.803922, 0.803922, 0.494118)
-
-[node name="TextureRect" parent="Player/CanvasLayer/Control/Control" index="0"]
-scale = Vector2(0.194192, 0.194192)
-pivot_offset = Vector2(328.921, 412.224)
-
 [node name="CollisionShape3D3" parent="Player" index="5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, 0.269019)
 shape = SubResource("SeparationRayShape3D_umimj")
