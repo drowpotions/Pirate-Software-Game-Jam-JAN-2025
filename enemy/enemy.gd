@@ -33,8 +33,8 @@ func _physics_process(delta: float) -> void:
 			direction = direction.normalized()
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-		#stop following when player is out of LoS range
-		elif distance > los_distance:
+		#stop following when player is out of LoS range (TODO: FIX, IT DOESNT WORK!!!!)
+		elif distance > -1*los_distance:
 			velocity.x = 0
 			velocity.z = 0
 			following = false
