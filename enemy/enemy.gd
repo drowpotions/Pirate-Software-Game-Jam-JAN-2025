@@ -4,7 +4,8 @@ extends CharacterBody3D
 @onready var detection_area: Area3D = $Area3D
 
 var following := false
-var speed := .01
+var speed := 5.0
+var stop_distance = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var player: CharacterBody3D
@@ -16,8 +17,15 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 	if following == true:
-		pass
-		#look_at(player.position)
+		look_at(player.global_position)
+		var direction = (player.global_transform.origin - global_transform.origin)
+		var distance = direction.length()
+		
+		if distance > stop_distance:
+			direction = direction.normalized()
+			velocity = direction * speed
+		else:
+			velocity = Vector3.ZERO
 	
 	move_and_slide()
 

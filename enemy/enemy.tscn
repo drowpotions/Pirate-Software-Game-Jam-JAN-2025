@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=7 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 
@@ -10,7 +10,9 @@ albedo_color = Color(1, 0.00392157, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0d3uo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p4qnp"]
-radius = 4.71684
+radius = 19.0874
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_3rhhp")
@@ -31,6 +33,10 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_p4qnp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.23463e-15, 3.62595e-09, 0.609612, 0.64617, -3.62595e-09, 0, 2.8245e-08, 0.0829521, -2.6647e-08, -0.00121987, 0.487905, -0.443301)
+mesh = SubResource("CylinderMesh_5lwvn")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
