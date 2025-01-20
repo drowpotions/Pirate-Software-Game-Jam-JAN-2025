@@ -265,6 +265,13 @@ material_override = ExtResource("4_ssn5t")
 use_collision = true
 size = Vector3(9.41477, 0.522949, 44.7217)
 
+[node name="CSGBox3D99" type="CSGBox3D" parent="Area 1"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -81.9977, 4.88733, -2.3947)
+layers = 3
+material_override = ExtResource("4_ssn5t")
+use_collision = true
+size = Vector3(9.41477, 0.522949, 44.7217)
+
 [node name="CSGBox3D83" type="CSGBox3D" parent="Area 1"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -58.1609, 4.88733, -3.22918)
 layers = 3
@@ -411,7 +418,7 @@ use_collision = true
 size = Vector3(7.17785, 0.982544, 3.47363)
 
 [node name="CSGBox3D80" type="CSGBox3D" parent="Area 1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -80.9977, 2.88733, 0.113846)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -82.0306, 2.88733, 0.113846)
 layers = 3
 material_override = ExtResource("4_ssn5t")
 use_collision = true

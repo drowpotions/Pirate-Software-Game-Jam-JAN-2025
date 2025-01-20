@@ -26,6 +26,9 @@ region = Rect2(561, 0, 187, 160)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_78gvp")
 }, {
 "duration": 1.0,
@@ -204,6 +207,8 @@ transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, -0.05, -0.02, -0.
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ml7ay")
 animation = &"punch"
+frame = 5
+frame_progress = 1.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
