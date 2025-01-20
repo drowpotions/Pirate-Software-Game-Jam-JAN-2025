@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=13 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pe52b"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
 [ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://Charlie Greybox/In Game Demo.wav" id="6_ndevj"]
 [ext_resource type="PackedScene" uid="uid://bdnfwfe1vq8d6" path="res://pickups/ammo_pickup.tscn" id="7_51wtt"]
+[ext_resource type="PackedScene" uid="uid://o0evi0fsos01" path="res://Prefabs/Big_Door.tscn" id="8_xoohd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -890,3 +891,8 @@ transform = Transform3D(0.902442, 0, -0.43081, 0, 1, 0, 0.43081, 0, 0.902442, -2
 
 [node name="AmmoPickup7" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(0.902442, 0, -0.43081, 0, 1, 0, 0.43081, 0, 0.902442, -23.149, 5.38143, -20.8137)
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="Big_Door" parent="." instance=ExtResource("8_xoohd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.0822, 0.48378, 13.9768)
