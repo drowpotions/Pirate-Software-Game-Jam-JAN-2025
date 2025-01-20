@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1s41gbqy0feb"]
+[gd_scene load_steps=24 format=3 uid="uid://d1s41gbqy0feb"]
 
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_fdsk4"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_urymp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://VN Segment/Intro_Controller.gd" id="6_0e226"]
 [ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://menu/Main Menu Demo.wav" id="6_r15uo"]
 [ext_resource type="Texture2D" uid="uid://cuvi566jspoa3" path="res://VN Segment/Illustration90.png" id="8_1qp8k"]
+[ext_resource type="Shader" path="res://PSX Shaders/spatial/standard_transparent.gdshader" id="8_6af86"]
 [ext_resource type="Material" uid="uid://dkkdwh7ctsm3s" path="res://VN Segment/yellow.tres" id="10_lsi5i"]
 
 [sub_resource type="Animation" id="Animation_ewdmg"]
@@ -61,6 +62,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.656268, 0.855892, -0.656838)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_52dtp"]
 resource_name = "Train"
@@ -77,6 +102,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.01, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.656268, 0.855892, -0.656838), Vector3(0.656, 0.876, -0.657), Vector3(0.656268, 0.855892, -0.656838), Vector3(0.656268, 0.855892, -0.656838)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.01, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5y5a8"]
 _data = {
@@ -90,14 +139,14 @@ length = 16.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("Node3D/Camera3D:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 16),
-"transitions": PackedFloat32Array(2, 0.5),
+"transitions": PackedFloat32Array(0.659754, 0.5),
 "update": 0,
-"values": [Vector3(-0.896526, 0.924776, 5.35833), Vector3(0.829272, 0.924776, 5.35833)]
+"values": [Vector3(-0.896526, 0.924776, 5.35833), Vector3(0.334, 0.925, 5.358)]
 }
 
 [sub_resource type="Animation" id="Animation_ogh0l"]
@@ -105,7 +154,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("Node3D/Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -120,6 +169,20 @@ _data = {
 "Cam": SubResource("Animation_hod32"),
 "RESET": SubResource("Animation_ogh0l")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5b68m"]
+render_priority = 0
+shader = ExtResource("8_6af86")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture_as_primary_color = true
+shader_parameter/mix_factor = 1.0
+shader_parameter/texture_lod_halve_distance_override = 0.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_scroll_speed = Vector2(0, 0)
+shader_parameter/cull_distance_override = 0.0
+shader_parameter/convert_vertex_colors = false
+shader_parameter/albedo_texture = ExtResource("8_1qp8k")
 
 [sub_resource type="Animation" id="Animation_30dyv"]
 length = 0.001
@@ -185,9 +248,11 @@ _data = {
 
 [node name="Intro" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896526, 0.924776, 5.35833)
-fov = 30.0
+fov = 16.0
 script = ExtResource("6_0e226")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -407,6 +472,7 @@ autoplay = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.656268, 0.855892, -0.656838)
+material_override = SubResource("ShaderMaterial_5b68m")
 shaded = true
 texture_filter = 0
 texture = ExtResource("8_1qp8k")
