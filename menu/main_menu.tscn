@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=8 format=3 uid="uid://bekmbyokqyu10"]
 
+[ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="1_cldyn"]
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
 [ext_resource type="Texture2D" uid="uid://v8g0vmlg2mmw" path="res://grey2.png" id="2_0s6du"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_ls86s"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_cldyn")
 script = ExtResource("1_pa5p5")
 
 [node name="TextureRect3" type="TextureRect" parent="."]

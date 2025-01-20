@@ -42,6 +42,7 @@ signal finished_typing()
 var _already_mutated_indices: PackedInt32Array = []
 
 
+
 ## The current line of dialogue.
 var dialogue_line:
 	set(next_dialogue_line):
@@ -91,8 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if self.is_typing and visible_ratio < 1 and InputMap.has_action(skip_action) and event.is_action_pressed(skip_action):
 		get_viewport().set_input_as_handled()
 		skip_typing()
-
-
+		
 ## Start typing out the text
 func type_out() -> void:
 	text = dialogue_line.text
