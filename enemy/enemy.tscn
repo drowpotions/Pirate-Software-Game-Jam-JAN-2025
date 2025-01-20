@@ -45,6 +45,7 @@ mesh = SubResource("CylinderMesh_5lwvn")
 transform = Transform3D(0.295373, 0, 0, 0, 0.295373, 0, 0, 0, 1, 0, 0, 0)
 billboard = 2
 shaded = true
+texture_filter = 0
 texture = ExtResource("2_0imka")
 
 [node name="LosTimer" type="Timer" parent="."]

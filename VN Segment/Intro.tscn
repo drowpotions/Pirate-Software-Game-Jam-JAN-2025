@@ -12,6 +12,20 @@
 [ext_resource type="Material" uid="uid://dkkdwh7ctsm3s" path="res://VN Segment/yellow.tres" id="10_lsi5i"]
 [ext_resource type="AudioStream" uid="uid://dffnlbrrshsbq" path="res://VN Segment/Train_Ambience.wav" id="11_l0no0"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5b68m"]
+render_priority = 0
+shader = ExtResource("8_6af86")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture_as_primary_color = true
+shader_parameter/mix_factor = 1.0
+shader_parameter/texture_lod_halve_distance_override = 0.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_scroll_speed = Vector2(0, 0)
+shader_parameter/cull_distance_override = 0.0
+shader_parameter/convert_vertex_colors = false
+shader_parameter/albedo_texture = ExtResource("8_1qp8k")
+
 [sub_resource type="Animation" id="Animation_ewdmg"]
 length = 0.001
 tracks/0/type = "value"
@@ -171,20 +185,6 @@ _data = {
 "RESET": SubResource("Animation_ogh0l")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5b68m"]
-render_priority = 0
-shader = ExtResource("8_6af86")
-shader_parameter/albedo_color = Color(1, 1, 1, 1)
-shader_parameter/albedo_texture_as_primary_color = true
-shader_parameter/mix_factor = 1.0
-shader_parameter/texture_lod_halve_distance_override = 0.0
-shader_parameter/uv_offset = Vector2(0, 0)
-shader_parameter/uv_scale = Vector2(1, 1)
-shader_parameter/uv_scroll_speed = Vector2(0, 0)
-shader_parameter/cull_distance_override = 0.0
-shader_parameter/convert_vertex_colors = false
-shader_parameter/albedo_texture = ExtResource("8_1qp8k")
-
 [sub_resource type="Animation" id="Animation_30dyv"]
 length = 0.001
 tracks/0/type = "value"
@@ -249,18 +249,18 @@ _data = {
 
 [node name="Intro" type="Node3D"]
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, -5)
+light_color = Color(0.610934, 0.685239, 0.719411, 1)
+light_energy = 0.238
+shadow_enabled = true
+
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896526, 0.924776, 5.35833)
 fov = 16.0
 script = ExtResource("6_0e226")
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, -5)
-light_color = Color(0.610934, 0.685239, 0.719411, 1)
-light_energy = 0.238
-shadow_enabled = true
 
 [node name="Meshes" type="Node3D" parent="."]
 
@@ -435,31 +435,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98002, 1.83096, 0)
 light_color = Color(0.700816, 0.700817, 0, 1)
 light_energy = 2.0
 shadow_enabled = true
-
-[node name="Lights" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_s72jx")
-}
-autoplay = "light"
-
-[node name="Train" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5y5a8")
-}
-autoplay = "Train"
-
-[node name="Camera" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_2srby")
-}
-autoplay = "Cam"
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.656268, 0.855892, -0.656838)
-material_override = SubResource("ShaderMaterial_5b68m")
-shaded = true
-texture_filter = 0
-texture = ExtResource("8_1qp8k")
 
 [node name="Streaks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, 0)
@@ -1005,6 +980,31 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 1.
 material_override = ExtResource("10_lsi5i")
 size = Vector3(0.0146484, 0.0178223, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.656268, 0.855892, -0.656838)
+material_override = SubResource("ShaderMaterial_5b68m")
+shaded = true
+texture_filter = 0
+texture = ExtResource("8_1qp8k")
+
+[node name="Lights" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s72jx")
+}
+autoplay = "light"
+
+[node name="Train" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5y5a8")
+}
+autoplay = "Train"
+
+[node name="Camera" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2srby")
+}
+autoplay = "Cam"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3nln1")
@@ -1020,3 +1020,5 @@ autoplay = true
 stream = ExtResource("11_l0no0")
 volume_db = 5.0
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
