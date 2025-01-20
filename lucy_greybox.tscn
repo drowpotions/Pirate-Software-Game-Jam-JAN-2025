@@ -156,5 +156,8 @@ player = NodePath("../Player")
 [node name="AmmoPickup" parent="." instance=ExtResource("3_8kdhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7527, 20.4635, 1.86546)
 
+[node name="AmmoPickup2" parent="." instance=ExtResource("3_8kdhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.5397, 20.4635, 1.86546)
+
 [editable path="Player"]
 [editable path="Enemy"]

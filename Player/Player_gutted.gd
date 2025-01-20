@@ -147,6 +147,6 @@ func menu_features():
 
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
-	if body.name == "AmmoPickup":
+	if body.name.begins_with("Ammo"):
 		player_camera.pickup_ammo(body.ammo_amt)
 		body.hide()
