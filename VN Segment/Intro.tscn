@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1s41gbqy0feb"]
+[gd_scene load_steps=25 format=3 uid="uid://d1s41gbqy0feb"]
 
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_fdsk4"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_urymp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cuvi566jspoa3" path="res://VN Segment/Illustration90.png" id="8_1qp8k"]
 [ext_resource type="Shader" path="res://PSX Shaders/spatial/standard_transparent.gdshader" id="8_6af86"]
 [ext_resource type="Material" uid="uid://dkkdwh7ctsm3s" path="res://VN Segment/yellow.tres" id="10_lsi5i"]
+[ext_resource type="AudioStream" uid="uid://dffnlbrrshsbq" path="res://VN Segment/Train_Ambience.wav" id="11_l0no0"]
 
 [sub_resource type="Animation" id="Animation_ewdmg"]
 length = 0.001
@@ -255,21 +256,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.896526, 0.924776, 5.35833)
 fov = 16.0
 script = ExtResource("6_0e226")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, 0)
-light_color = Color(0.899822, 0.600764, 3.85046e-07, 1)
-light_energy = 0.238
-shadow_enabled = true
-
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, -5)
-light_color = Color(0.899822, 0.600764, 3.85046e-07, 1)
-light_energy = 0.238
-shadow_enabled = true
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, 5)
-light_color = Color(0.899822, 0.600764, 3.85046e-07, 1)
+light_color = Color(0.610934, 0.685239, 0.719411, 1)
 light_energy = 0.238
 shadow_enabled = true
 
@@ -429,8 +418,8 @@ size = Vector3(0.0830078, 2.05249, 1.85156)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.99084, 0)
 material_override = ExtResource("4_bnpr1")
 flip_faces = true
-radius = 4.78228
-height = 18.4553
+radius = 27.97
+height = 203.075
 
 [node name="Animated Lights" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -464,11 +453,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2srby")
 }
 autoplay = "Cam"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_r15uo")
-volume_db = -20.0
-autoplay = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.656268, 0.855892, -0.656838)
@@ -1026,3 +1010,13 @@ libraries = {
 "": SubResource("AnimationLibrary_3nln1")
 }
 autoplay = "Streaks"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r15uo")
+volume_db = -30.0
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_l0no0")
+volume_db = 5.0
+autoplay = true

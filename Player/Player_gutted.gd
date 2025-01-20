@@ -16,7 +16,7 @@ var mouse_rotation_amount :float = 0.01
 
 #variables for breathing
 var head_node: Node3D
-var head_amplitude: float = 0.0003  # Maximum distance (in meters) the head moves
+var head_amplitude: float = 0.001  # Maximum distance (in meters) the head moves
 var weapon_amplitude: float = 0.00003 # Maximum distance (in meters) the head moves
 var frequency: float = 0.1  # Breathing cycle frequency (cycles per second)
 var time_elapsed: float = 0.0  # Tracks elapsed time
