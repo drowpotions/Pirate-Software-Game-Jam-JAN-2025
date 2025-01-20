@@ -108,7 +108,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 9.1160
 size = Vector3(7.25323, 37.792, 1)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Meshes/CSGBox3D8"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.884, 2.0658, 31.7235)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.884, 2.0658, 34.3298)
 size = Vector3(7.25323, 28.0634, 1)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Meshes/CSGBox3D8"]
@@ -131,12 +131,12 @@ operation = 2
 size = Vector3(6.20215, 4.26981, 4.79358)
 
 [node name="CSGBox3D63" type="CSGBox3D" parent="Meshes/CSGBox3D8"]
-transform = Transform3D(0.952459, 0.174095, 0.250032, -0.0734324, 0.927642, -0.366179, -0.295691, 0.33041, 0.896324, -10.8251, 2.33561, 17.9078)
+transform = Transform3D(0.952459, 0.174095, 0.250032, -0.0734324, 0.927642, -0.366179, -0.295691, 0.33041, 0.896324, -10.8251, 2.33561, 20.5141)
 operation = 2
 size = Vector3(2.55664, 2.88184, 2.78613)
 
 [node name="CSGBox3D64" type="CSGBox3D" parent="Meshes/CSGBox3D8"]
-transform = Transform3D(0.684814, 0.178225, -0.706589, -0.624565, 0.643101, -0.443103, 0.375436, 0.744753, 0.551717, -10.3066, 2.33561, 17.8692)
+transform = Transform3D(0.684814, 0.178225, -0.706589, -0.624565, 0.643101, -0.443103, 0.375436, 0.744753, 0.551717, -10.3066, 2.33561, 20.4755)
 operation = 2
 size = Vector3(2.55664, 2.88184, 2.78613)
 
@@ -336,13 +336,13 @@ use_collision = true
 size = Vector3(2.33273, 0.29126, 1.29834)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="Meshes"]
-transform = Transform3D(-0.714708, -0.181452, 0.618702, -0.575212, 0.701908, -0.38476, -0.3979, -0.688768, -0.555095, -13.6978, 8.53234, -17.0124)
+transform = Transform3D(0.154452, -0.298873, 0.862559, -0.650189, 0.68692, 0.297362, -0.743908, -0.662433, -0.0808126, -14.7355, 8.43108, -16.8134)
 material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(2.33273, 0.297119, 1.29834)
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="Meshes"]
-transform = Transform3D(0.322205, 0.710488, 0.573028, -0.165718, 0.692983, -0.642676, -0.932052, 0.1224, 0.31236, -18.2783, 7.91684, -16.4644)
+transform = Transform3D(-0.387739, 0.28891, 0.80175, -0.805059, 0.356348, -0.434372, -0.448929, -0.888565, 0.0864847, -18.2845, 8.63348, -17.3227)
 material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(2.33273, 0.31543, 1.29834)
