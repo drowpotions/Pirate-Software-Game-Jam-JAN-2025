@@ -100,6 +100,7 @@ func _physics_process(delta):
 	weapon_crouch_movement(delta)
 	weapon_holder_breathing(delta)
 	crouch_speed()
+	melee_anim()
 
 #crouching function
 @onready var original_capsule_height = player_collider.shape.height
@@ -153,6 +154,9 @@ func menu_features():
 	if Input.is_action_pressed("esc"):
 		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
 
+func melee_anim():
+	if Input.is_action_just_pressed("melee"):
+		%Melee.play("punch")
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
