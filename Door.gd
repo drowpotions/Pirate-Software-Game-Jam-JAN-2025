@@ -16,14 +16,14 @@ func _process(delta: float) -> void:
 	%AnimationTree.set("parameters/Blend3/blend_amount", current_value)
 	
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("enemy"):
 		if target_value != open_value:
 			target_value = open_value
 	print("enter")
 	
 	
 func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("enemy"):
 		if target_value != close_value:
 			target_value = close_value
 	print("exit")
