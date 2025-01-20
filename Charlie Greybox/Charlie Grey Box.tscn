@@ -879,25 +879,26 @@ height = 1.09261
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ndevj")
 volume_db = -15.0
-autoplay = true
 
-[node name="AmmoPickup" parent="." instance=ExtResource("7_51wtt")]
+[node name="Ammos" type="Node3D" parent="."]
+
+[node name="AmmoPickup" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(0.791127, 0, 0.611651, 0, 1, 0, -0.611651, 0, 0.791127, -17.8236, 0.167821, -6.7802)
 
-[node name="AmmoPickup2" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup2" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(0.791127, 0, 0.611651, 0, 1, 0, -0.611651, 0, 0.791127, -18.2836, 0.171246, -6.94578)
 
-[node name="AmmoPickup3" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup3" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.478, 0.255637, -22.7316)
 
-[node name="AmmoPickup4" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup4" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7043, 7.70786, -19.0511)
 
-[node name="AmmoPickup5" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup5" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8461, 5.38143, -20.3438)
 
-[node name="AmmoPickup6" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup6" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(0.902442, 0, -0.43081, 0, 1, 0, 0.43081, 0, 0.902442, -22.5136, 5.38143, -20.9217)
 
-[node name="AmmoPickup7" parent="." instance=ExtResource("7_51wtt")]
+[node name="AmmoPickup7" parent="Ammos" instance=ExtResource("7_51wtt")]
 transform = Transform3D(0.902442, 0, -0.43081, 0, 1, 0, 0.43081, 0, 0.902442, -23.149, 5.38143, -20.8137)

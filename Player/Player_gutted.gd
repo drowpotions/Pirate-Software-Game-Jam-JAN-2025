@@ -98,6 +98,7 @@ func _physics_process(delta):
 	weapon_sway(delta)
 	weapon_crouch_movement(delta)
 	weapon_holder_breathing(delta)
+	crouch_speed()
 
 #crouching function
 @onready var original_capsule_height = player_collider.shape.height
@@ -120,6 +121,12 @@ func weapon_holder_breathing(delta):
 		var offset_y = sin(time_elapsed * frequency * TAU) * weapon_amplitude
 		# Apply the offset to the head node
 		weapon_holder.position.y += offset_y
+
+func crouch_speed():
+	if crouching == true:
+		walk_speed = 4.0
+	else: 
+		walk_speed = 9.0
 
 #Weapon crouch animation
 func weapon_crouch_movement(delta):
