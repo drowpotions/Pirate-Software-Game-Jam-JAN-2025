@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="4_y26wy"]
 [ext_resource type="Script" path="res://VN Segment/Intro_Controller.gd" id="6_0e226"]
 [ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://menu/Main Menu Demo.wav" id="6_r15uo"]
-[ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="7_3dib3"]
+[ext_resource type="Texture2D" uid="uid://cuvi566jspoa3" path="res://VN Segment/Illustration90.png" id="8_1qp8k"]
 [ext_resource type="Material" uid="uid://dkkdwh7ctsm3s" path="res://VN Segment/yellow.tres" id="10_lsi5i"]
 
 [sub_resource type="Animation" id="Animation_ewdmg"]
@@ -406,9 +406,10 @@ volume_db = -20.0
 autoplay = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.256671, 0, 0, 0, 0.256671, 0, 0, 0, 1, 0.759984, 0.906595, -0.656838)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.656268, 0.855892, -0.656838)
 shaded = true
-texture = ExtResource("7_3dib3")
+texture_filter = 0
+texture = ExtResource("8_1qp8k")
 
 [node name="Streaks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, 0)

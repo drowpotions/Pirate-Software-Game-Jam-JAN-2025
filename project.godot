@@ -83,6 +83,10 @@ reload={
 common/physics_ticks_per_second=200
 3d/default_gravity=50.0
 
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+
 [shader_globals]
 
 affine_texture_mapping={
