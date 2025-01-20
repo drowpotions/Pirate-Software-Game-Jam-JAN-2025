@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://o0evi0fsos01"]
+[gd_scene load_steps=15 format=3 uid="uid://o0evi0fsos01"]
 
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="1_8x3ct"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_v24wp"]
 [ext_resource type="Script" path="res://Door.gd" id="3_ugdkk"]
+[ext_resource type="AudioStream" uid="uid://dq0p3dkibokeb" path="res://Prefabs/door_sound.wav" id="4_5gw1o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]
 size = Vector3(6.57324, 2.25391, 6.1875)
@@ -109,7 +110,6 @@ animation = &"Close"
 animation = &"Open"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5ia4n"]
-graph_offset = Vector2(-268.909, -151.727)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_wftuj")
 nodes/Animation/position = Vector2(20, 60)
 nodes/Blend3/node = SubResource("AnimationNodeBlend3_8cuc4")
@@ -169,6 +169,10 @@ root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeBlendTree_5ia4n")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Blend3/blend_amount = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_5gw1o")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Door_Trigger_Area3D" to="Door_Trigger_Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Door_Trigger_Area3D" to="Door_Trigger_Area3D" method="_on_body_exited"]

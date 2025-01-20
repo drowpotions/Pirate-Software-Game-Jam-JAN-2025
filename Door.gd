@@ -1,5 +1,6 @@
 extends Node3D
 @onready var animation_tree: AnimationTree = %AnimationTree
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $"../AudioStreamPlayer3D"
 
 var open_value = -1.0
 var close_value = 0.0
@@ -19,6 +20,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") or body.is_in_group("enemy"):
 		if target_value != open_value:
 			target_value = open_value
+			audio_stream_player_3d.play()
 	print("enter")
 	
 	
@@ -26,6 +28,7 @@ func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player") or body.is_in_group("enemy"):
 		if target_value != close_value:
 			target_value = close_value
+			audio_stream_player_3d.play()
 	print("exit")
 	
 	
