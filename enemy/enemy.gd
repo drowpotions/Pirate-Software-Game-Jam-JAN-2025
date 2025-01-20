@@ -60,6 +60,7 @@ func hit(damage, type):
 			health = 0
 		else:
 			health -= damage
+		execute_check()
 		if health == 0:
 			self.queue_free()
 
@@ -88,6 +89,11 @@ func flash():
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(.5).timeout
 	sprite.modulate = Color.WHITE
+
+
+func execute_check():
+	if health  <= max_health/5:
+		$ExecuteSprite.show()
 
 
 func _on_los_timer_timeout() -> void:

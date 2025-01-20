@@ -152,7 +152,6 @@ material = SubResource("StandardMaterial3D_g3n6i")
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_2iopr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.4072, 20.5799, -4.75214)
 player = NodePath("../Player")
-health = 20
 
 [node name="AmmoPickup" parent="." instance=ExtResource("3_8kdhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7527, 20.4635, 1.86546)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=9 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
+[ext_resource type="Texture2D" uid="uid://bgupd1676d78p" path="res://enemy/execute.png" id="3_rc6mt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
 
@@ -47,6 +48,12 @@ billboard = 2
 shaded = true
 texture_filter = 0
 texture = ExtResource("2_0imka")
+
+[node name="ExecuteSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30351, 0)
+visible = false
+billboard = 2
+texture = ExtResource("3_rc6mt")
 
 [node name="LosTimer" type="Timer" parent="."]
 wait_time = 0.25

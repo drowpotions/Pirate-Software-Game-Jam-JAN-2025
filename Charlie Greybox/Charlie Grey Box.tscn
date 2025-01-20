@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_pwr0t"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="4_ssn5t"]
-[ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
+[ext_resource type="Material" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
 [ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://Charlie Greybox/In Game Demo.wav" id="6_ndevj"]
 [ext_resource type="PackedScene" uid="uid://bdnfwfe1vq8d6" path="res://pickups/ammo_pickup.tscn" id="7_51wtt"]
 [ext_resource type="PackedScene" uid="uid://o0evi0fsos01" path="res://Prefabs/Big_Door.tscn" id="8_xoohd"]
