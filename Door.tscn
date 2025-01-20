@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7gde8be6fmh"]
+
+[ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="1_3mg0v"]
+[ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_8xeje"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]
+size = Vector3(1.91699, 2.25391, 2.9043)
+
+[node name="Door" type="Node3D"]
+
+[node name="Door_Left" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Door_Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579956, 0.680115, 0)
+material_override = ExtResource("1_3mg0v")
+size = Vector3(1.15356, 2.36023, 0.15918)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Door_Left"]
+transform = Transform3D(0.84832, 0, 0, 0, 1, 0, 0, 0, 0.258479, -0.579956, 0.680115, 0)
+size = Vector3(1, 2.11304, 1)
+material = ExtResource("2_8xeje")
+
+[node name="Door_Right" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Door_Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.572824, 0.680115, 0)
+material_override = ExtResource("1_3mg0v")
+size = Vector3(1.15356, 2.36023, 0.15918)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Door_Right"]
+transform = Transform3D(0.84832, 0, 0, 0, 1, 0, 0, 0, 0.258479, 0.572824, 0.680115, 0)
+size = Vector3(1, 2.11304, 1)
+material = ExtResource("2_8xeje")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.643555, 0)
+shape = SubResource("BoxShape3D_ot46f")

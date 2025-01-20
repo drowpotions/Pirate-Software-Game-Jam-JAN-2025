@@ -18,15 +18,15 @@ shadow_size = 2
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58tvs"]
-bg_color = Color(0.278431, 0.278431, 0.278431, 0.184314)
+bg_color = Color(0.439216, 0.458824, 0.545098, 0.0627451)
 border_width_bottom = 20
-border_color = Color(0.171642, 0.219271, 0.257198, 1)
+border_color = Color(0.239216, 0.270588, 0.305882, 1)
 border_blend = true
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
-shadow_size = 3
+shadow_size = 2
 
 [resource]
 Button/styles/normal = SubResource("StyleBoxFlat_wj3ls")
