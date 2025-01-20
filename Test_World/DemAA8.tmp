@@ -175,8 +175,3 @@ use_collision = true
 
 [node name="Door" parent="." instance=ExtResource("2_fxtwy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60864, 0.560197, -3.34512)
-
-[node name="AnimationTree" parent="Door" index="4"]
-parameters/Blend3/blend_amount = 0
-
-[editable path="Door"]

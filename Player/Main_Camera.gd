@@ -47,6 +47,7 @@ func _input(_event):
 		
 	jump_shake()
 
+#main gun raycast
 func get_camera_collision():
 	# Get the updated viewport size
 	var viewport_size = get_viewport().get_visible_rect().size

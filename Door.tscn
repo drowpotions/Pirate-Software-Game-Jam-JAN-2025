@@ -1,10 +1,125 @@
-[gd_scene load_steps=4 format=3 uid="uid://f7gde8be6fmh"]
+[gd_scene load_steps=14 format=3 uid="uid://f7gde8be6fmh"]
 
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="1_3mg0v"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_8xeje"]
+[ext_resource type="Script" path="res://Door.gd" id="3_n62lu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]
 size = Vector3(1.91699, 2.25391, 2.9043)
+
+[sub_resource type="Animation" id="Animation_doga4"]
+resource_name = "Open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2hxcd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w8403"]
+resource_name = "Close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door_Right:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_Left:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o43u"]
+_data = {
+"Close": SubResource("Animation_w8403"),
+"Open": SubResource("Animation_doga4"),
+"RESET": SubResource("Animation_2hxcd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wftuj"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_8cuc4"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e50ct"]
+animation = &"Close"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ygqf"]
+animation = &"Open"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5ia4n"]
+graph_offset = Vector2(-268.909, -151.727)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_wftuj")
+nodes/Animation/position = Vector2(20, 60)
+nodes/Blend3/node = SubResource("AnimationNodeBlend3_8cuc4")
+nodes/Blend3/position = Vector2(260, 0)
+nodes/Closing/node = SubResource("AnimationNodeAnimation_e50ct")
+nodes/Closing/position = Vector2(20, 200)
+nodes/Opening/node = SubResource("AnimationNodeAnimation_8ygqf")
+nodes/Opening/position = Vector2(20, -80)
+nodes/output/position = Vector2(500, 120)
+node_connections = [&"Blend3", 0, &"Opening", &"Blend3", 1, &"Animation", &"Blend3", 2, &"Closing", &"output", 0, &"Blend3"]
 
 [node name="Door" type="Node3D"]
 
@@ -13,6 +128,7 @@ size = Vector3(1.91699, 2.25391, 2.9043)
 [node name="CSGBox3D" type="CSGBox3D" parent="Door_Left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579956, 0.680115, 0)
 material_override = ExtResource("1_3mg0v")
+use_collision = true
 size = Vector3(1.15356, 2.36023, 0.15918)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Door_Left"]
@@ -25,6 +141,7 @@ material = ExtResource("2_8xeje")
 [node name="CSGBox3D" type="CSGBox3D" parent="Door_Right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.572824, 0.680115, 0)
 material_override = ExtResource("1_3mg0v")
+use_collision = true
 size = Vector3(1.15356, 2.36023, 0.15918)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Door_Right"]
@@ -32,8 +149,26 @@ transform = Transform3D(0.84832, 0, 0, 0, 1, 0, 0, 0, 0.258479, 0.572824, 0.6801
 size = Vector3(1, 2.11304, 1)
 material = ExtResource("2_8xeje")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Door_Trigger_Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_n62lu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="TriggerBox" type="CollisionShape3D" parent="Door_Trigger_Area3D"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.643555, 0)
 shape = SubResource("BoxShape3D_ot46f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0o43u")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
+tree_root = SubResource("AnimationNodeBlendTree_5ia4n")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend3/blend_amount = 0.0
+
+[connection signal="body_entered" from="Door_Trigger_Area3D" to="Door_Trigger_Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Door_Trigger_Area3D" to="Door_Trigger_Area3D" method="_on_body_exited"]
