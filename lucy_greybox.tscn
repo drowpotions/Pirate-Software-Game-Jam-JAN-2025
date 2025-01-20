@@ -41,6 +41,7 @@ shadow_enabled = true
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2572, 19.8664, 0)
 use_collision = true
+collision_layer = 3
 size = Vector3(176.514, 40.0371, 100)
 material = SubResource("StandardMaterial3D_rf2n7")
 
@@ -157,7 +158,7 @@ player = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7527, 20.4635, 1.86546)
 
 [node name="AmmoPickup2" parent="." instance=ExtResource("3_8kdhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.5397, 20.4635, 1.86546)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.2544, 20.4635, 1.86546)
 
 [editable path="Player"]
 [editable path="Enemy"]

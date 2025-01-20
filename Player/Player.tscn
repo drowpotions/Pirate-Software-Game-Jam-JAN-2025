@@ -132,9 +132,11 @@ length = 0.158376
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tmpc8"]
 height = 2.12282
+radius = 0.985305
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
+collision_mask = 2
 script = ExtResource("1_4bpwi")
 mouse_sens = 0.2
 
