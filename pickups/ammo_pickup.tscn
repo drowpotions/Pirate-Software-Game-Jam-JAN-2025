@@ -29,6 +29,7 @@ mesh = SubResource("BoxMesh_hdb6v")
 stream = ExtResource("2_ktio7")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.785, 0, 0, 0, 2.785, 0, 0, 0, 2.785, 0, 0.405617, 0)
 billboard = 2
 texture_filter = 0
 texture = ExtResource("3_brr18")
