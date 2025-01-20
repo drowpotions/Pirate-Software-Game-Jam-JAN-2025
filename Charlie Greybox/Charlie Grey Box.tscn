@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_pwr0t"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="4_ssn5t"]
-[ext_resource type="Material" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
+[ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
 [ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://Charlie Greybox/In Game Demo.wav" id="6_ndevj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
@@ -32,7 +32,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_pe52b")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0322766, 0.0292211, 15.3748)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.03228, 0.0292211, 15.3748)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -16.0274, 9.08862, -22.4573)
@@ -65,6 +65,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23)
 material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(3.84937, 4.56567, 22.04)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Meshes/CSGBox3D26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342219, -0.425854, 15.4034)
+operation = 2
+size = Vector3(3.72314, 2.65015, 2.41699)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Meshes/CSGBox3D26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104423, -0.425854, 18.8917)
+operation = 2
+size = Vector3(3.01782, 2.65015, 12.4189)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34912, 2.64752, 25.3293)
