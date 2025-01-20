@@ -12,31 +12,37 @@ var ray_range = 2000
 #weapon vars
 @export var fire_rate := 16.0
 @export var damage := 1
-@export var ammo := 8
+@export var curr_ammo := 8
+@export var max_ammo := 100
+
+
+func _ready() -> void:
+	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 
 
 func _input(_event):
 	if Input.is_action_just_pressed("Fire") and shooting == false:
 		#weapon fires if ammo is not 0
-		if ammo != 0:
+		if curr_ammo != 0:
 			shooting = true
-			ammo -= 1
-			ammo_label.text = "Ammo: " + str(ammo) + "/8"
+			curr_ammo -= 1
+			ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 			shoot_sound()
 			shoot_anim()
 			get_camera_collision()
-			print("Ammo left: " + str(ammo))
 		#weapon reloads if ammo is 0
-		elif ammo == 0:
+		elif curr_ammo == 0 and max_ammo > 0:
 			reload_anim()
+		elif curr_ammo == 0 and max_ammo == 0:
+			print("All out of ammo")
 		else:
 			print("This should never appear, if it does something is wrong")
 	
 	#manual reload input, only reload if ammo is not full
 	if Input.is_action_just_pressed("reload") and shooting == false:
-		if ammo < 8:
+		if curr_ammo < 8:
 			reload_anim()
-		elif ammo == 8:
+		elif curr_ammo == 8:
 			print("Ammo full!")
 		
 	jump_shake()
@@ -98,8 +104,13 @@ func reload_anim():
 	shoot_anim_sprite.modulate = Color.BLACK
 	ammo_label.text = "Reloading..."
 	await get_tree().create_timer(2).timeout
-	ammo = 8
-	ammo_label.text = "Ammo: " + str(ammo) + "/8"
+	if max_ammo >= 8:
+		curr_ammo = 8
+		max_ammo -= 8
+	elif max_ammo < 8:
+		curr_ammo = max_ammo
+		max_ammo = 0
+	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 	shooting = false
 	shoot_anim_sprite.modulate = Color.WHITE
 
