@@ -41,7 +41,6 @@ shadow_enabled = true
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.2572, 19.8664, 0)
 use_collision = true
-collision_layer = 3
 size = Vector3(176.514, 40.0371, 100)
 material = SubResource("StandardMaterial3D_rf2n7")
 

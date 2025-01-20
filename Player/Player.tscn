@@ -136,7 +136,6 @@ radius = 0.985305
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
-collision_mask = 2
 script = ExtResource("1_4bpwi")
 mouse_sens = 0.2
 
@@ -313,6 +312,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.3277
 shape = SubResource("SeparationRayShape3D_umimj")
 
 [node name="PickupRadius" type="Area3D" parent="." groups=["player"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupRadius"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290197, 0)
