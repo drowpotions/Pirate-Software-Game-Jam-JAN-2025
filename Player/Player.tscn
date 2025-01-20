@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=21 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -134,6 +134,9 @@ length = 0.158376
 height = 2.12282
 radius = 0.985305
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_13cvm"]
+radius = 0.172
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
 script = ExtResource("1_4bpwi")
@@ -163,6 +166,9 @@ collision_mask = 2
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.055, 0.0302766, -0.0202211, -0.075)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cd8s5")
+
+[node name="MeleeSpot" type="Marker3D" parent="head/Weapon_Holder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193519, 0, 0)
 
 [node name="Leg" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
@@ -318,5 +324,8 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupRadius"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290197, 0)
 shape = SubResource("CylinderShape3D_tmpc8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_13cvm")
 
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]

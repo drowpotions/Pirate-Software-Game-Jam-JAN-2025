@@ -58,6 +58,7 @@ func _input(event):
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
 		mouse_input = event.relative
+		
 
 func _physics_process(delta):
 	# Add the gravity.

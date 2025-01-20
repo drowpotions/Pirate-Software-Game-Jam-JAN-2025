@@ -4,6 +4,7 @@ extends Camera3D
 @onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 @onready var cam_anim = $"../../../AnimationPlayer"
 @onready var ammo_label: Label = $"../../../CanvasLayer/Control/AmmoLabel"
+@onready var melee_spot: Marker3D = $"../../Weapon_Holder/MeleeSpot"
 
 @export var shooting = false
 
@@ -11,7 +12,7 @@ var ray_range = 2000
 
 #weapon vars
 @export var fire_rate := 16.0
-@export var damage := 1
+@export var damage := 2
 @export var curr_ammo := 8
 @export var max_ammo := 100
 
@@ -44,6 +45,15 @@ func _input(_event):
 			reload_anim()
 		elif curr_ammo == 8:
 			print("Ammo full!")
+	
+	
+	if Input.is_action_just_pressed("melee") and shooting == false:
+		shooting = true
+		var melee: Node3D = preload("res://Player/melee.tscn").instantiate()
+		add_child(melee)
+		melee.position = melee_spot.position
+		await get_tree().create_timer(1).timeout
+		shooting = false
 		
 	jump_shake()
 
@@ -76,7 +86,7 @@ func get_camera_collision():
 		#if collider is an enemy, damage its health
 		elif result.collider.is_in_group("enemy"):
 			Hit_Label.text = "Enemy Hit!"
-			result.collider.hit(damage)
+			result.collider.hit(damage, "gun")
 			print("Enemy has " + str(result.collider.health) + " remaining")
 		#every other case
 		else:
