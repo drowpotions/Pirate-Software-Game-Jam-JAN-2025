@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var player_camera = $"head/Camera Holder/Camera3D"
 @onready var weapon_holder = $head/Weapon_Holder
 @onready var cam_holder = $"head/Camera Holder"
+@onready var pickup_radius: Area3D = $PickupRadius
 
 #cam rotation variables
 var cam_rotation_amount : float = 0.04
@@ -143,3 +144,9 @@ func weapon_sway(delta):
 func menu_features():
 	if Input.is_action_pressed("esc"):
 		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
+
+
+func _on_pickup_radius_body_entered(body: Node3D) -> void:
+	if body.name == "AmmoPickup":
+		player_camera.pickup_ammo(body.ammo_amt)
+		body.hide()

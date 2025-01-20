@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=20 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -129,6 +129,9 @@ _data = {
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
 length = 0.158376
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tmpc8"]
+height = 2.12282
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
@@ -306,3 +309,11 @@ shape = SubResource("SeparationRayShape3D_umimj")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.327724, 0.113526, -0.00479695)
 shape = SubResource("SeparationRayShape3D_umimj")
+
+[node name="PickupRadius" type="Area3D" parent="." groups=["player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupRadius"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290197, 0)
+shape = SubResource("CylinderShape3D_tmpc8")
+
+[connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]

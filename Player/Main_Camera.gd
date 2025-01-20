@@ -105,8 +105,8 @@ func reload_anim():
 	ammo_label.text = "Reloading..."
 	await get_tree().create_timer(2).timeout
 	if max_ammo >= 8:
+		max_ammo -= 8 - curr_ammo
 		curr_ammo = 8
-		max_ammo -= 8
 	elif max_ammo < 8:
 		curr_ammo = max_ammo
 		max_ammo = 0
@@ -131,3 +131,8 @@ func shoot_sound():
 	audio_stream_player.finished.connect(func():
 		audio_stream_player.queue_free()
 	)
+
+
+func pickup_ammo(ammo_count):
+	max_ammo += ammo_count
+	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
