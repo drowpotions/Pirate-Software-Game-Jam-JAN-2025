@@ -1,11 +1,14 @@
 extends CharacterBody3D
 
 @onready var dmg_pos: Marker3D = $Marker3D
+@onready var proj_pos: Marker3D	= $ProjSpawnPoint
 @onready var detection_area: Area3D = $Area3D
 @onready var los: RayCast3D = $LoS
 @onready var sprite: Sprite3D = $Sprite3D
+@onready var atk_timer: Timer = $AttackTimer
 
 var following := false
+var attacking := false
 var speed := 5.0
 var stop_distance = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -17,6 +20,8 @@ var max_health: int
 
 
 func _ready() -> void:
+	atk_timer.start(1)
+	atk_timer.paused = true
 	los.target_position = Vector3(0,0,-los_distance)
 	max_health = health
 
@@ -110,6 +115,16 @@ func _on_los_timer_timeout() -> void:
 					
 					if collider.is_in_group("player"):
 						los.debug_shape_custom_color = Color.GREEN
-						following = true
+						following = true  
+						atk_timer.paused = false #attack player if in LoS
 					else:
-						los.debug_shape_custom_color = Color.RED
+						los.debug_shape_custom_color = Color.RED 
+						atk_timer.paused = true #dont attack player if not in LoS
+
+
+func _on_attack_timer_timeout() -> void:
+	var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
+	get_parent().add_child(projectile)
+	projectile.global_position = proj_pos.global_position
+	projectile.go_to_target(player.head)
+	

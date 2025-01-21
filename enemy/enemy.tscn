@@ -30,6 +30,9 @@ mesh = SubResource("CapsuleMesh_0d3uo")
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.893638, 0, 0)
 
+[node name="ProjSpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.403516, -0.723768)
+
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 monitorable = false
@@ -59,8 +62,11 @@ texture = ExtResource("3_rc6mt")
 wait_time = 0.25
 autostart = true
 
+[node name="AttackTimer" type="Timer" parent="."]
+
 [node name="LoS" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406405, 0)
 target_position = Vector3(0, 0, -20)
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

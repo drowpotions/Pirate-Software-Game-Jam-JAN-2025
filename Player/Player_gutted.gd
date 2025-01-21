@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var head = $head
 @onready var interaction = $"head/Camera Holder/Camera3D/interaction"
 @onready var player_collider = $CollisionShape3D
+@onready var player_head = $head
 @onready var player_camera = $"head/Camera Holder/Camera3D"
 @onready var weapon_holder = $head/Weapon_Holder
 @onready var cam_holder = $"head/Camera Holder"
