@@ -3,7 +3,8 @@ extends Area3D
 @onready var root = $".."
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $"../AudioStreamPlayer3D"
 
-signal blue_key_found
+
+signal red_key_found
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		emit_signal("blue_key_found")
+		emit_signal("red_key_found")
 		audio_stream_player_3d.play()
 		await audio_stream_player_3d.finished
 		root.queue_free()

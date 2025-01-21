@@ -1,12 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=23 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pe52b"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_pwr0t"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="4_ssn5t"]
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="5_174pq"]
+[ext_resource type="Script" path="res://Charlie Greybox/train_script.gd" id="6_i68x6"]
 [ext_resource type="AudioStream" uid="uid://1lx0y6boud1b" path="res://Charlie Greybox/In Game Demo.wav" id="6_ndevj"]
 [ext_resource type="PackedScene" uid="uid://bdnfwfe1vq8d6" path="res://pickups/ammo_pickup.tscn" id="7_51wtt"]
+[ext_resource type="AudioStream" uid="uid://dffnlbrrshsbq" path="res://VN Segment/Train_Ambience.wav" id="7_iu76a"]
 [ext_resource type="PackedScene" uid="uid://o0evi0fsos01" path="res://Prefabs/Big_Door.tscn" id="8_xoohd"]
 [ext_resource type="PackedScene" uid="uid://f7gde8be6fmh" path="res://Prefabs/Small_Door.tscn" id="9_7m3m8"]
 [ext_resource type="PackedScene" uid="uid://fnbh82ut1tay" path="res://Prefabs/Blue_Door.tscn" id="10_3ntyn"]
@@ -25,6 +27,46 @@ background_mode = 2
 sky = SubResource("Sky_8cq6w")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_6whin"]
+resource_name = "train_move"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(2.21914, 0.5),
+"update": 0,
+"values": [Vector3(0.000833511, 0, -0.00660324), Vector3(0.000833511, 0, -89.808)]
+}
+
+[sub_resource type="Animation" id="Animation_6gxpo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.000833511, 0, -0.00660324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tykjx"]
+_data = {
+"RESET": SubResource("Animation_6gxpo"),
+"train_move": SubResource("Animation_6whin")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm0j4"]
+size = Vector3(4.45093, 4.5932, 3.93982)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uoeqm"]
 
@@ -48,36 +90,59 @@ player = NodePath("../Player")
 transform = Transform3D(-0.999368, 0, 0.0355446, 0, 1, 0, -0.0355446, 0, -0.999368, -24.2546, 1.07579, 4.7057)
 player = NodePath("../Player")
 
-[node name="Area 1" type="Node3D" parent="."]
+[node name="Trains" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000833511, 0, -0.00660324)
 
-[node name="CSGBox3D26" type="CSGBox3D" parent="Area 1"]
+[node name="CSGBox3D26" type="CSGBox3D" parent="Trains"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06711, 1.78284, 0)
 material_override = ExtResource("11_j5alk")
 use_collision = true
 collision_layer = 3
 size = Vector3(3.84937, 4.56567, 22.04)
 
-[node name="CSGBox3D28" type="CSGBox3D" parent="Area 1/CSGBox3D26"]
+[node name="CSGBox3D28" type="CSGBox3D" parent="Trains/CSGBox3D26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23)
 material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(3.84937, 4.56567, 22.04)
 
-[node name="CSGBox3D27" type="CSGBox3D" parent="Area 1/CSGBox3D26"]
+[node name="CSGBox3D27" type="CSGBox3D" parent="Trains/CSGBox3D26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23)
 material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(3.84937, 4.56567, 22.04)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Area 1/CSGBox3D26"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Trains/CSGBox3D26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342219, -0.581097, 15.4842)
 operation = 2
 size = Vector3(3.72314, 2.29291, 2.25537)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Area 1/CSGBox3D26"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Trains/CSGBox3D26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104423, -0.425854, 18.8917)
 operation = 2
 size = Vector3(3.01782, 2.65015, 12.4189)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trains"]
+libraries = {
+"": SubResource("AnimationLibrary_tykjx")
+}
+
+[node name="Small_Door" parent="Trains" instance=ExtResource("9_7m3m8")]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -2.32846, 0.528722, 15.5112)
+
+[node name="Area3D" type="Area3D" parent="Trains"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7018, 7.99345, -18.8147)
+script = ExtResource("6_i68x6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trains/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7966, -0.48175)
+shape = SubResource("BoxShape3D_tm0j4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trains"]
+stream = ExtResource("7_iu76a")
+volume_db = 10.0
+
+[node name="Area 1" type="Node3D" parent="."]
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Area 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34912, 2.64752, 25.3293)
@@ -290,13 +355,6 @@ material_override = ExtResource("3_pwr0t")
 use_collision = true
 size = Vector3(0.867195, 1.33911, 44.5969)
 
-[node name="CSGBox3D101" type="CSGBox3D" parent="Area 1"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -62.4057, 5.34321, -3.72296)
-layers = 3
-material_override = ExtResource("3_pwr0t")
-use_collision = true
-size = Vector3(0.867195, 1.33911, 44.5969)
-
 [node name="CSGBox3D102" type="CSGBox3D" parent="Area 1"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -53.969, 5.34321, -3.72296)
 layers = 3
@@ -363,12 +421,58 @@ material_override = ExtResource("4_ssn5t")
 use_collision = true
 size = Vector3(6.94329, 0.522949, 7.15845)
 
+[node name="CSGBox3D140" type="CSGBox3D" parent="Area 1"]
+transform = Transform3D(-1, 8.74228e-08, 0, -6.77941e-08, -0.775474, 0.63138, 5.5197e-08, 0.63138, 0.775474, -60.2896, 3.31172, -2.01631)
+layers = 3
+material_override = ExtResource("4_ssn5t")
+use_collision = true
+size = Vector3(3.28906, 0.522949, 5.08984)
+
+[node name="CSGBox3D141" type="CSGBox3D" parent="Area 1"]
+transform = Transform3D(-0.987186, -0.0390656, -0.154715, -8.47625e-08, -0.969569, 0.244817, -0.159571, 0.24168, 0.957146, -59.882, 0.961286, -6.45436)
+layers = 3
+material_override = ExtResource("4_ssn5t")
+use_collision = true
+size = Vector3(3.3573, 0.522949, 6.16211)
+
 [node name="CSGBox3D83" type="CSGBox3D" parent="Area 1"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -58.1609, 4.88733, -3.22918)
 layers = 3
 material_override = ExtResource("4_ssn5t")
 use_collision = true
 size = Vector3(11.4834, 0.522949, 46.3906)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area 1/CSGBox3D83"]
+transform = Transform3D(0.902983, 7.66891e-09, 0.429676, 0.0584475, 0.990705, -0.12283, -0.425682, 0.136027, 0.89459, 3.37987, -0.849608, -2.67626)
+operation = 2
+size = Vector3(4.37695, 2.69922, 5.49219)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Area 1/CSGBox3D83"]
+transform = Transform3D(0.931453, -0.0983839, -0.350309, 0.0584475, 0.990705, -0.12283, 0.359137, 0.0939356, 0.928545, 2.9132, -0.348915, 0.208068)
+operation = 2
+size = Vector3(5.01367, 3.74756, 5.49219)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Area 1/CSGBox3D83"]
+transform = Transform3D(0.961708, -0.0228746, 0.273121, 0.0584474, 0.990705, -0.12283, -0.267772, 0.13409, 0.954106, 3.85416, -0.64775, -4.68688)
+operation = 2
+size = Vector3(6.39258, 2.69922, 7.51318)
+
+[node name="CSGBox3D101" type="CSGBox3D" parent="Area 1"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -62.4057, 5.34321, -3.72296)
+layers = 3
+material_override = ExtResource("3_pwr0t")
+use_collision = true
+size = Vector3(0.867195, 1.33911, 44.5969)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area 1/CSGBox3D101"]
+transform = Transform3D(0.998786, 0.0159254, 0.0466233, -2.29348e-09, 0.946317, -0.32324, -0.0492681, 0.322848, 0.945168, 0.378535, 0, 0)
+operation = 2
+size = Vector3(2.51282, 4.61353, 5.75293)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Area 1/CSGBox3D101"]
+transform = Transform3D(0.989548, -0.0466115, -0.13646, -1.82903e-09, 0.946317, -0.32324, 0.144201, 0.319862, 0.936426, 0.202539, 0, -5)
+operation = 2
+size = Vector3(2.51282, 4.61353, 5.75293)
 
 [node name="CSGBox3D129" type="CSGBox3D" parent="Area 1"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -88.9228, -0.242535, -32.4619)
@@ -1482,7 +1586,7 @@ use_collision = true
 size = Vector3(1, 5.18152, 1)
 
 [node name="CSGBox3D79" type="CSGBox3D" parent="Area 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7586, 2.09076, 6.99785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.7586, -1.87328, 6.99785)
 layers = 3
 material_override = ExtResource("3_pwr0t")
 use_collision = true
@@ -1503,14 +1607,28 @@ use_collision = true
 size = Vector3(1, 5.18152, 1)
 
 [node name="CSGBox3D82" type="CSGBox3D" parent="Area 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7586, 2.09076, -7.00215)
+transform = Transform3D(0.972117, -0.226976, -0.0589155, 0.234497, 0.940936, 0.244236, 0, -0.251242, 0.967924, -63.1766, 0.466171, -7.00215)
 layers = 3
 material_override = ExtResource("3_pwr0t")
 use_collision = true
-size = Vector3(1, 5.18152, 1)
+size = Vector3(1, 1.93234, 1)
+
+[node name="CSGBox3D93" type="CSGBox3D" parent="Area 2"]
+transform = Transform3D(0.972117, -0.226976, -0.0589155, 0.0451138, -0.0655265, 0.99683, -0.230117, -0.971694, -0.0534597, -60.4904, 0.159566, -2.34951)
+layers = 3
+material_override = ExtResource("3_pwr0t")
+use_collision = true
+size = Vector3(1, 4.6975, 1)
+
+[node name="CSGBox3D94" type="CSGBox3D" parent="Area 2"]
+transform = Transform3D(0.963661, 0.265844, -0.0261374, 0.0451138, -0.0655265, 0.99683, 0.263289, -0.961786, -0.0751386, -59.02, 0.159566, -6.75314)
+layers = 3
+material_override = ExtResource("3_pwr0t")
+use_collision = true
+size = Vector3(1, 4.6975, 1)
 
 [node name="CSGBox3D83" type="CSGBox3D" parent="Area 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7586, 2.09076, -14.0022)
+transform = Transform3D(0.93418, -0.356803, 0, 0.356803, 0.93418, 0, 0, 0, 1, -64.0713, 2.09076, -14.0022)
 layers = 3
 material_override = ExtResource("3_pwr0t")
 use_collision = true
@@ -1524,7 +1642,7 @@ use_collision = true
 size = Vector3(1, 5.18152, 1)
 
 [node name="CSGBox3D85" type="CSGBox3D" parent="Area 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.7586, 2.09076, 6.99785)
+transform = Transform3D(0.306647, -0.811714, 0.49708, 0.821476, -0.0380915, -0.568969, 0.480774, 0.582812, 0.655123, -66.9934, -0.994676, 7.87122)
 layers = 3
 material_override = ExtResource("3_pwr0t")
 use_collision = true
@@ -1644,9 +1762,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.08
 [node name="Big_Door2" parent="Doors" instance=ExtResource("8_xoohd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.8284, 0.48378, 3.79171)
 
-[node name="Small_Door" parent="Doors" instance=ExtResource("9_7m3m8")]
-transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -2.32763, 0.528722, 15.5046)
-
 [node name="Blue_Door" parent="Doors" instance=ExtResource("10_3ntyn")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -81.9899, 0.544014, 10.6874)
 
@@ -1708,6 +1823,7 @@ player = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8767, 0.0455412, 19.8599)
 player = NodePath("../Player")
 
+[connection signal="body_entered" from="Trains/Area3D" to="Trains/Area3D" method="_on_body_entered"]
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Doors/Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
 
 [editable path="Doors/Blue_Door"]

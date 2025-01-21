@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://chloohjqvqgys"]
+[gd_scene load_steps=22 format=3 uid="uid://chloohjqvqgys"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_1c6xn"]
 [ext_resource type="PackedScene" uid="uid://f7gde8be6fmh" path="res://Prefabs/Small_Door.tscn" id="2_fxtwy"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bdnfwfe1vq8d6" path="res://pickups/ammo_pickup.tscn" id="7_dqpym"]
 [ext_resource type="PackedScene" uid="uid://j4ebwxuifcsd" path="res://pickups/Blue_Key.tscn" id="8_vujmr"]
 [ext_resource type="PackedScene" uid="uid://fnbh82ut1tay" path="res://Prefabs/Blue_Door.tscn" id="9_u1rao"]
+[ext_resource type="PackedScene" uid="uid://cqci1p8mdso8j" path="res://Prefabs/Red_Door.tscn" id="10_sv6gy"]
+[ext_resource type="PackedScene" uid="uid://cngb71e0mi5qs" path="res://pickups/Red_Key.tscn" id="11_4hvv4"]
 
 [sub_resource type="Animation" id="Animation_1y15o"]
 length = 0.001
@@ -326,7 +328,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5604, 0.051627, 6.37443)
 [node name="Blue_Door" parent="." instance=ExtResource("9_u1rao")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.6256, 0.531872, 0.770847)
 
+[node name="Red_Door" parent="." instance=ExtResource("10_sv6gy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.686, 0.544922, 13.1504)
+
+[node name="RedKey" parent="." instance=ExtResource("11_4hvv4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8312, 0.0516261, 19.2711)
+
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
+[connection signal="red_key_found" from="RedKey/Area3D" to="Red_Door/Door_Trigger_Area3D" method="_on_area_3d_red_key_found"]
 
 [editable path="BlueKey"]
 [editable path="Blue_Door"]
+[editable path="Red_Door"]
+[editable path="RedKey"]
