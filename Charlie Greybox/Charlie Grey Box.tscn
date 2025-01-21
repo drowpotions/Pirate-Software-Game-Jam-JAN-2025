@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=17 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pe52b"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://f7gde8be6fmh" path="res://Prefabs/Small_Door.tscn" id="9_7m3m8"]
 [ext_resource type="PackedScene" uid="uid://fnbh82ut1tay" path="res://Prefabs/Blue_Door.tscn" id="10_3ntyn"]
 [ext_resource type="Material" uid="uid://bsofmy8bvbl4d" path="res://Dev_Textures/Dev_Green.tres" id="11_j5alk"]
+[ext_resource type="PackedScene" uid="uid://j4ebwxuifcsd" path="res://pickups/Blue_Key.tscn" id="12_c6xnt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1510,7 +1511,7 @@ use_collision = true
 size = Vector3(1, 5.18152, 1)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Area 2"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, 0.915949, 0.623798, 0.781586, 3.12927e-08, -0.781586, 0.623798, 2.49752e-08, -58.1334, 13.6621, -26.1469)
+transform = Transform3D(1.91069e-15, -4.37114e-08, 0.915949, 0.623798, 0.781586, 3.12927e-08, -0.781586, 0.623798, 2.49752e-08, -58.1334, 13.7801, -26.1469)
 layers = 3
 material_override = ExtResource("3_pwr0t")
 use_collision = true
@@ -1583,7 +1584,6 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -81.6391
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ndevj")
 volume_db = -15.0
-autoplay = true
 
 [node name="Traincars" type="Node3D" parent="."]
 
@@ -1607,3 +1607,11 @@ size = Vector3(3.28491, 4.70288, 13.249)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4533, 0, 3.85947)
 material_override = ExtResource("11_j5alk")
 size = Vector3(3.28491, 4.70288, 13.249)
+
+[node name="BlueKey" parent="." instance=ExtResource("12_c6xnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.6069, -0.929117, 5.39507)
+
+[connection signal="blue_key_found" from="BlueKey/Area3D" to="Doors/Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
+
+[editable path="Doors/Blue_Door"]
+[editable path="BlueKey"]

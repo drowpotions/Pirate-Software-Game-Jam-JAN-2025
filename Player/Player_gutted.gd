@@ -8,6 +8,10 @@ extends CharacterBody3D
 @onready var cam_holder = $"head/Camera Holder"
 @onready var pickup_radius: Area3D = $PickupRadius
 
+
+var blue_key_have = false
+
+
 #cam rotation variables
 var cam_rotation_amount : float = 0.04
 

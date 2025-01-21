@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="1_0ms3g"]
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="1_dfhk8"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_2ugse"]
-[ext_resource type="Script" path="res://Door.gd" id="3_dmg53"]
 [ext_resource type="AudioStream" uid="uid://dq0p3dkibokeb" path="res://Prefabs/door_sound.wav" id="4_fg3ra"]
+[ext_resource type="Script" path="res://Blue_Door.gd" id="4_stjkr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]
 size = Vector3(6.57324, 2.25391, 6.1875)
@@ -122,7 +122,7 @@ nodes/Opening/position = Vector2(20, -80)
 nodes/output/position = Vector2(500, 120)
 node_connections = [&"Blend3", 0, &"Opening", &"Blend3", 1, &"Animation", &"Blend3", 2, &"Closing", &"output", 0, &"Blend3"]
 
-[node name="Big_Door" type="Node3D"]
+[node name="Blue_Door" type="Node3D"]
 
 [node name="Door_Left" type="Node3D" parent="."]
 
@@ -166,7 +166,7 @@ material = ExtResource("2_2ugse")
 
 [node name="Door_Trigger_Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("3_dmg53")
+script = ExtResource("4_stjkr")
 
 [node name="TriggerBox" type="CollisionShape3D" parent="Door_Trigger_Area3D"]
 unique_name_in_owner = true
