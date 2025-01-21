@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvi2i34hm7ue5"]
+[gd_scene load_steps=12 format=3 uid="uid://cvi2i34hm7ue5"]
 
 [ext_resource type="Script" path="res://pickups/ZIP_File.gd" id="1_nfutm"]
 [ext_resource type="Material" uid="uid://doka8owbo1l2m" path="res://Dev_Textures/Dev_Red.tres" id="2_nn3m4"]
@@ -10,15 +10,36 @@ size = Vector3(1.31055, 1.4989, 1.31934)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mkfbs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tcgks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytnye"]
 atlas = ExtResource("4_kndil")
-region = Rect2(13, 2800, 1125, 2000)
+region = Rect2(0, 0, 1469, 2342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5km7"]
+atlas = ExtResource("4_kndil")
+region = Rect2(1469, 0, 1469, 2342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xo6p"]
+atlas = ExtResource("4_kndil")
+region = Rect2(2938, 0, 1469, 2342)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qke6u"]
+atlas = ExtResource("4_kndil")
+region = Rect2(4407, 0, 1469, 2342)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3pd3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tcgks")
+"texture": SubResource("AtlasTexture_ytnye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5km7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xo6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qke6u")
 }],
 "loop": true,
 "name": &"default",
@@ -51,5 +72,6 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_e3pd3")
+frame_progress = 0.0156945
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
