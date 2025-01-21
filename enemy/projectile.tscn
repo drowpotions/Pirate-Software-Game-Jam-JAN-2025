@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dneooi7towbdt"]
+[gd_scene load_steps=6 format=3 uid="uid://dneooi7towbdt"]
 
 [ext_resource type="Script" path="res://enemy/projectile.gd" id="1_xd23y"]
 
@@ -12,7 +12,11 @@ albedo_color = Color(0.898275, 2.59906e-06, 1.2514e-06, 1)
 radius = 0.2
 height = 0.4
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_upxcl"]
+radius = 0.21
+
 [node name="Projectile" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_xd23y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -21,3 +25,10 @@ shape = SubResource("SphereShape3D_g0wub")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_4gb2l")
 mesh = SubResource("SphereMesh_ur7dv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_upxcl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

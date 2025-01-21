@@ -47,6 +47,8 @@ var FOV_Zoom = 50
 #crouch variables
 const crouch_translate := -1.0
 
+@export var health := 5
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -63,7 +65,11 @@ func _input(event):
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
 		mouse_input = event.relative
-		
+
+
+func _process(delta: float) -> void:
+	if health == 0:
+		get_tree().reload_current_scene()    #death	
 
 func _physics_process(delta):
 	# Add the gravity.
