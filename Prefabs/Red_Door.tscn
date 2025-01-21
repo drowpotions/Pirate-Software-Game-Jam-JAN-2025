@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://doka8owbo1l2m" path="res://Dev_Textures/Dev_Red.tres" id="1_etau1"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="2_6r477"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="3_dvij3"]
-[ext_resource type="Script" path="res://Red_Door.gd" id="4_jgg4i"]
+[ext_resource type="Script" path="res://Prefabs/Red_Door.gd" id="4_jgg4i"]
 [ext_resource type="AudioStream" uid="uid://dq0p3dkibokeb" path="res://Prefabs/door_sound.wav" id="5_3qigh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]

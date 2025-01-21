@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="1_dfhk8"]
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_2ugse"]
 [ext_resource type="AudioStream" uid="uid://dq0p3dkibokeb" path="res://Prefabs/door_sound.wav" id="4_fg3ra"]
-[ext_resource type="Script" path="res://Blue_Door.gd" id="4_stjkr"]
+[ext_resource type="Script" path="res://Prefabs/Blue_Door.gd" id="4_stjkr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ot46f"]
 size = Vector3(6.57324, 2.25391, 6.1875)
