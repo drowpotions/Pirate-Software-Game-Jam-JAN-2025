@@ -40,6 +40,7 @@ var direction = Vector3.ZERO
 var crouching = false
 var walking = false
 var attacking = false
+var dead = false
 #fov variables
 var Default_FOV = 60
 var FOV_Zoom = 50
@@ -60,7 +61,7 @@ func _ready():
 #Main Input Functions
 func _input(event):
 	#Handles Camera Movement
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and dead == false:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
@@ -69,49 +70,51 @@ func _input(event):
 
 func _process(delta: float) -> void:
 	if health == 0:
-		get_tree().reload_current_scene()    #death	
+		death_state()  #death	
+		
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-		
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+	if dead == false:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+			
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = jump_velocity
 
-	#breathing headbob
-	if head:
-		time_elapsed += delta
-		# Calculate the breathing offset
-		var offset_y = sin(time_elapsed * frequency * TAU) * head_amplitude
-		# Apply the offset to the head node
-		head.position.y += offset_y
+		#breathing headbob
+		if head:
+			time_elapsed += delta
+			# Calculate the breathing offset
+			var offset_y = sin(time_elapsed * frequency * TAU) * head_amplitude
+			# Apply the offset to the head node
+			head.position.y += offset_y
 
-# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("left", "right", "forwards", "backwards")
-	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(),delta*lerp_speed)
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * walk_speed
-			velocity.z = direction.z * walk_speed
+	# Get the input direction and handle the movement/deceleration.
+		var input_dir = Input.get_vector("left", "right", "forwards", "backwards")
+		direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(),delta*lerp_speed)
+		if is_on_floor():
+			if direction:
+				velocity.x = direction.x * walk_speed
+				velocity.z = direction.z * walk_speed
+			else:
+				velocity.x = move_toward(velocity.x, 0, walk_speed)
+				velocity.z = move_toward(velocity.z, 0, walk_speed)
 		else:
-			velocity.x = move_toward(velocity.x, 0, walk_speed)
-			velocity.z = move_toward(velocity.z, 0, walk_speed)
-	else:
-		velocity.x = lerp(velocity.x, direction.x * walk_speed, delta * 1.0)
-		velocity.z = lerp(velocity.z, direction.z * walk_speed, delta * 1.0)
+			velocity.x = lerp(velocity.x, direction.x * walk_speed, delta * 1.0)
+			velocity.z = lerp(velocity.z, direction.z * walk_speed, delta * 1.0)
 		
 
-	move_and_slide()
-	menu_features()
-	crouch(delta)
-	camera_movement(input_dir, delta)
-	weapon_sway(delta)
-	weapon_crouch_movement(delta)
-	weapon_holder_breathing(delta)
-	crouch_speed()
-	melee_anim()
+		move_and_slide()
+		menu_features()
+		crouch(delta)
+		camera_movement(input_dir, delta)
+		weapon_sway(delta)
+		weapon_crouch_movement(delta)
+		weapon_holder_breathing(delta)
+		crouch_speed()
+		melee_anim()
 
 #crouching function
 @onready var original_capsule_height = player_collider.shape.height
@@ -168,6 +171,15 @@ func menu_features():
 func melee_anim():
 	if Input.is_action_just_pressed("melee"):
 		%Melee.play("punch")
+
+
+func death_state():
+	$CanvasLayer/Control/DeathLabel.show()
+	$CanvasLayer/Control/ColorRect.show()
+	dead = true
+	velocity = Vector3.ZERO
+	await get_tree().create_timer(3).timeout
+	get_tree().reload_current_scene()
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
