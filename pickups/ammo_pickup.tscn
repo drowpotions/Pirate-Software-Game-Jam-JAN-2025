@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdnfwfe1vq8d6"]
+[gd_scene load_steps=5 format=3 uid="uid://bdnfwfe1vq8d6"]
 
 [ext_resource type="Script" path="res://pickups/ammo_pickup.gd" id="1_4pl11"]
 [ext_resource type="AudioStream" uid="uid://csu7ji8axfmaw" path="res://pickups/PH-pickup.wav" id="2_ktio7"]
@@ -7,23 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfkeq"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m66mh"]
-albedo_color = Color(1, 0, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hdb6v"]
-size = Vector3(0.3, 0.3, 0.3)
-
 [node name="AmmoPickup" type="RigidBody3D"]
 collision_layer = 2
 script = ExtResource("1_4pl11")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_qfkeq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
-material_override = SubResource("StandardMaterial3D_m66mh")
-mesh = SubResource("BoxMesh_hdb6v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_ktio7")

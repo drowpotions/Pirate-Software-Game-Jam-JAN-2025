@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 func hit(damage, type):
 	if player.player_camera.shooting == true:
 		following = true
+		attacking = true
 		look_at(player.global_position)
 		#show_hit_label(damage)
 		show_particles()

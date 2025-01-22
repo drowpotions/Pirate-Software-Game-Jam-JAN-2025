@@ -178,7 +178,11 @@ func death_state():
 	
 
 func hit(damage):
-	health -= 1
+	health -= damage
+	update_health()
+
+
+func update_health():
 	$CanvasLayer/Control/HealthLabel.text = ""
 	if health <= 2:
 		$CanvasLayer/Control/HealthLabel.modulate = Color.RED
@@ -190,3 +194,10 @@ func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
 		player_camera.pickup_ammo(body.ammo_amt)
 		body.hide()
+	elif body.name.begins_with("Health"):
+		if health < 5:
+			health += 1
+			body.hide()
+			update_health()
+		else:
+			pass

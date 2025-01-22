@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7qiki3o4vtq4"]
+[gd_scene load_steps=12 format=3 uid="uid://b7qiki3o4vtq4"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_mb8yd"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_2iopr"]
 [ext_resource type="PackedScene" uid="uid://bdnfwfe1vq8d6" path="res://pickups/ammo_pickup.tscn" id="3_8kdhk"]
+[ext_resource type="PackedScene" uid="uid://dt36oxlgqnjtx" path="res://pickups/health_pickup.tscn" id="4_6m5xh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_irpd5"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -158,6 +159,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.7527, 20.4635, 1.86546)
 
 [node name="AmmoPickup2" parent="." instance=ExtResource("3_8kdhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.2544, 20.4635, 1.86546)
+
+[node name="HealthPickup" parent="." instance=ExtResource("4_6m5xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.716, 20.7306, 1.92515)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("4_6m5xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.114, 20.7306, 1.92515)
+
+[node name="HealthPickup3" parent="." instance=ExtResource("4_6m5xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.465, 20.7306, 1.92515)
 
 [editable path="Player"]
 [editable path="Enemy"]
