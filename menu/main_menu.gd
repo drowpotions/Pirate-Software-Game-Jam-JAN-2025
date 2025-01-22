@@ -22,3 +22,10 @@ func _on_intro_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_options_button_pressed() -> void:
+	var options = preload("res://ui/options.tscn").instantiate()
+	add_child(options)
+	await options.closed
+	options.queue_free()
