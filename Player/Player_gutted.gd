@@ -165,7 +165,11 @@ func weapon_sway(delta):
 #menu interaction
 func menu_features():
 	if Input.is_action_pressed("esc"):
-		get_tree().change_scene_to_file("res://menu/main_menu.tscn")
+		get_tree().paused = true
+		$Pause/PauseMenu.show_pause_menu()
+		await $Pause/PauseMenu.dismissed
+		get_tree().paused = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func death_state():
@@ -183,11 +187,11 @@ func hit(damage):
 
 
 func update_health():
-	$CanvasLayer/Control/HealthLabel.text = ""
+	$Control/HealthLabel.text = ""
 	if health <= 2:
-		$CanvasLayer/Control/HealthLabel.modulate = Color.RED
+		$Control/HealthLabel.modulate = Color.RED
 	for i in health:
-		$CanvasLayer/Control/HealthLabel.text += "/ "
+		$Control/HealthLabel.text += "/ "
 	
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:

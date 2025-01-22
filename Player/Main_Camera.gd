@@ -1,9 +1,9 @@
 extends Camera3D
 
-@onready var Hit_Label = $"../../../CanvasLayer/Control/Hit_Label"
+@onready var Hit_Label = $"../../../Control/Hit_Label"
 @onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 @onready var cam_anim = $"../../../AnimationPlayer"
-@onready var ammo_label: Label = $"../../../CanvasLayer/Control/AmmoLabel"
+@onready var ammo_label: Label = $"../../../Control/AmmoLabel"
 @onready var melee_spot: Marker3D = $"../../Weapon_Holder/MeleeSpot"
 
 @export var shooting = false

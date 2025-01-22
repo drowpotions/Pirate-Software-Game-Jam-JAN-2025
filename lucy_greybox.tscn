@@ -125,18 +125,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="head" parent="Player" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="Hit_Label" parent="Player/CanvasLayer/Control" index="1"]
-text = "HIT!"
-
-[node name="CollisionShape3D3" parent="Player" index="5"]
+[node name="CollisionShape3D3" parent="Player" index="3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, 0.269019)
 shape = SubResource("SeparationRayShape3D_umimj")
 
-[node name="CollisionShape3D4" parent="Player" index="6"]
+[node name="CollisionShape3D4" parent="Player" index="4"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.254387, 0.113526, 0.000730038)
 shape = SubResource("SeparationRayShape3D_umimj")
 
-[node name="CollisionShape3D5" parent="Player" index="7"]
+[node name="CollisionShape3D5" parent="Player" index="5"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.264335, 0.113526, 0.000730038)
 shape = SubResource("SeparationRayShape3D_umimj")
 
@@ -170,4 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.114, 20.7306, 1.92515)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.465, 20.7306, 1.92515)
 
 [editable path="Player"]
+[editable path="Player/Pause/PauseMenu"]
+[editable path="Player/Pause/PauseMenu/Options"]
 [editable path="Enemy"]

@@ -1,59 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://clg0ktgnkra4a"]
+[gd_scene load_steps=4 format=3 uid="uid://clg0ktgnkra4a"]
 
-[ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="1_fqj6b"]
 [ext_resource type="Script" path="res://ui/pause_menu.gd" id="2_0ge5b"]
+[ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="2_hccfc"]
+[ext_resource type="PackedScene" uid="uid://5faiwxv6t400" path="res://ui/options.tscn" id="3_m3pcn"]
 
 [node name="PauseMenu" type="Control"]
+process_mode = 3
+z_index = 1000
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_fqj6b")
+anchors_preset = 0
 script = ExtResource("2_0ge5b")
 
-[node name="BG" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.533333)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="ResumeButton" type="Button" parent="."]
-layout_mode = 1
+[node name="BG" type="ColorRect" parent="CanvasLayer"]
+offset_right = 641.0
+offset_bottom = 493.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.443137)
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
+offset_left = -36.0
 offset_top = -51.0
-offset_right = 35.0
+offset_right = 34.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hccfc")
 text = "Resume"
 
-[node name="OptionsButton" type="Button" parent="."]
-layout_mode = 1
+[node name="OptionsButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -36.0
+offset_top = -14.0
+offset_right = 34.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hccfc")
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="."]
-layout_mode = 1
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -65,8 +62,31 @@ offset_right = 22.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_hccfc")
 text = "Quit"
 
-[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Options" parent="." instance=ExtResource("3_m3pcn")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 321.0
+offset_top = 281.0
+offset_right = 321.0
+offset_bottom = 281.0
+
+[node name="CanvasLayer" parent="Options" index="0"]
+visible = false
+
+[node name="ColorRect" parent="Options/CanvasLayer" index="0"]
+color = Color(0, 0, 0, 0.443137)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer" to="." method="_on_canvas_layer_visibility_changed"]
+[connection signal="pressed" from="CanvasLayer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="Options"]

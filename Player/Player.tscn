@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=28 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cqe3mwchxgv74" path="res://Player/sprite_sheet.png" id="4_nfp6s"]
 [ext_resource type="Texture2D" uid="uid://ciojdg85fkox0" path="res://Player/234154.png" id="4_qyuje"]
 [ext_resource type="Texture2D" uid="uid://bfeemk8l4rb1s" path="res://theboy.png" id="5_uj2am"]
+[ext_resource type="PackedScene" uid="uid://clg0ktgnkra4a" path="res://ui/pause_menu.tscn" id="7_hs8yk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.172079
@@ -96,6 +97,16 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
+length = 0.158376
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tmpc8"]
+height = 2.12282
+radius = 0.985305
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_13cvm"]
+radius = 0.172
+
 [sub_resource type="LabelSettings" id="LabelSettings_iklbx"]
 font_color = Color(1, 0, 1, 1)
 
@@ -104,26 +115,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("head/Camera Holder/Camera3D:rotation")
+tracks/0/path = NodePath("head/Weapon_Holder/AnimatedSprite3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0.0302766, -0.0202211, -0.075)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("head/Weapon_Holder/AnimatedSprite3D:position")
+tracks/1/path = NodePath("head/Camera Holder/Camera3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.0302766, -0.0202211, -0.075)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ikm84"]
@@ -168,16 +179,6 @@ _data = {
 "cam_shake_shoot": SubResource("Animation_8fvnp"),
 "hud_testing": SubResource("Animation_g2ofn")
 }
-
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
-length = 0.158376
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_tmpc8"]
-height = 2.12282
-radius = 0.985305
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_13cvm"]
-radius = 0.172
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0322766, 0.0292211, 0)
@@ -224,161 +225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193519, 0, 0)
 [node name="Leg" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(20, 20)
-texture = ExtResource("3_6pp65")
-stretch_mode = 3
-
-[node name="Hit_Label" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 0
-offset_left = 300.0
-offset_top = 255.0
-offset_right = 340.0
-offset_bottom = 278.0
-text = "Hit!"
-
-[node name="Control2" type="Control" parent="CanvasLayer/Control"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Control/Control2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 233.0
-offset_top = 405.0
-offset_right = 367.0
-offset_bottom = 440.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.576471, 0.576471, 0.576471, 1)
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Control2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 236.0
-offset_top = 388.0
-offset_right = 364.0
-offset_bottom = 440.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.804743, 0.804743, 0.804743, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control/Control2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 129.0
-offset_top = 405.0
-offset_right = 471.0
-offset_bottom = 440.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.803922, 0.803922, 0.803922, 0.494118)
-
-[node name="Control" type="Control" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/Control"]
-layout_mode = 0
-offset_left = -12.9756
-offset_top = 10.0317
-offset_right = 723.024
-offset_bottom = 874.032
-scale = Vector2(0.194192, 0.194192)
-pivot_offset = Vector2(328.921, 412.224)
-texture = ExtResource("5_uj2am")
-
-[node name="HealthLabel" type="Label" parent="CanvasLayer/Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 159.0
-offset_top = 451.0
-offset_right = 243.0
-offset_bottom = 474.0
-text = "/ / / / /"
-label_settings = SubResource("LabelSettings_iklbx")
-
-[node name="AmmoLabel" type="Label" parent="CanvasLayer/Control"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 399.0
-offset_top = 450.0
-offset_right = 484.0
-offset_bottom = 473.0
-text = "Ammo: 8/8"
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.654902)
-
-[node name="DeathLabel" type="Label" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -69.0
-offset_right = 20.0
-offset_bottom = -46.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "You Died!"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_yvc46")
-}
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.113526, -0.261359)
 shape = SubResource("SeparationRayShape3D_umimj")
@@ -407,4 +253,173 @@ shape = SubResource("CylinderShape3D_tmpc8")
 visible = false
 mesh = SubResource("CapsuleMesh_13cvm")
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+texture = ExtResource("3_6pp65")
+stretch_mode = 3
+
+[node name="Hit_Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 255.0
+offset_right = 340.0
+offset_bottom = 278.0
+text = "Hit!"
+
+[node name="Control2" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 233.0
+offset_top = 405.0
+offset_right = 367.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.576471, 0.576471, 0.576471, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 236.0
+offset_top = 388.0
+offset_right = 364.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.804743, 0.804743, 0.804743, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Control2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 405.0
+offset_right = 471.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.803922, 0.803922, 0.803922, 0.494118)
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Control"]
+layout_mode = 0
+offset_left = -12.9756
+offset_top = 10.0317
+offset_right = 723.024
+offset_bottom = 874.032
+scale = Vector2(0.194192, 0.194192)
+pivot_offset = Vector2(328.921, 412.224)
+mouse_filter = 2
+texture = ExtResource("5_uj2am")
+
+[node name="HealthLabel" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 159.0
+offset_top = 451.0
+offset_right = 243.0
+offset_bottom = 474.0
+text = "/ / / / /"
+label_settings = SubResource("LabelSettings_iklbx")
+
+[node name="AmmoLabel" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 399.0
+offset_top = 450.0
+offset_right = 484.0
+offset_bottom = 473.0
+text = "Ammo: 8/8"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.654902)
+
+[node name="DeathLabel" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -69.0
+offset_right = 20.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yvc46")
+}
+
+[node name="Pause" type="Node2D" parent="."]
+z_index = 1000
+
+[node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs8yk")]
+
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]
+
+[editable path="Pause/PauseMenu"]
+[editable path="Pause/PauseMenu/Options"]
