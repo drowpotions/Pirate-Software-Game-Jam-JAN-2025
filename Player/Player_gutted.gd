@@ -173,8 +173,8 @@ func menu_features():
 
 
 func death_state():
-	$CanvasLayer/Control/DeathLabel.show()
-	$CanvasLayer/Control/ColorRect.show()
+	$Control/DeathLabel.show()
+	$Control/ColorRect.show()
 	dead = true
 	velocity = Vector3.ZERO
 	await get_tree().create_timer(3).timeout
