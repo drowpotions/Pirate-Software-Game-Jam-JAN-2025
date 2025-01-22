@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dodsmfno8mwtj"]
+[gd_scene load_steps=25 format=3 uid="uid://dodsmfno8mwtj"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_pe52b"]
 [ext_resource type="PackedScene" uid="uid://duu2hhu4jsm7d" path="res://enemy/enemy.tscn" id="2_eagkr"]
@@ -15,6 +15,7 @@
 [ext_resource type="Material" uid="uid://bsofmy8bvbl4d" path="res://Dev_Textures/Dev_Green.tres" id="11_j5alk"]
 [ext_resource type="PackedScene" uid="uid://j4ebwxuifcsd" path="res://pickups/Blue_Key.tscn" id="12_c6xnt"]
 [ext_resource type="PackedScene" uid="uid://cvi2i34hm7ue5" path="res://pickups/ZIP_File.tscn" id="15_vjp36"]
+[ext_resource type="PackedScene" uid="uid://dt36oxlgqnjtx" path="res://pickups/health_pickup.tscn" id="16_l2pox"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2evqk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -140,6 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7966, -0.48175)
 shape = SubResource("BoxShape3D_tm0j4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Trains"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 stream = ExtResource("7_iu76a")
 volume_db = 10.0
 
@@ -1819,6 +1821,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30804, 5.16858, -10.4283)
 
 [node name="ZIP_File4" parent="." instance=ExtResource("15_vjp36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7544, -0.954459, 24.8487)
+
+[node name="HealthPickup" parent="." instance=ExtResource("16_l2pox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 5.30063, 15)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("16_l2pox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.7235, 5.30063, 15)
 
 [connection signal="body_entered" from="Trains/Area3D" to="Trains/Area3D" method="_on_body_entered"]
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Doors/Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]

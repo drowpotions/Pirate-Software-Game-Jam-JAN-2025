@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://chloohjqvqgys"]
+[gd_scene load_steps=24 format=3 uid="uid://chloohjqvqgys"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_1c6xn"]
 [ext_resource type="PackedScene" uid="uid://f7gde8be6fmh" path="res://Prefabs/Small_Door.tscn" id="2_fxtwy"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cqci1p8mdso8j" path="res://Prefabs/Red_Door.tscn" id="10_sv6gy"]
 [ext_resource type="PackedScene" uid="uid://cngb71e0mi5qs" path="res://pickups/Red_Key.tscn" id="11_4hvv4"]
 [ext_resource type="PackedScene" uid="uid://cvi2i34hm7ue5" path="res://pickups/ZIP_File.tscn" id="12_lso1h"]
+[ext_resource type="PackedScene" uid="uid://dt36oxlgqnjtx" path="res://pickups/health_pickup.tscn" id="13_b64ma"]
 
 [sub_resource type="Animation" id="Animation_1y15o"]
 length = 0.001
@@ -338,7 +339,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8312, 0.0516261, 19.2711)
 [node name="ZIP_File" parent="." instance=ExtResource("12_lso1h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7826, 0.0516265, 17.4679)
 
+[node name="HealthPickup" parent="." instance=ExtResource("13_b64ma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3453, 0.227083, 17.4976)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("13_b64ma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3453, 0.227083, 17.4976)
+
+[node name="HealthPickup3" parent="." instance=ExtResource("13_b64ma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34526, 0.227083, 17.4976)
+
+[node name="HealthPickup4" parent="." instance=ExtResource("13_b64ma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.34526, 0.227083, 17.4976)
+
+[node name="HealthPickup5" parent="." instance=ExtResource("13_b64ma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34526, 0.227083, 17.4976)
+
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
+[connection signal="red_key_found" from="RedKey/Area3D" to="Red_Door/Door_Trigger_Area3D" method="_on_area_3d_red_key_found"]
 
 [editable path="BlueKey"]
 [editable path="Blue_Door"]
