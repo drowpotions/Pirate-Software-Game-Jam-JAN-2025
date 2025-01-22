@@ -180,6 +180,16 @@ func death_state():
 	velocity = Vector3.ZERO
 	await get_tree().create_timer(3).timeout
 	get_tree().reload_current_scene()
+	
+
+func hit(damage):
+	health -= 1
+	$CanvasLayer/Control/HealthLabel.text = ""
+	if health <= 2:
+		$CanvasLayer/Control/HealthLabel.modulate = Color.RED
+	for i in health:
+		$CanvasLayer/Control/HealthLabel.text += "/ "
+	
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
