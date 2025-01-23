@@ -1,45 +1,66 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvi2i34hm7ue5"]
+[gd_scene load_steps=15 format=3 uid="uid://cvi2i34hm7ue5"]
 
 [ext_resource type="Script" path="res://pickups/ZIP_File.gd" id="1_nfutm"]
 [ext_resource type="Material" uid="uid://doka8owbo1l2m" path="res://Dev_Textures/Dev_Red.tres" id="2_nn3m4"]
 [ext_resource type="AudioStream" uid="uid://csu7ji8axfmaw" path="res://pickups/PH-pickup.wav" id="3_yhbor"]
-[ext_resource type="Texture2D" uid="uid://w2kiymfiusvf" path="res://pickups/Illustration676.png" id="4_kndil"]
+[ext_resource type="Texture2D" uid="uid://ndf75fjncfj4" path="res://enemy/Illustration676uy.png" id="4_jph58"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6exa"]
 size = Vector3(1.31055, 1.4989, 1.31934)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mkfbs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ytnye"]
-atlas = ExtResource("4_kndil")
-region = Rect2(0, 0, 1469, 2342)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpr07"]
+atlas = ExtResource("4_jph58")
+region = Rect2(400, 752, 1145, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5km7"]
-atlas = ExtResource("4_kndil")
-region = Rect2(1469, 0, 1469, 2342)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xlfa"]
+atlas = ExtResource("4_jph58")
+region = Rect2(1545, 752, 1145, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xo6p"]
-atlas = ExtResource("4_kndil")
-region = Rect2(2938, 0, 1469, 2342)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnbwt"]
+atlas = ExtResource("4_jph58")
+region = Rect2(2690, 752, 1145, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qke6u"]
-atlas = ExtResource("4_kndil")
-region = Rect2(4407, 0, 1469, 2342)
+[sub_resource type="AtlasTexture" id="AtlasTexture_70xkl"]
+atlas = ExtResource("4_jph58")
+region = Rect2(3835, 752, 1145, 2000)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e3pd3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq1iy"]
+atlas = ExtResource("4_jph58")
+region = Rect2(4980, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yay3y"]
+atlas = ExtResource("4_jph58")
+region = Rect2(6125, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2tjs"]
+atlas = ExtResource("4_jph58")
+region = Rect2(7270, 752, 1145, 2000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wy314"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ytnye")
+"texture": SubResource("AtlasTexture_mpr07")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u5km7")
+"texture": SubResource("AtlasTexture_7xlfa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3xo6p")
+"texture": SubResource("AtlasTexture_nnbwt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qke6u")
+"texture": SubResource("AtlasTexture_70xkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq1iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yay3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2tjs")
 }],
 "loop": true,
 "name": &"default",
@@ -66,12 +87,13 @@ mesh = SubResource("BoxMesh_mkfbs")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_yhbor")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.105, 0, 0, 0, 0.105, 0, 0, 0, 0.105, 0, 1, 0)
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 1.39652, 0)
 billboard = 2
 shaded = true
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_e3pd3")
-frame_progress = 0.0156945
+sprite_frames = SubResource("SpriteFrames_wy314")
+autoplay = "default"
+frame_progress = 0.0213613
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

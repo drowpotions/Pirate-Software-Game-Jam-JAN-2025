@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=13 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
 [ext_resource type="Texture2D" uid="uid://bgupd1676d78p" path="res://enemy/execute.png" id="3_rc6mt"]
+[ext_resource type="Texture2D" uid="uid://bjxo7fc7hbqkk" path="res://enemy/0iio.png" id="5_csg5l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
 
@@ -15,6 +16,28 @@ albedo_color = Color(1, 0.00392157, 0, 1)
 radius = 15.9408
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvory"]
+atlas = ExtResource("5_csg5l")
+region = Rect2(400, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbqsw"]
+atlas = ExtResource("5_csg5l")
+region = Rect2(1545, 752, 1145, 2000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qqpn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvory")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbqsw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_3rhhp")
@@ -47,6 +70,7 @@ mesh = SubResource("CylinderMesh_5lwvn")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.295373, 0, 0, 0, 0.295373, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 billboard = 2
 shaded = true
 texture_filter = 0
@@ -67,6 +91,15 @@ autostart = true
 [node name="LoS" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406405, 0)
 target_position = Vector3(0, 0, -20)
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.141452, 0)
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_2qqpn")
+autoplay = "default"
+frame_progress = 0.190576
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
