@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
 [ext_resource type="Texture2D" uid="uid://bgupd1676d78p" path="res://enemy/execute.png" id="3_rc6mt"]
-[ext_resource type="Texture2D" uid="uid://bjxo7fc7hbqkk" path="res://enemy/0iio.png" id="5_csg5l"]
+[ext_resource type="Texture2D" uid="uid://borcudc7r6ksx" path="res://enemy/0ip.png" id="4_61nxu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
 
@@ -17,22 +17,22 @@ radius = 15.9408
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvory"]
-atlas = ExtResource("5_csg5l")
-region = Rect2(400, 752, 1145, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnbjc"]
+atlas = ExtResource("4_61nxu")
+region = Rect2(386, 0, 1147, 2741)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jbqsw"]
-atlas = ExtResource("5_csg5l")
-region = Rect2(1545, 752, 1145, 2000)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vytb1"]
+atlas = ExtResource("4_61nxu")
+region = Rect2(1533, 0, 1147, 2741)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2qqpn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nleya"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bvory")
+"texture": SubResource("AtlasTexture_wnbjc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jbqsw")
+"texture": SubResource("AtlasTexture_vytb1")
 }],
 "loop": true,
 "name": &"default",
@@ -93,13 +93,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.406405, 0)
 target_position = Vector3(0, 0, -20)
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.141452, 0)
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0.83244, 0)
 billboard = 2
 shaded = true
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_2qqpn")
+sprite_frames = SubResource("SpriteFrames_nleya")
 autoplay = "default"
-frame_progress = 0.190576
+frame_progress = 0.0975325
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
