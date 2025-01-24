@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_fdsk4"]
 [ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="3_urymp"]
-[ext_resource type="Material" uid="uid://b812fddh5egab" path="res://Dev_Textures/PSX_DEV_Black.tres" id="3_yqye2"]
+[ext_resource type="Material" uid="uid://b812fddh5egab" path="res://Models/Wall/Wall.tres" id="3_yqye2"]
 [ext_resource type="Material" uid="uid://ciymoy4qiyblb" path="res://VN Segment/black.tres" id="4_bnpr1"]
 [ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="4_y26wy"]
 [ext_resource type="Script" path="res://VN Segment/Intro_Controller.gd" id="6_0e226"]
