@@ -190,6 +190,8 @@ func update_health():
 	$Control/HealthLabel.text = ""
 	if health <= 2:
 		$Control/HealthLabel.modulate = Color.RED
+	else:
+		$Control/HealthLabel.modulate = Color.PURPLE
 	for i in health:
 		$Control/HealthLabel.text += "/ "
 	

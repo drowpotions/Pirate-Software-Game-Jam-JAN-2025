@@ -17,9 +17,15 @@ var max_health: int
 @export var player: Node3D
 @export var health := 20
 @export var los_distance: float = 20.0
+@export var is_melee: bool = false
 
 
 func _ready() -> void:
+	if is_melee:
+		stop_distance = 1.0
+		atk_timer.wait_time = 3
+	else:
+		$AnimatedSprite3D2.modulate = Color.BLUE
 	atk_timer.start(1)
 	atk_timer.paused = true
 	los.target_position = Vector3(0,0,-los_distance)
@@ -124,8 +130,17 @@ func _on_los_timer_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
-	get_parent().add_child(projectile)
-	projectile.global_position = proj_pos.global_position
-	projectile.go_to_target(player.head)
+	if !is_melee:
+		var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
+		get_parent().add_child(projectile)
+		projectile.global_position = proj_pos.global_position
+		projectile.go_to_target(player.head)
+	elif is_melee:
+		var melee_arm: Node3D = preload("res://enemy/enemy_melee.tscn").instantiate()
+		add_child(melee_arm)
+		$AnimatedSprite3D2.play("attack")
+		await melee_arm.finished
+		melee_arm.queue_free()
+		$AnimatedSprite3D2.play("default")
+	
 	
