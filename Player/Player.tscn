@@ -208,11 +208,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
-<<<<<<< HEAD
 transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.02, 0.045, -0.04, -0.075)
-=======
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.022, 0.0302766, -0.0202211, -0.075)
->>>>>>> 31574940700f3d64abd968d9f56f054ce240b5e6
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cd8s5")
 
