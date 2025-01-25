@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://byxty5ogmdmvq"]
+
+[ext_resource type="PackedScene" uid="uid://c45jqnlxjoofy" path="res://Models/Modular_Kit/Modular_Kit.glb" id="1_1qapq"]
+
+[node name="Modular_Kit" instance=ExtResource("1_1qapq")]

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmdky2w8dtpjn"
-path.s3tc="res://.godot/imported/tileset_Brick_Normal256x256.jpg-aeeb4ba43223313938d5b20e07eec69b.s3tc.ctex"
+path.s3tc="res://.godot/imported/tileset_Brick_Normal256x256.jpg-12323477085834fdfe7912d8d826a14e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/tileset/tileset_Brick_Normal256x256.jpg"
-dest_files=["res://.godot/imported/tileset_Brick_Normal256x256.jpg-aeeb4ba43223313938d5b20e07eec69b.s3tc.ctex"]
+source_file="res://Models/tileset_old/tileset_Brick_Normal256x256.jpg"
+dest_files=["res://.godot/imported/tileset_Brick_Normal256x256.jpg-12323477085834fdfe7912d8d826a14e.s3tc.ctex"]
 
 [params]
 

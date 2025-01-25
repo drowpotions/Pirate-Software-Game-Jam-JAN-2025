@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r5ign302aom5"
-path.s3tc="res://.godot/imported/tileset_Concrete 256x256.jpg-c31a18475684503651b19b2e3bc0b3a5.s3tc.ctex"
+uid="uid://exfpisg2fkss"
+path.s3tc="res://.godot/imported/tileset_blue_metal_plate_diff_1k_n.jpg-06ddff0a730c1af5dddcac9b61758904.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3d299b10ad9d982ea2517aa3aec8915b"
+"md5": "5ad63af70fd00a263eea3e45471a2d83"
 }
 
 [deps]
 
-source_file="res://Models/tileset/tileset_Concrete 256x256.jpg"
-dest_files=["res://.godot/imported/tileset_Concrete 256x256.jpg-c31a18475684503651b19b2e3bc0b3a5.s3tc.ctex"]
+source_file="res://Models/tileset_old/tileset_blue_metal_plate_diff_1k_n.jpg"
+dest_files=["res://.godot/imported/tileset_blue_metal_plate_diff_1k_n.jpg-06ddff0a730c1af5dddcac9b61758904.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://tileset_blue_metal_plate_diff_1k_n.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

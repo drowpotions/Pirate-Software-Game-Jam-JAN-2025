@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw3piopeinph3"
-path.s3tc="res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-686db82a0c8c9442e7fd68c2960ae2e6.s3tc.ctex"
+uid="uid://dla5nppspmvx0"
+path.s3tc="res://.godot/imported/tileset_corrugated_iron_02_diff_1k_n.jpg-5ff93190ea94b375a80a83c34d60bc56.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9fdf9919a96c7948d2bb8cb2950ccfda"
+"md5": "c7c90e1dff8bc820267edfd71154ac7f"
 }
 
 [deps]
 
-source_file="res://Models/tileset/tileset_corrugated_iron_02_diff_1k.jpg"
-dest_files=["res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-686db82a0c8c9442e7fd68c2960ae2e6.s3tc.ctex"]
+source_file="res://Models/tileset_old/tileset_corrugated_iron_02_diff_1k_n.jpg"
+dest_files=["res://.godot/imported/tileset_corrugated_iron_02_diff_1k_n.jpg-5ff93190ea94b375a80a83c34d60bc56.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://tileset_corrugated_iron_02_diff_1k_n.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

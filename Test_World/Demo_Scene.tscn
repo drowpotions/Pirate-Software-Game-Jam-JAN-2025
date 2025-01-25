@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cngb71e0mi5qs" path="res://pickups/Red_Key.tscn" id="11_4hvv4"]
 [ext_resource type="PackedScene" uid="uid://cvi2i34hm7ue5" path="res://pickups/ZIP_File.tscn" id="12_lso1h"]
 [ext_resource type="PackedScene" uid="uid://dt36oxlgqnjtx" path="res://pickups/health_pickup.tscn" id="13_b64ma"]
-[ext_resource type="MeshLibrary" uid="uid://b12lqufn6jcb6" path="res://Models/tileset/tileset.tres" id="14_4o1ji"]
+[ext_resource type="MeshLibrary" uid="uid://b12lqufn6jcb6" path="res://Models/tileset_old/tileset.tres" id="14_4o1ji"]
 
 [sub_resource type="Animation" id="Animation_1y15o"]
 length = 0.001
