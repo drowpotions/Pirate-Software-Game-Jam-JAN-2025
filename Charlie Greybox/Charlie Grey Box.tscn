@@ -87,7 +87,6 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -4.03228
 [node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -17.9413, 0.994032, -19.1515)
 player = NodePath("../Player")
-is_melee = false
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(-0.999368, 0, 0.0355446, 0, 1, 0, -0.0355446, 0, -0.999368, -24.2546, 1.07579, 4.7057)

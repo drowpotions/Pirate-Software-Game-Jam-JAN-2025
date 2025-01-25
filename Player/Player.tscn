@@ -1,12 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=29 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Player/Crosshair.png" id="3_6pp65"]
-[ext_resource type="Texture2D" uid="uid://8ovebarumc3j" path="res://Player/Hand_Idle.png" id="4_0qli1"]
+[ext_resource type="Texture2D" uid="uid://blj7dm2w40rws" path="res://Player/Idle.png" id="4_qwcee"]
 [ext_resource type="Texture2D" uid="uid://ciojdg85fkox0" path="res://Player/234154.png" id="4_qyuje"]
-[ext_resource type="Texture2D" uid="uid://3y1j23lwo2wi" path="res://Player/Hand_Shoot.png" id="5_l03ne"]
+[ext_resource type="Texture2D" uid="uid://dsioao3oln5t4" path="res://Player/Shoot.png" id="5_7tyvd"]
 [ext_resource type="Texture2D" uid="uid://bfeemk8l4rb1s" path="res://theboy.png" id="5_uj2am"]
+[ext_resource type="Texture2D" uid="uid://25ib3gmytv76" path="res://Player/Recoil.png" id="6_04ssg"]
 [ext_resource type="PackedScene" uid="uid://clg0ktgnkra4a" path="res://ui/pause_menu.tscn" id="7_hs8yk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
@@ -50,23 +51,27 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_klxr4"]
-atlas = ExtResource("4_0qli1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7bux"]
+atlas = ExtResource("4_qwcee")
 region = Rect2(0, 0, 490, 547)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jxxi"]
-atlas = ExtResource("4_0qli1")
+[sub_resource type="AtlasTexture" id="AtlasTexture_roxoj"]
+atlas = ExtResource("4_qwcee")
 region = Rect2(0, 0, 490, 547)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mujhn"]
-atlas = ExtResource("5_l03ne")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy1fb"]
+atlas = ExtResource("5_7tyvd")
+region = Rect2(0, 0, 490, 547)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ep7l"]
+atlas = ExtResource("6_04ssg")
 region = Rect2(0, 0, 490, 547)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cd8s5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_klxr4")
+"texture": SubResource("AtlasTexture_r7bux")
 }],
 "loop": true,
 "name": &"default",
@@ -74,16 +79,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2jxxi")
+"texture": SubResource("AtlasTexture_roxoj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mujhn")
+"texture": SubResource("AtlasTexture_wy1fb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mujhn")
+"texture": SubResource("AtlasTexture_3ep7l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2jxxi")
+"texture": SubResource("AtlasTexture_roxoj")
 }],
 "loop": false,
 "name": &"shoot",
@@ -161,6 +166,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.00872665, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("head/Weapon_Holder/AnimatedSprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.045, -0.04, -0.075), Vector3(0.045, -0.04, -0.07), Vector3(0.045, -0.04, -0.075), Vector3(0.045, -0.04, -0.075)]
+}
 
 [sub_resource type="Animation" id="Animation_g2ofn"]
 resource_name = "hud_testing"
@@ -211,6 +228,9 @@ frame_progress = 1.0
 transform = Transform3D(0.018, 0, 0, 0, 0.018, 0, 0, 0, 0.02, 0.045, -0.04, -0.075)
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_cd8s5")
+animation = &"shoot"
+frame = 3
+frame_progress = 1.0
 
 [node name="MeleeSpot" type="Marker3D" parent="head/Weapon_Holder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193519, 0, 0)
