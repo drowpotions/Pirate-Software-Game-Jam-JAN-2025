@@ -47,6 +47,7 @@ func load_data():
 
 
 func add_zip_file(index):
-	zip_files[index-1] = true
-	print(zip_files[index-1])
-	save_data()
+	if index >= 1 and index <= 5: 
+		zip_files[index-1] = true
+		print(zip_files[index-1])
+		save_data()
