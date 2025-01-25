@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://chloohjqvqgys"]
+[gd_scene load_steps=25 format=3 uid="uid://chloohjqvqgys"]
 
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="1_1c6xn"]
 [ext_resource type="PackedScene" uid="uid://f7gde8be6fmh" path="res://Prefabs/Small_Door.tscn" id="2_fxtwy"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cngb71e0mi5qs" path="res://pickups/Red_Key.tscn" id="11_4hvv4"]
 [ext_resource type="PackedScene" uid="uid://cvi2i34hm7ue5" path="res://pickups/ZIP_File.tscn" id="12_lso1h"]
 [ext_resource type="PackedScene" uid="uid://dt36oxlgqnjtx" path="res://pickups/health_pickup.tscn" id="13_b64ma"]
+[ext_resource type="MeshLibrary" uid="uid://b12lqufn6jcb6" path="res://Models/tileset/tileset.tres" id="14_4o1ji"]
 
 [sub_resource type="Animation" id="Animation_1y15o"]
 length = 0.001
@@ -160,17 +161,17 @@ material_override = ExtResource("3_36qr6")
 use_collision = true
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385935, 11.2039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.876978, 11.2039)
 material_override = ExtResource("3_36qr6")
 use_collision = true
-size = Vector3(17.3564, 0.658325, 6.2666)
+size = Vector3(17.3564, 6.70566, 6.2666)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Mesh/CSGBox3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.360317, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.052, 0)
 material_override = ExtResource("3_36qr6")
 operation = 2
 use_collision = true
-size = Vector3(15.9763, 1.35156, 5.37305)
+size = Vector3(15.9763, 4.73492, 5.37305)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Mesh"]
 transform = Transform3D(-1.46623e-07, 0, 2.02954, 0, 1.85867, 0, -3.35433, 0, -8.87139e-08, -13.0098, 0.0280893, -4.29233)
@@ -353,6 +354,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.34526, 0.227083, 17.4976)
 
 [node name="HealthPickup5" parent="." instance=ExtResource("13_b64ma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34526, 0.227083, 17.4976)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("14_4o1ji")
+cell_size = Vector3(2.1, 2.1, 2.1)
+cell_center_y = false
+cell_scale = 0.2
+data = {
+"cells": PackedInt32Array(19, 28, 4, 19, 25, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
 [connection signal="red_key_found" from="RedKey/Area3D" to="Red_Door/Door_Trigger_Area3D" method="_on_area_3d_red_key_found"]
