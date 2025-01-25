@@ -29,3 +29,10 @@ func _on_options_button_pressed() -> void:
 	add_child(options)
 	await options.closed
 	options.queue_free()
+
+
+func _on_files_pressed() -> void:
+	var zip_files = preload("res://menu/zip_files.tscn").instantiate()
+	add_child(zip_files)
+	await zip_files.closed
+	zip_files.queue_free()

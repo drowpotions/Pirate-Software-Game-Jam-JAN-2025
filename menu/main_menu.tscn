@@ -95,12 +95,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.0
-offset_top = 97.0
+offset_top = 98.0
 offset_right = 67.0
-offset_bottom = 128.0
+offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Intro
+"
+
+[node name="Files" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = 133.0
+offset_right = 22.5
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Zip Files
 "
 
 [node name="OptionsButton" type="Button" parent="."]
@@ -111,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -36.0
-offset_top = 133.0
+offset_top = 166.0
 offset_right = 36.0
-offset_bottom = 161.0
+offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Options"
@@ -126,9 +142,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -65.5
-offset_top = 168.0
+offset_top = 201.0
 offset_right = 66.5
-offset_bottom = 199.0
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
@@ -188,5 +204,6 @@ uppercase = true
 [connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]
 [connection signal="pressed" from="WorldButton" to="." method="_on_world_button_pressed"]
 [connection signal="pressed" from="Intro" to="." method="_on_intro_pressed"]
+[connection signal="pressed" from="Files" to="." method="_on_files_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

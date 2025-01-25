@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dneooi7towbdt"]
+[gd_scene load_steps=7 format=3 uid="uid://dneooi7towbdt"]
 
 [ext_resource type="Script" path="res://enemy/projectile.gd" id="1_xd23y"]
+[ext_resource type="Texture2D" uid="uid://nkh5c6igsimd" path="res://enemy/projectile.png" id="2_1vpwq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g0wub"]
 radius = 0.2
@@ -23,6 +24,7 @@ script = ExtResource("1_xd23y")
 shape = SubResource("SphereShape3D_g0wub")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_4gb2l")
 mesh = SubResource("SphereMesh_ur7dv")
 
@@ -30,5 +32,10 @@ mesh = SubResource("SphereMesh_ur7dv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_upxcl")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0.0862358, -0.0196527, 0)
+billboard = 2
+texture = ExtResource("2_1vpwq")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

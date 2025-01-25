@@ -65,6 +65,14 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpr07")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [node name="ZIP_File" type="Node3D"]
@@ -93,7 +101,7 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_wy314")
+animation = &"idle"
 autoplay = "default"
-frame_progress = 0.0213613
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

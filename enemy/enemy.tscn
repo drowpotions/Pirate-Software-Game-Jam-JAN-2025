@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=27 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
 [ext_resource type="Texture2D" uid="uid://bgupd1676d78p" path="res://enemy/execute.png" id="3_rc6mt"]
 [ext_resource type="Texture2D" uid="uid://borcudc7r6ksx" path="res://enemy/0ip.png" id="4_61nxu"]
+[ext_resource type="Texture2D" uid="uid://dxbfd2dgnogq5" path="res://enemy/ranged_sprites.png" id="5_27i3x"]
+[ext_resource type="Texture2D" uid="uid://ndf75fjncfj4" path="res://enemy/Illustration676uy.png" id="6_45ith"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
 
@@ -33,6 +35,46 @@ region = Rect2(386, 0, 1147, 2741)
 atlas = ExtResource("4_61nxu")
 region = Rect2(1533, 0, 1147, 2741)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3w23"]
+atlas = ExtResource("5_27i3x")
+region = Rect2(2715, 0, 1100, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53smp"]
+atlas = ExtResource("5_27i3x")
+region = Rect2(3815, 0, 1100, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5aeb"]
+atlas = ExtResource("5_27i3x")
+region = Rect2(515, 0, 1100, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitp8"]
+atlas = ExtResource("5_27i3x")
+region = Rect2(1615, 0, 1100, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xlfa"]
+atlas = ExtResource("6_45ith")
+region = Rect2(1545, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnbwt"]
+atlas = ExtResource("6_45ith")
+region = Rect2(2690, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70xkl"]
+atlas = ExtResource("6_45ith")
+region = Rect2(3835, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq1iy"]
+atlas = ExtResource("6_45ith")
+region = Rect2(4980, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yay3y"]
+atlas = ExtResource("6_45ith")
+region = Rect2(6125, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2tjs"]
+atlas = ExtResource("6_45ith")
+region = Rect2(7270, 752, 1145, 2000)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_nleya"]
 animations = [{
 "frames": [{
@@ -43,7 +85,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_f6bhc")
 }],
 "loop": true,
-"name": &"attack",
+"name": &"melee_attack",
 "speed": 6.0
 }, {
 "frames": [{
@@ -54,13 +96,71 @@ animations = [{
 "texture": SubResource("AtlasTexture_vytb1")
 }],
 "loop": true,
-"name": &"default",
+"name": &"melee_default",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3w23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53smp")
+}],
+"loop": true,
+"name": &"ranged_attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5aeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitp8")
+}],
+"loop": true,
+"name": &"ranged_default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xlfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnbwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70xkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq1iy")
+}],
+"loop": true,
+"name": &"zip_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yay3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2tjs")
+}],
+"loop": true,
+"name": &"zip_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xlfa")
+}],
+"loop": true,
+"name": &"zip_default",
+"speed": 5.0
 }]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_3rhhp")
-is_melee = true
+is_zip = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5boi")
@@ -118,8 +218,9 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
-autoplay = "default"
-frame_progress = 0.4063
+animation = &"zip_attack"
+autoplay = "melee_default"
+frame_progress = 0.800186
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

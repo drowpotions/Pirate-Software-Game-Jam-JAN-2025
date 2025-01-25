@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjs0yt77qf8d"]
+
+[ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="1_w60ka"]
+[ext_resource type="Script" path="res://menu/zip_files.gd" id="2_pfrd6"]
+
+[node name="ZipFiles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w60ka")
+script = ExtResource("2_pfrd6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.187176, 0.187176, 0.187176, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -78.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 13
+
+[node name="File1" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "File 1"
+
+[node name="File2" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "File 2"
+
+[node name="File3" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "File 3"
+
+[node name="File4" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "File 4"
+
+[node name="File5" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "File 5"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="ZipContents" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Contents1" type="Label" parent="HBoxContainer/ZipContents"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meow 1"
+
+[node name="Contents2" type="Label" parent="HBoxContainer/ZipContents"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meow 2"
+
+[node name="Contents3" type="Label" parent="HBoxContainer/ZipContents"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meow 3"
+
+[node name="Contents4" type="Label" parent="HBoxContainer/ZipContents"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meow 4"
+
+[node name="Contents5" type="Label" parent="HBoxContainer/ZipContents"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Meow 5"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = 175.0
+offset_right = 23.5
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back
+"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/File1" to="." method="_on_file_1_toggled"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/File2" to="." method="_on_file_2_toggled"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/File3" to="." method="_on_file_3_toggled"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/File4" to="." method="_on_file_4_toggled"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/File5" to="." method="_on_file_5_toggled"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

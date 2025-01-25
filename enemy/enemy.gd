@@ -18,14 +18,22 @@ var max_health: int
 @export var health := 20
 @export var los_distance: float = 20.0
 @export var is_melee: bool = false
+@export var is_zip: bool = false
 
 
 func _ready() -> void:
-	if is_melee:
+	if is_zip:
+		is_melee = false
+		$AnimatedSprite3D2.play("zip_default")
+		$AnimatedSprite3D2.position.y = .15
+	elif is_melee:
 		stop_distance = 1.0
 		atk_timer.wait_time = 3
+		$AnimatedSprite3D2.play("melee_default")
 	else:
-		$AnimatedSprite3D2.modulate = Color.BLUE
+		$AnimatedSprite3D2.play("ranged_default")
+		
+
 	atk_timer.start(1)
 	atk_timer.paused = true
 	los.target_position = Vector3(0,0,-los_distance)
@@ -133,14 +141,24 @@ func _on_attack_timer_timeout() -> void:
 	if !is_melee:
 		var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
 		get_parent().add_child(projectile)
+		if is_zip:
+			$AnimatedSprite3D2.play("zip_attack")
+		else:
+			$AnimatedSprite3D2.play("ranged_attack")
 		projectile.global_position = proj_pos.global_position
 		projectile.go_to_target(player.head)
+		await get_tree().create_timer(.5).timeout
+		if is_zip:
+			$AnimatedSprite3D2.play("zip_default")
+		else:
+			$AnimatedSprite3D2.play("ranged_default")
 	elif is_melee:
 		var melee_arm: Node3D = preload("res://enemy/enemy_melee.tscn").instantiate()
 		add_child(melee_arm)
-		$AnimatedSprite3D2.play("attack")
+		$AnimatedSprite3D2.play("melee_attack")
 		await melee_arm.finished
 		melee_arm.queue_free()
-		$AnimatedSprite3D2.play("default")
+		$AnimatedSprite3D2.play("melee_default")
+		
 	
 	

@@ -214,6 +214,7 @@ visible = false
 collision_mask = 2
 
 [node name="Weapon_Holder" type="Node3D" parent="head"]
+visible = false
 
 [node name="Melee" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
 unique_name_in_owner = true
