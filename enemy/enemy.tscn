@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=15 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
@@ -17,6 +17,14 @@ radius = 15.9408
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja3wt"]
+atlas = ExtResource("4_61nxu")
+region = Rect2(2665, 0, 1168, 2740)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6bhc"]
+atlas = ExtResource("4_61nxu")
+region = Rect2(3833, 0, 1168, 2740)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnbjc"]
 atlas = ExtResource("4_61nxu")
 region = Rect2(386, 0, 1147, 2741)
@@ -27,6 +35,17 @@ region = Rect2(1533, 0, 1147, 2741)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nleya"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ja3wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6bhc")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wnbjc")
@@ -41,6 +60,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_3rhhp")
+is_melee = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5boi")
@@ -99,7 +119,7 @@ shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
 autoplay = "default"
-frame_progress = 0.0975325
+frame_progress = 0.4063
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
