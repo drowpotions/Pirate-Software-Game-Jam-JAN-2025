@@ -907,11 +907,12 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -4.03228
 [node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -17.9413, 0.994032, -19.1515)
 player = NodePath("../Player")
+is_zip = false
 
 [node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(-0.999368, 0, 0.0355446, 0, 1, 0, -0.0355446, 0, -0.999368, -24.2546, 1.07579, 4.7057)
 player = NodePath("../Player")
-is_melee = false
+is_zip = false
 
 [node name="Trains" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000833511, 0, -0.00660324)
@@ -2582,17 +2583,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -91.3507, 0.155063, -29.8237)
 [node name="Enemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.5679, 8.65496, -26.3407)
 player = NodePath("../Player")
-is_melee = false
+is_zip = false
 
 [node name="Enemy5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5481, 6.1488, 1.3295)
 player = NodePath("../Player")
-is_melee = false
+is_zip = false
 
 [node name="Enemy6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_eagkr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8767, 0.0455412, 19.8599)
 player = NodePath("../Player")
-is_melee = false
+is_zip = false
 
 [node name="ZIP_File" parent="." instance=ExtResource("15_vjp36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.5984, 0.0189393, -32.2189)

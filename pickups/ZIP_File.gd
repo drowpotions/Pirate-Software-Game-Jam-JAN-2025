@@ -17,5 +17,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			get_parent().add_child(enemy)
 			enemy.player = body
 			enemy.is_zip = true
-			enemy.global_position = global_position
+			enemy.position = $".".global_position
+			enemy.position.y += 1
 		self.queue_free()

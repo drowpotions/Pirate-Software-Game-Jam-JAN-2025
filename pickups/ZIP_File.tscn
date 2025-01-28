@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ndf75fjncfj4" path="res://enemy/Illustration676uy.png" id="4_jph58"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6exa"]
-size = Vector3(1.31055, 1.4989, 1.31934)
+size = Vector3(4.2403, 1.4989, 4.70361)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mkfbs"]
 
@@ -83,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249452, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.119721, 0.249452, 0.0510249)
 shape = SubResource("BoxShape3D_i6exa")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

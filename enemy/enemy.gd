@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var los: RayCast3D = $LoS
 @onready var sprite: Sprite3D = $Sprite3D
 @onready var atk_timer: Timer = $AttackTimer
+@onready var nav: NavigationAgent3D = $NavigationAgent3D
 
 var following := false
 var attacking := false
@@ -19,6 +20,7 @@ var max_health: int
 @export var los_distance: float = 20.0
 @export var is_melee: bool = false
 @export var is_zip: bool = false
+
 
 
 func _ready() -> void:
@@ -46,23 +48,20 @@ func _physics_process(delta: float) -> void:
 		
 		
 	if following == true:
+		var direction = Vector3()
+	
+		nav.target_position = player.global_position
 		look_at(player.global_position)
-		var direction = (player.global_transform.origin - global_transform.origin)
-		var distance = direction.length()
 		
-		#stop following when within stopping distance of player
+		direction = nav.get_next_path_position() - global_position
+		var distance = direction.length()
+		direction = direction.normalized()
 		if distance > stop_distance:
-			direction = direction.normalized()
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		#stop following when player is out of LoS range (TODO: FIX, IT DOESNT WORK!!!!)
-		elif distance > -1*los_distance:
-			velocity.x = 0
-			velocity.z = 0
-			following = false
+			velocity = velocity.lerp(direction * speed, 10 * delta)
 		else:
 			velocity.x = 0
 			velocity.z = 0
+		
 			
 	
 	move_and_slide()

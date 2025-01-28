@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ndf75fjncfj4" path="res://enemy/Illustration676uy.png" id="6_45ith"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5boi"]
+radius = 0.50101
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdbop"]
 albedo_color = Color(1, 0.00392157, 0, 1)
@@ -220,7 +221,9 @@ texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
 animation = &"zip_attack"
 autoplay = "melee_default"
-frame_progress = 0.800186
+frame_progress = 0.575151
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
