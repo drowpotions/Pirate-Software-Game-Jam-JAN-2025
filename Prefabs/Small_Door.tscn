@@ -125,6 +125,7 @@ node_connections = [&"Blend3", 0, &"Opening", &"Blend3", 1, &"Animation", &"Blen
 [node name="Small_Door" type="Node3D"]
 
 [node name="Door_Left" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.300696, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Door_Left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.579956, 0.680115, 0)
@@ -138,6 +139,7 @@ size = Vector3(1, 2.11304, 1)
 material = ExtResource("2_8xeje")
 
 [node name="Door_Right" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.300696, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Door_Right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.572824, 0.680115, 0)
