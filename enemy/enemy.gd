@@ -75,6 +75,9 @@ func hit(damage, type):
 		#show_hit_label(damage)
 		show_particles()
 		flash()
+		if type == "melee":
+			melee_sound()
+		
 		if health <= max_health/5 and type == "melee":
 			health = 0
 		else:
@@ -113,6 +116,18 @@ func flash():
 func execute_check():
 	if health  <= max_health/5:
 		$ExecuteSprite.show()
+
+
+func melee_sound():
+	var audio_stream_player := AudioStreamPlayer.new()
+	audio_stream_player.stream = load("res://enemy/PUNCH.ogg")
+	audio_stream_player.bus = "Sound"
+	audio_stream_player.volume_db = linear_to_db(.7)
+	get_parent().add_child(audio_stream_player)
+	audio_stream_player.play()
+	audio_stream_player.finished.connect(func():
+		audio_stream_player.queue_free()
+	)
 
 
 func _on_los_timer_timeout() -> void:
