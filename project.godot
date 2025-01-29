@@ -19,7 +19,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Global="*res://global.gd"
+Global="*res://autoloads/global.gd"
+ButtonSound="*res://autoloads/button_sound.gd"
 
 [dialogue_manager]
 
