@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://4ne7uuxh5sdx"
+path.s3tc="res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "52630e38bdc7579a03c1e4e6ef8765e4"
+}
+
+[deps]
+
+source_file="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png"
+dest_files=["res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
