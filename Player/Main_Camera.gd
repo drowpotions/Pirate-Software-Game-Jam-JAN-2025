@@ -51,9 +51,13 @@ func _input(_event):
 		shooting = true
 		var melee: Node3D = preload("res://Player/melee.tscn").instantiate()
 		add_child(melee)
+		%Melee.show()
 		%Melee.play("punch")
+		$"../../Weapon_Holder/AnimationPlayer".play("melee_swing")
 		melee.position = melee_spot.position
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(.25).timeout
+		%Melee.hide()
+		await get_tree().create_timer(.75).timeout
 		shooting = false
 		
 	jump_shake()

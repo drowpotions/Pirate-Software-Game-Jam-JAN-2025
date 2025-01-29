@@ -1,54 +1,46 @@
-[gd_scene load_steps=29 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=33 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
+[ext_resource type="Texture2D" uid="uid://bqatj1w2sci3n" path="res://Player/melee_frames/melee_00.png" id="3_6awsj"]
 [ext_resource type="Texture2D" uid="uid://diu3u0c0k0su2" path="res://Player/Crosshair.png" id="3_6pp65"]
 [ext_resource type="Texture2D" uid="uid://blj7dm2w40rws" path="res://Player/Idle.png" id="4_qwcee"]
-[ext_resource type="Texture2D" uid="uid://ciojdg85fkox0" path="res://Player/234154.png" id="4_qyuje"]
+[ext_resource type="Texture2D" uid="uid://dpei8qq81ryhb" path="res://Player/melee_frames/melee_01.png" id="4_tkn4t"]
 [ext_resource type="Texture2D" uid="uid://dsioao3oln5t4" path="res://Player/Shoot.png" id="5_7tyvd"]
+[ext_resource type="Texture2D" uid="uid://d1te35kkuhwan" path="res://Player/melee_frames/melee_02.png" id="5_l32kc"]
 [ext_resource type="Texture2D" uid="uid://bfeemk8l4rb1s" path="res://theboy.png" id="5_uj2am"]
 [ext_resource type="Texture2D" uid="uid://25ib3gmytv76" path="res://Player/Recoil.png" id="6_04ssg"]
+[ext_resource type="Texture2D" uid="uid://ramjvlcek62i" path="res://Player/melee_frames/melee_03.png" id="6_hv2ok"]
 [ext_resource type="PackedScene" uid="uid://clg0ktgnkra4a" path="res://ui/pause_menu.tscn" id="7_hs8yk"]
+[ext_resource type="Texture2D" uid="uid://be4dgy4hwmjq" path="res://Player/melee_frames/melee_04.png" id="7_qdd7d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
-radius = 0.172079
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_78gvp"]
-atlas = ExtResource("4_qyuje")
-region = Rect2(0, 0, 187, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejohg"]
-atlas = ExtResource("4_qyuje")
-region = Rect2(374, 0, 187, 160)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_26lp8"]
-atlas = ExtResource("4_qyuje")
-region = Rect2(561, 0, 187, 160)
+radius = 0.437873
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ml7ay"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("3_6awsj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_78gvp")
+"texture": ExtResource("4_tkn4t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejohg")
+"texture": ExtResource("5_l32kc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_26lp8")
+"texture": ExtResource("6_hv2ok")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_78gvp")
+"texture": ExtResource("7_qdd7d")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("3_6awsj")
 }],
 "loop": false,
 "name": &"punch",
-"speed": 16.0
+"speed": 20.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7bux"]
@@ -94,6 +86,67 @@ animations = [{
 "name": &"shoot",
 "speed": 16.0
 }]
+
+[sub_resource type="Animation" id="Animation_es1hu"]
+resource_name = "melee_swing"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Melee:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 0.0185814),
+"update": 0,
+"values": [Vector3(0, 0, 0.383972), Vector3(0, 0, -0.523599)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Melee:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1.36604),
+"update": 0,
+"values": [Vector3(-0.118738, -0.0344291, -0.112089), Vector3(-0.0438921, -0.0344291, -0.112089)]
+}
+
+[sub_resource type="Animation" id="Animation_y0dyv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Melee:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.08291)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Melee:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.118738, -0.0344291, -0.112089)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkkqo"]
+_data = {
+"RESET": SubResource("Animation_y0dyv"),
+"melee_swing": SubResource("Animation_es1hu")
+}
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_umimj"]
 length = 0.158376
@@ -217,10 +270,12 @@ collision_mask = 2
 
 [node name="Melee" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
 unique_name_in_owner = true
-transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, -0.05, -0.02, -0.097)
+transform = Transform3D(0.0117191, -0.0220831, 0, 0.0220831, 0.0117191, 0, 0, 0, 0.025, -0.118738, -0.0344291, -0.112089)
+visible = false
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_ml7ay")
 animation = &"punch"
+frame = 5
 frame_progress = 1.0
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="head/Weapon_Holder"]
@@ -233,6 +288,11 @@ frame_progress = 1.0
 
 [node name="MeleeSpot" type="Marker3D" parent="head/Weapon_Holder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193519, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="head/Weapon_Holder"]
+libraries = {
+"": SubResource("AnimationLibrary_xkkqo")
+}
 
 [node name="Leg" type="Node3D" parent="head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
