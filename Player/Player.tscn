@@ -518,6 +518,11 @@ z_index = 1000
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs8yk")]
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67956, 0)
+light_color = Color(0.494049, 0.425205, 0.455724, 1)
+omni_range = 3.14645
+
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]
 
 [editable path="Pause/PauseMenu"]
