@@ -117,7 +117,7 @@ func shoot_anim():
 #wait for reload anim to finish before shooting again
 func reload_anim():
 	shooting = true
-	shoot_anim_sprite.modulate = Color.BLACK
+	shoot_anim_sprite.play("reload")
 	ammo_label.text = "Reloading..."
 	await get_tree().create_timer(1).timeout
 	if max_ammo >= 8:
@@ -128,7 +128,7 @@ func reload_anim():
 		max_ammo = 0
 	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 	shooting = false
-	shoot_anim_sprite.modulate = Color.WHITE
+	shoot_anim_sprite.play("default")
 
 
 func jump_shake():
