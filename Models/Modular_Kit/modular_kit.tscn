@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://byxty5ogmdmvq"]
+[gd_scene load_steps=4 format=3 uid="uid://byxty5ogmdmvq"]
 
 [ext_resource type="PackedScene" uid="uid://c45jqnlxjoofy" path="res://Models/Modular_Kit/Modular_Kit.glb" id="1_1qapq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jb6yx"]
 size = Vector3(2.01074, 2, 0.0830078)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vy62u"]
+size = Vector3(2, 1.97565, 0.12915)
+
 [node name="Modular_Kit" instance=ExtResource("1_1qapq")]
 
 [node name="CollisionShape3D" parent="wall/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.990356, 0)
 shape = SubResource("BoxShape3D_jb6yx")
+
+[node name="CollisionShape3D" parent="wall_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00839, 0)
+shape = SubResource("BoxShape3D_vy62u")
