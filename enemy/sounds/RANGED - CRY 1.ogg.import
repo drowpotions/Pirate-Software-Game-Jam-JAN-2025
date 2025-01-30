@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://qtdwmj4ptjbg"
+path="res://.godot/imported/RANGED - CRY 1.ogg-d7dc94e28dec33e1f1d170f85f9302d4.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/RANGED - CRY 1.ogg"
+dest_files=["res://.godot/imported/RANGED - CRY 1.ogg-d7dc94e28dec33e1f1d170f85f9302d4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

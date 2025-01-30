@@ -123,7 +123,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_53smp")
 }],
-"loop": true,
+"loop": false,
 "name": &"ranged_attack",
 "speed": 6.0
 }, {
@@ -251,7 +251,7 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
-animation = &"zip_dead_perm"
+animation = &"ranged_attack"
 autoplay = "melee_default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

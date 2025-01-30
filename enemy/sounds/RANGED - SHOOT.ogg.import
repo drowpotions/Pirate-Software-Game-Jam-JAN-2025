@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwjb8fxog246y"
+path="res://.godot/imported/RANGED - SHOOT.ogg-3dd344549f36bff79897da0d1b365be2.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/RANGED - SHOOT.ogg"
+dest_files=["res://.godot/imported/RANGED - SHOOT.ogg-3dd344549f36bff79897da0d1b365be2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

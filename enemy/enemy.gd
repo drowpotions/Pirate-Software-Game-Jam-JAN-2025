@@ -37,7 +37,8 @@ func _ready() -> void:
 		atk_timer.start(3)
 	else:
 		$AnimatedSprite3D2.play("ranged_default")
-		atk_timer.start(1)
+		atk_timer.wait_time = 3
+		atk_timer.start(3)
 		
 
 	atk_timer.paused = true
@@ -95,6 +96,7 @@ func hit(damage, type):
 		if health == 0:
 			dead = true
 			atk_timer.paused = true
+			death_sound()
 			if is_zip == true:
 				$AnimatedSprite3D2.play("zip_death")
 			elif is_melee:
@@ -153,8 +155,27 @@ func attack_sound():
 	var audio_stream_player := AudioStreamPlayer3D.new()
 	if is_zip:
 		audio_stream_player.stream = load("res://enemy/sounds/ZIP FILE - electric.ogg")
-	else:
+	elif is_melee:
 		audio_stream_player.stream = load("res://enemy/sounds/WORM - slither crushed.ogg")
+	else:
+		audio_stream_player.stream = load("res://enemy/sounds/RANGED - SHOOT.ogg")
+	audio_stream_player.bus = "Sound"
+	audio_stream_player.volume_db = linear_to_db(.7)
+	add_child(audio_stream_player)
+	audio_stream_player.play()
+	audio_stream_player.finished.connect(func():
+		audio_stream_player.queue_free()
+	)
+
+
+func death_sound():
+	var audio_stream_player := AudioStreamPlayer3D.new()
+	if is_zip:
+		audio_stream_player.stream = load("res://enemy/sounds/ZIP FILE - dying.ogg")
+	elif is_melee:
+		audio_stream_player.stream = load("res://enemy/sounds/WORM - dying.ogg")
+	else:
+		audio_stream_player.stream = load("res://enemy/sounds/RANGED - CRY 2.ogg")
 	audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
 	add_child(audio_stream_player)
