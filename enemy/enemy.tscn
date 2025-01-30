@@ -76,13 +76,13 @@ region = Rect2(3835, 752, 1145, 2000)
 atlas = ExtResource("6_45ith")
 region = Rect2(4980, 752, 1145, 2000)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yay3y"]
-atlas = ExtResource("6_45ith")
-region = Rect2(6125, 752, 1145, 2000)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2tjs"]
 atlas = ExtResource("6_45ith")
 region = Rect2(7270, 752, 1145, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yay3y"]
+atlas = ExtResource("6_45ith")
+region = Rect2(6125, 752, 1145, 2000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nleya"]
 animations = [{
@@ -161,6 +161,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"zip_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_m2tjs")
+}],
+"loop": false,
+"name": &"zip_dead_perm",
 "speed": 5.0
 }, {
 "frames": [{
@@ -243,7 +251,7 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
-animation = &"ranged_death"
+animation = &"zip_dead_perm"
 autoplay = "melee_default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

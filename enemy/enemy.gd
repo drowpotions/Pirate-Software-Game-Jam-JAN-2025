@@ -46,7 +46,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
+	if not is_on_floor() and dead == false:
 		velocity += get_gravity() * delta
 		
 		
@@ -65,7 +65,13 @@ func _physics_process(delta: float) -> void:
 			velocity.x = 0
 			velocity.z = 0
 		
-			
+	if dead == true:
+		if is_zip:
+			$AnimatedSprite3D2.play("zip_dead_perm")
+		elif is_melee:
+			$AnimatedSprite3D2.play("melee_death")
+		else:
+			$AnimatedSprite3D2.play("ranged_death")
 	
 	move_and_slide()
 
@@ -96,8 +102,8 @@ func hit(damage, type):
 			else:
 				$AnimatedSprite3D2.play("ranged_death")
 			velocity = Vector3.ZERO
-			await get_tree().create_timer(5).timeout
-			self.queue_free()
+			$CollisionShape3D.queue_free()
+			$ExecuteSprite.hide()
 
 
 func show_hit_label(damage):
@@ -191,7 +197,7 @@ func _on_attack_timer_timeout() -> void:
 				$AnimatedSprite3D2.play("ranged_attack")
 			projectile.global_position = proj_pos.global_position
 			projectile.go_to_target(player.head)
-			await get_tree().create_timer(.5).timeout
+			await $AnimatedSprite3D2.animation_finished
 			if is_zip:
 				$AnimatedSprite3D2.play("zip_default")
 			else:
