@@ -192,6 +192,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+floor_stop_on_slope = false
 script = ExtResource("1_3rhhp")
 is_zip = true
 
