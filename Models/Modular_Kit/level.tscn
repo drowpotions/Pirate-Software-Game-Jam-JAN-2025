@@ -262,6 +262,15 @@ metadata/_editor_floor_ = Vector3(0, 6, 0)
 [node name="Box" parent="NavigationRegion3D" instance=ExtResource("10_4uqvr")]
 transform = Transform3D(0.783802, 0, 0.621011, 0, 1, 0, -0.621011, 0, 0.783802, -10.9952, 4.64883, -42.4347)
 
+[node name="Box19" parent="NavigationRegion3D" instance=ExtResource("10_4uqvr")]
+transform = Transform3D(0.783802, 0, 0.621011, 0, 1, 0, -0.621011, 0, 0.783802, 3.92802, 4.64883, -37.4347)
+
+[node name="Box20" parent="NavigationRegion3D" instance=ExtResource("10_4uqvr")]
+transform = Transform3D(0.18721, 0, 0.98232, 0, 1, 0, -0.98232, 0, 0.18721, 5.91658, 4.64883, -37.4347)
+
+[node name="Box21" parent="NavigationRegion3D" instance=ExtResource("10_4uqvr")]
+transform = Transform3D(0.18721, 0, 0.98232, 0, 1, 0, -0.98232, 0, 0.18721, 2.66619, 4.64883, -42.9589)
+
 [node name="Box9" parent="NavigationRegion3D" instance=ExtResource("10_4uqvr")]
 transform = Transform3D(0.988881, 0, 0.148707, 0, 1, 0, -0.148707, 0, 0.988881, -19.0078, 0.634358, -59.1048)
 
@@ -999,7 +1008,24 @@ light_color = Color(0.968627, 0.709804, 0.556863, 1)
 omni_range = 2.97529
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_4ctn5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6799, 1.03269, -5.10581)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30627, 5.085, -41.3798)
+player = NodePath("../Player")
+los_distance = 40.0
+is_zip = false
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_4ctn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5355, 1.085, -37.4639)
+player = NodePath("../Player")
+is_melee = true
+is_zip = false
+
+[node name="Enemy3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_4ctn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5355, 1.085, -61.4639)
+player = NodePath("../Player")
+is_zip = false
+
+[node name="Enemy4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_4ctn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5355, 1.085, -62.4639)
 player = NodePath("../Player")
 is_melee = true
 is_zip = false
