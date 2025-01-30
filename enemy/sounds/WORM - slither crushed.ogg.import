@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://buc58e581ngts"
+path="res://.godot/imported/WORM - slither crushed.ogg-5806e3a41edb4d32c02353ec0000655f.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/WORM - slither crushed.ogg"
+dest_files=["res://.godot/imported/WORM - slither crushed.ogg-5806e3a41edb4d32c02353ec0000655f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -46,6 +46,7 @@ _data = {
 }
 
 [node name="MeleeRoot" type="Node3D"]
+visible = false
 script = ExtResource("1_yek6y")
 
 [node name="Area3D" type="Area3D" parent="."]

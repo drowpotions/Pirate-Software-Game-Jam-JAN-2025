@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fwahsxveosx2"
+path="res://.godot/imported/ZIP FILE - groan.ogg-8c86fee4f0e3306ef4a54efc76d01ad8.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/ZIP FILE - groan.ogg"
+dest_files=["res://.godot/imported/ZIP FILE - groan.ogg-8c86fee4f0e3306ef4a54efc76d01ad8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

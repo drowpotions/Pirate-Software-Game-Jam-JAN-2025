@@ -14,6 +14,7 @@ var speed := 5.0
 var stop_distance = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var max_health: int
+var dead := false
 
 @export var player: Node3D
 @export var health := 20
@@ -28,15 +29,17 @@ func _ready() -> void:
 		is_melee = false
 		$AnimatedSprite3D2.play("zip_default")
 		$AnimatedSprite3D2.position.y = .15
+		atk_timer.start(1)
 	elif is_melee:
 		stop_distance = 1.0
 		atk_timer.wait_time = 3
 		$AnimatedSprite3D2.play("melee_default")
+		atk_timer.start(3)
 	else:
 		$AnimatedSprite3D2.play("ranged_default")
+		atk_timer.start(1)
 		
 
-	atk_timer.start(1)
 	atk_timer.paused = true
 	los.target_position = Vector3(0,0,-los_distance)
 	max_health = health
@@ -47,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		
 		
-	if following == true:
+	if following == true and dead == false:
 		var direction = Vector3()
 	
 		nav.target_position = player.global_position
@@ -84,6 +87,16 @@ func hit(damage, type):
 			health -= damage
 		execute_check()
 		if health == 0:
+			dead = true
+			atk_timer.paused = true
+			if is_zip == true:
+				$AnimatedSprite3D2.play("zip_death")
+			elif is_melee:
+				$AnimatedSprite3D2.play("melee_death")
+			else:
+				$AnimatedSprite3D2.play("ranged_death")
+			velocity = Vector3.ZERO
+			await get_tree().create_timer(5).timeout
 			self.queue_free()
 
 
@@ -119,11 +132,26 @@ func execute_check():
 
 
 func melee_sound():
-	var audio_stream_player := AudioStreamPlayer.new()
+	var audio_stream_player := AudioStreamPlayer3D.new()
 	audio_stream_player.stream = load("res://enemy/PUNCH.ogg")
 	audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
-	get_parent().add_child(audio_stream_player)
+	add_child(audio_stream_player)
+	audio_stream_player.play()
+	audio_stream_player.finished.connect(func():
+		audio_stream_player.queue_free()
+	)
+
+
+func attack_sound():
+	var audio_stream_player := AudioStreamPlayer3D.new()
+	if is_zip:
+		audio_stream_player.stream = load("res://enemy/sounds/ZIP FILE - electric.ogg")
+	else:
+		audio_stream_player.stream = load("res://enemy/sounds/WORM - slither crushed.ogg")
+	audio_stream_player.bus = "Sound"
+	audio_stream_player.volume_db = linear_to_db(.7)
+	add_child(audio_stream_player)
 	audio_stream_player.play()
 	audio_stream_player.finished.connect(func():
 		audio_stream_player.queue_free()
@@ -152,27 +180,29 @@ func _on_los_timer_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
-	if !is_melee:
-		var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
-		get_parent().add_child(projectile)
-		if is_zip:
-			$AnimatedSprite3D2.play("zip_attack")
-		else:
-			$AnimatedSprite3D2.play("ranged_attack")
-		projectile.global_position = proj_pos.global_position
-		projectile.go_to_target(player.head)
-		await get_tree().create_timer(.5).timeout
-		if is_zip:
-			$AnimatedSprite3D2.play("zip_default")
-		else:
-			$AnimatedSprite3D2.play("ranged_default")
-	elif is_melee:
-		var melee_arm: Node3D = preload("res://enemy/enemy_melee.tscn").instantiate()
-		add_child(melee_arm)
-		$AnimatedSprite3D2.play("melee_attack")
-		await melee_arm.finished
-		melee_arm.queue_free()
-		$AnimatedSprite3D2.play("melee_default")
+	if dead == false:
+		attack_sound()
+		if !is_melee:
+			var projectile: CharacterBody3D = preload("res://enemy/projectile.tscn").instantiate()
+			get_parent().add_child(projectile)
+			if is_zip:
+				$AnimatedSprite3D2.play("zip_attack")
+			else:
+				$AnimatedSprite3D2.play("ranged_attack")
+			projectile.global_position = proj_pos.global_position
+			projectile.go_to_target(player.head)
+			await get_tree().create_timer(.5).timeout
+			if is_zip:
+				$AnimatedSprite3D2.play("zip_default")
+			else:
+				$AnimatedSprite3D2.play("ranged_default")
+		elif is_melee:
+			var melee_arm: Node3D = preload("res://enemy/enemy_melee.tscn").instantiate()
+			add_child(melee_arm)
+			$AnimatedSprite3D2.play("melee_attack")
+			await melee_arm.finished
+			melee_arm.queue_free()
+			$AnimatedSprite3D2.play("melee_default")
 		
 	
 	

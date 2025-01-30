@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjtclxukjm2ej"
+path="res://.godot/imported/WORM - noise.ogg-00259c6e56b16e9270578335583fc862.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/WORM - noise.ogg"
+dest_files=["res://.godot/imported/WORM - noise.ogg-00259c6e56b16e9270578335583fc862.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

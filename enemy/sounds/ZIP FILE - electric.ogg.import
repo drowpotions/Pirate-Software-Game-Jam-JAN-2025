@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bui18u804768j"
+path="res://.godot/imported/ZIP FILE - electric.ogg-39508a3eabcccc1663fe5822abeb64c3.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/ZIP FILE - electric.ogg"
+dest_files=["res://.godot/imported/ZIP FILE - electric.ogg-39508a3eabcccc1663fe5822abeb64c3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

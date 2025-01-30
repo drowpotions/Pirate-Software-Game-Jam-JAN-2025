@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlehdr8ytvw0l"
+path="res://.godot/imported/ZIP FILE - dying.ogg-39a8047264cdcc12d3396e770d0b34aa.oggvorbisstr"
+
+[deps]
+
+source_file="res://enemy/sounds/ZIP FILE - dying.ogg"
+dest_files=["res://.godot/imported/ZIP FILE - dying.ogg-39a8047264cdcc12d3396e770d0b34aa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://duu2hhu4jsm7d"]
+[gd_scene load_steps=29 format=3 uid="uid://duu2hhu4jsm7d"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_3rhhp"]
 [ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_0imka"]
@@ -28,6 +28,10 @@ region = Rect2(2665, 0, 1168, 2740)
 atlas = ExtResource("4_61nxu")
 region = Rect2(3833, 0, 1168, 2740)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7kcp"]
+atlas = ExtResource("4_61nxu")
+region = Rect2(6131, 0, 1129, 2752)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnbjc"]
 atlas = ExtResource("4_61nxu")
 region = Rect2(386, 0, 1147, 2741)
@@ -43,6 +47,10 @@ region = Rect2(2715, 0, 1100, 2752)
 [sub_resource type="AtlasTexture" id="AtlasTexture_53smp"]
 atlas = ExtResource("5_27i3x")
 region = Rect2(3815, 0, 1100, 2752)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufjpm"]
+atlas = ExtResource("5_27i3x")
+region = Rect2(6163, 0, 1078, 2752)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5aeb"]
 atlas = ExtResource("5_27i3x")
@@ -91,6 +99,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_k7kcp")
+}],
+"loop": false,
+"name": &"melee_death",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wnbjc")
 }, {
 "duration": 1.0,
@@ -110,6 +126,14 @@ animations = [{
 "loop": true,
 "name": &"ranged_attack",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufjpm")
+}],
+"loop": false,
+"name": &"ranged_death",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -143,12 +167,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yay3y")
 }, {
-"duration": 1.0,
+"duration": 15.0,
 "texture": SubResource("AtlasTexture_m2tjs")
 }],
-"loop": true,
+"loop": false,
 "name": &"zip_death",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -219,9 +243,8 @@ billboard = 2
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_nleya")
-animation = &"zip_attack"
+animation = &"ranged_death"
 autoplay = "melee_default"
-frame_progress = 0.575151
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
