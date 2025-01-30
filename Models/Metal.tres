@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dw47xhbscn5qc"]
+
+[ext_resource type="Texture2D" uid="uid://cr5ji1if4e6f" path="res://Models/dreammetal.png" id="1_pr2f5"]
+
+[resource]
+albedo_texture = ExtResource("1_pr2f5")
+texture_filter = 0

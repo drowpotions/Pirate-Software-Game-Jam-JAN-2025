@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://nmx10oe8ejf2"]
+
+[ext_resource type="PackedScene" uid="uid://dq12jaxtpsi7a" path="res://Models/Box.fbx" id="1_v8h6g"]
+[ext_resource type="Texture2D" uid="uid://lvax04510x1v" path="res://Models/box.png" id="2_sfnbp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcegh"]
+albedo_texture = ExtResource("2_sfnbp")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7qld"]
+size = Vector3(1.38647, 1.39539, 1.38965)
+
+[node name="Box" instance=ExtResource("1_v8h6g")]
+
+[node name="pCube1" parent="." index="0"]
+transform = Transform3D(138.752, 0, 0, 0, 138.752, 0, 0, 0, 138.752, 0, 0.0598456, 0)
+material_override = SubResource("StandardMaterial3D_kcegh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pCube1" index="0"]
+transform = Transform3D(0.00720711, 0, 0, 0, 0.00720711, 0, 0, 0, 0.00720711, 0, -0.000431314, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pCube1/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0595093, 0)
+shape = SubResource("BoxShape3D_b7qld")

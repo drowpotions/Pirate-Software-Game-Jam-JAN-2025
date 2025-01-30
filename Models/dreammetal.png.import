@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ne7uuxh5sdx"
-path.s3tc="res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex"
+uid="uid://cr5ji1if4e6f"
+path.s3tc="res://.godot/imported/dreammetal.png-5820ee6949fd51ea8c3e8bb7cfbd9a2c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "84760dd35e3224291585253bd38f48bf"
-}
 
 [deps]
 
-source_file="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png"
-dest_files=["res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex"]
+source_file="res://Models/dreammetal.png"
+dest_files=["res://.godot/imported/dreammetal.png-5820ee6949fd51ea8c3e8bb7cfbd9a2c.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
