@@ -256,5 +256,6 @@ autoplay = "melee_default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="LosTimer" to="." method="_on_los_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

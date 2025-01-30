@@ -91,12 +91,14 @@ func get_camera_collision():
 		#if collider is an enemy, damage its health
 		elif result.collider.is_in_group("enemy"):
 			Hit_Label.text = "Enemy Hit!"
+			$"../../../Control/TextureRect".texture = load("res://Player/Crosshair_hit.png")
 			result.collider.hit(damage, "gun")
 			print("Enemy has " + str(result.collider.health) + " remaining")
 		#every other case
 		else:
 			Hit_Label.text = "Hit!"
 		await get_tree().create_timer(.5).timeout
+		$"../../../Control/TextureRect".texture = load("res://Player/Crosshair.png")
 		Hit_Label.hide()
 	else:
 		#no colliders

@@ -10,6 +10,7 @@ extends CharacterBody3D
 
 var following := false
 var attacking := false
+var sound_played := false
 var speed := 5.0
 var stop_distance = 5.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -36,6 +37,7 @@ func _ready() -> void:
 		$AnimatedSprite3D2.play("melee_default")
 		atk_timer.start(3)
 	else:
+		stop_distance = 2.0
 		$AnimatedSprite3D2.play("ranged_default")
 		atk_timer.wait_time = 3
 		atk_timer.start(3)
@@ -185,6 +187,23 @@ func death_sound():
 	)
 
 
+func aggro_sound():
+	if !sound_played:
+		sound_played = true
+		var audio_stream_player := AudioStreamPlayer3D.new()
+		if is_melee and !is_zip:
+			audio_stream_player.stream = load("res://enemy/sounds/WORM - noise.ogg")
+		else:
+			audio_stream_player.stream = load("res://enemy/sounds/RANGED - CRY 1.ogg")
+		audio_stream_player.bus = "Sound"
+		audio_stream_player.volume_db = linear_to_db(.7)
+		add_child(audio_stream_player)
+		audio_stream_player.play()
+		audio_stream_player.finished.connect(func():
+			audio_stream_player.queue_free()
+		)
+
+
 func _on_los_timer_timeout() -> void:
 	var overlaps = detection_area.get_overlapping_bodies()
 	if overlaps.size() > 0:
@@ -218,7 +237,7 @@ func _on_attack_timer_timeout() -> void:
 				$AnimatedSprite3D2.play("ranged_attack")
 			projectile.global_position = proj_pos.global_position
 			projectile.go_to_target(player.head)
-			await $AnimatedSprite3D2.animation_finished
+			await get_tree().create_timer(.5).timeout
 			if is_zip:
 				$AnimatedSprite3D2.play("zip_default")
 			else:
@@ -232,4 +251,6 @@ func _on_attack_timer_timeout() -> void:
 			$AnimatedSprite3D2.play("melee_default")
 		
 	
-	
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		aggro_sound()
