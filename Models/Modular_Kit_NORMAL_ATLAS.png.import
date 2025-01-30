@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2d87fslm5hyj"
-path.s3tc="res://.godot/imported/Modular_Kit_ATLAS.png-85905b16e69141597d7a3cc44899a145.s3tc.ctex"
+uid="uid://dv3nycasl6vng"
+path.s3tc="res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-62fa92a0883f62cf2153bdfa783f53df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "eb9aa5f6bb262ebd7868724fea32a6d3"
+"md5": "bf2359ee2f5455e2fa55928239e9f504"
 }
 
 [deps]
 
-source_file="res://Models/Modular_Kit/Modular_Kit_ATLAS.png"
-dest_files=["res://.godot/imported/Modular_Kit_ATLAS.png-85905b16e69141597d7a3cc44899a145.s3tc.ctex"]
+source_file="res://Models/Modular_Kit_NORMAL_ATLAS.png"
+dest_files=["res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-62fa92a0883f62cf2153bdfa783f53df.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Models/Modular_Kit_NORMAL_ATLAS.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
