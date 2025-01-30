@@ -39,8 +39,8 @@ func _ready() -> void:
 	else:
 		stop_distance = 2.0
 		$AnimatedSprite3D2.play("ranged_default")
-		atk_timer.wait_time = 3
-		atk_timer.start(3)
+		atk_timer.wait_time = 2
+		atk_timer.start(2)
 		
 
 	atk_timer.paused = true
@@ -82,6 +82,9 @@ func _physics_process(delta: float) -> void:
 func hit(damage, type):
 	if player.player_camera.shooting == true:
 		following = true
+		if sound_played == false:
+			aggro_sound()
+			sound_played = true
 		attacking = true
 		look_at(player.global_position)
 		#show_hit_label(damage)
@@ -218,6 +221,9 @@ func _on_los_timer_timeout() -> void:
 					
 					if collider.is_in_group("player"):
 						los.debug_shape_custom_color = Color.GREEN
+						if sound_played == false:
+							aggro_sound()
+							sound_played = true
 						following = true  
 						atk_timer.paused = false #attack player if in LoS
 					else:
@@ -250,7 +256,3 @@ func _on_attack_timer_timeout() -> void:
 			melee_arm.queue_free()
 			$AnimatedSprite3D2.play("melee_default")
 		
-	
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		aggro_sound()
