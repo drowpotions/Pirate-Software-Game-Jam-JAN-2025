@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpf8etjw34f17"
-path.s3tc="res://.godot/imported/Ammo.png-34fe78a6f283f4a51e4ec9f064f182ab.s3tc.ctex"
+path.s3tc="res://.godot/imported/ammo.png-0e257a155b07d288887ba8201edcd36f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://pickups/Ammo.png"
-dest_files=["res://.godot/imported/Ammo.png-34fe78a6f283f4a51e4ec9f064f182ab.s3tc.ctex"]
+source_file="res://pickups/ammo.png"
+dest_files=["res://.godot/imported/ammo.png-0e257a155b07d288887ba8201edcd36f.s3tc.ctex"]
 
 [params]
 

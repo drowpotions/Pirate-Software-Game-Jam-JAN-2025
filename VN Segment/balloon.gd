@@ -90,10 +90,27 @@ var dialogue_line: DialogueLine:
 
 func _physics_process(delta: float) -> void:
 	var name = $"???"
-	if %CharacterLabel.text == "???":
-		name.visible = true
-	else:
-		name.visible = false
+	if %CharacterLabel.text == "B":
+		name.show()
+		$Default.hide()
+		$Shocked.hide()
+		$Sad.hide()
+	elif Global.default == true:
+		$Default.show()
+		name.hide()
+		$Shocked.hide()
+		$Sad.hide()
+	elif Global.shocked == true:
+		$Default.hide()
+		name.hide()
+		$Shocked.show()
+		$Sad.hide()
+	elif Global.sad == true:
+		$Default.hide()
+		name.hide()
+		$Shocked.hide()
+		$Sad.show()
+		
 
 func _ready() -> void:
 	balloon.hide()
