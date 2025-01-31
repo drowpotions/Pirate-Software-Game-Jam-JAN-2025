@@ -590,6 +590,9 @@ z_index = 1000
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("7_hs8yk")]
 
+[node name="HSlider" parent="Pause/PauseMenu/Options/CanvasLayer/MarginContainer/VBoxContainer" index="3" node_paths=PackedStringArray("player")]
+player = NodePath("../../../../../../..")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67956, 0)
 light_color = Color(0.494049, 0.425205, 0.455724, 1)
