@@ -191,7 +191,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Streaks:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -203,14 +203,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Streaks2:position")
+tracks/1/path = NodePath("../Streaks2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(3.07773, 1.18436, -46.3633)]
+"values": [Vector3(3.07773, 1.18436, 52.6367)]
 }
 
 [sub_resource type="Animation" id="Animation_iy2gv"]
@@ -220,7 +220,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Streaks:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -232,7 +232,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Streaks2:position")
+tracks/1/path = NodePath("../Streaks2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -286,6 +286,7 @@ _data = {
 }
 
 [node name="Intro" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07773, 1.18436, 0)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75804, -5)
@@ -476,7 +477,7 @@ light_energy = 2.0
 shadow_enabled = true
 
 [node name="Streaks" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, 52.6367)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Streaks"]
 material_override = ExtResource("10_lsi5i")
@@ -748,7 +749,7 @@ material_override = ExtResource("10_lsi5i")
 size = Vector3(0.0146484, 0.0178223, 1)
 
 [node name="Streaks2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, -46.3633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.3, 3.07773, 1.18436, -70.3633)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Streaks2"]
 material_override = ExtResource("10_lsi5i")
