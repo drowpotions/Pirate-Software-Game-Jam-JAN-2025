@@ -150,7 +150,7 @@ func execute_check():
 func melee_sound():
 	var audio_stream_player := AudioStreamPlayer3D.new()
 	audio_stream_player.stream = load("res://enemy/PUNCH.ogg")
-	audio_stream_player.bus = "Sound"
+	#audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
 	add_child(audio_stream_player)
 	audio_stream_player.play()
@@ -167,7 +167,7 @@ func attack_sound():
 		audio_stream_player.stream = load("res://enemy/sounds/WORM - slither crushed.ogg")
 	else:
 		audio_stream_player.stream = load("res://enemy/sounds/RANGED - SHOOT.ogg")
-	audio_stream_player.bus = "Sound"
+	#audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
 	add_child(audio_stream_player)
 	audio_stream_player.play()
@@ -184,7 +184,7 @@ func death_sound():
 		audio_stream_player.stream = load("res://enemy/sounds/WORM - dying.ogg")
 	else:
 		audio_stream_player.stream = load("res://enemy/sounds/RANGED - CRY 2.ogg")
-	audio_stream_player.bus = "Sound"
+	#audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
 	add_child(audio_stream_player)
 	audio_stream_player.play()
@@ -201,7 +201,7 @@ func aggro_sound():
 			audio_stream_player.stream = load("res://enemy/sounds/WORM - noise.ogg")
 		else:
 			audio_stream_player.stream = load("res://enemy/sounds/RANGED - CRY 1.ogg")
-		audio_stream_player.bus = "Sound"
+		#audio_stream_player.bus = "Sound"
 		audio_stream_player.volume_db = linear_to_db(.7)
 		add_child(audio_stream_player)
 		audio_stream_player.play()

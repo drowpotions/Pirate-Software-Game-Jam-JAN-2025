@@ -135,7 +135,7 @@ func shoot_sound():
 	#if shooting == false:
 	var audio_stream_player := AudioStreamPlayer.new()
 	audio_stream_player.stream = load("res://Player/SHOOT.ogg")
-	audio_stream_player.bus = "Sound"
+	#audio_stream_player.bus = "Sound"
 	audio_stream_player.volume_db = linear_to_db(.7)
 	get_parent().add_child(audio_stream_player)
 	audio_stream_player.play()

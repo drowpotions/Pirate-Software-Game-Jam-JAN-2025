@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://autoloads/global.gd"
 ButtonSound="*res://autoloads/button_sound.gd"
+Plugin="*res://addons/csg_converter/plugin.gd"
 
 [dialogue_manager]
 
