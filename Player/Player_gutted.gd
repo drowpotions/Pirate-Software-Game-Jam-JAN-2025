@@ -64,6 +64,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await $AnimationPlayer.animation_finished
 	fading = false
+	await get_tree().create_timer(10).timeout
+	$Control/InstructionLabel.hide()
 
 
 #Main Input Functions

@@ -72,6 +72,14 @@ grow_vertical = 2
 text = "Zip Files
 "
 
+[node name="Controls" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 247.0
+offset_right = 189.0
+offset_bottom = 284.0
+text = "Controls"
+
 [node name="OptionsButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -79,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -246.5
-offset_top = 5.0
-offset_right = -174.5
-offset_bottom = 33.0
+offset_left = -276.5
+offset_top = 45.0
+offset_right = -144.5
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Options"
@@ -95,9 +103,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -276.0
-offset_top = 40.0
+offset_top = 81.5
 offset_right = -144.0
-offset_bottom = 71.0
+offset_bottom = 118.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
@@ -109,5 +117,6 @@ autoplay = true
 
 [connection signal="pressed" from="Intro" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="Files" to="." method="_on_files_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
