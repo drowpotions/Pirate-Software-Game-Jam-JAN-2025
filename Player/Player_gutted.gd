@@ -201,6 +201,9 @@ func death_state():
 func hit(damage):
 	health -= damage
 	update_health()
+	$Control/Hit.show()
+	await get_tree().create_timer(.3).timeout
+	$Control/Hit.hide()
 
 
 func update_health():
@@ -212,6 +215,7 @@ func update_health():
 	for i in health:
 		$Control/HealthLabel.text += "/ "
 	
+
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
