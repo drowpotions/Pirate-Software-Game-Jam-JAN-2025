@@ -320,6 +320,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 4.3201e-12, 0, 1, -1.40183, 1.4957, -4
 material_override = SubResource("ShaderMaterial_ap46u")
 size = Vector3(0.0327148, 1, 2.02637)
 
+[node name="CSGBox3D20" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 4.61853e-14, 0, 1, 0, 3.95062e-12, 0, 1, 1.329, 1.45112, 2.36893e-07)
+visible = false
+use_collision = true
+size = Vector3(0.0622559, 2.99512, 11.3884)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(1, 0, 4.61853e-14, 0, 1, 0, 5.4996e-12, 0, 1, -1.36477, 1.45112, -2.10297)
+visible = false
+use_collision = true
+size = Vector3(0.0622559, 2.99512, 7.1825)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(-4.37169e-08, 0, -0.402566, 0, 1, 0, 1, 0, -1.75967e-08, -0.0239223, 1.45112, -5.4834)
+visible = false
+use_collision = true
+size = Vector3(0.0622559, 2.99512, 7.1825)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Meshes"]
+transform = Transform3D(-4.37169e-08, 0, -0.402566, 0, 1, 0, 1, 0, -1.75967e-08, -0.0239228, 1.45112, 5.5166)
+visible = false
+use_collision = true
+size = Vector3(0.0622559, 2.99512, 7.1825)
+
 [node name="Small_Door" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.89029, 0.507331, -2.7312)
 
