@@ -1,21 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://deq3v6pci5o8y"]
+[gd_scene load_steps=9 format=3 uid="uid://b80y4t7tn7im"]
 
 [ext_resource type="Material" uid="uid://dkkdwh7ctsm3s" path="res://VN Segment/yellow.tres" id="1_0ld6l"]
 [ext_resource type="Material" uid="uid://ciymoy4qiyblb" path="res://VN Segment/black.tres" id="2_y001d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokn3"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.5, 0.5, 0.5, 1)
-sky_energy_multiplier = 0.0
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0, 0, 0, 1)
+sky_top_color = Color(0.893126, 0.20085, 0.640003, 1)
+sky_horizon_color = Color(0.0383972, 0.0383972, 0.0383971, 1)
+sky_curve = 1.81886
+ground_bottom_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_horizon_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_curve = 0.177532
 
-[sub_resource type="Sky" id="Sky_gsrwg"]
+[sub_resource type="Sky" id="Sky_80x8d"]
 sky_material = SubResource("ProceduralSkyMaterial_sokn3")
 
 [sub_resource type="Environment" id="Environment_fs0pe"]
 background_mode = 2
-sky = SubResource("Sky_gsrwg")
+sky = SubResource("Sky_80x8d")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -85,6 +86,7 @@ _data = {
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -4.3, -1.87959e-07, 3.07773, 4.1752, -6.28319)
+visible = false
 material_override = ExtResource("2_y001d")
 flip_faces = true
 radius = 27.97

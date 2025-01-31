@@ -1,21 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5txwhyo2j7gu"]
+[gd_scene load_steps=8 format=3 uid="uid://cd8dipcseri3c"]
 
 [ext_resource type="Script" path="res://menu/main_menu_3d.gd" id="1_bum26"]
 [ext_resource type="Material" uid="uid://ciymoy4qiyblb" path="res://VN Segment/black.tres" id="1_qfo4x"]
-[ext_resource type="PackedScene" uid="uid://brh6t6ytd0xb4" path="res://menu/streaks.tscn" id="3_8kkv7"]
+[ext_resource type="PackedScene" path="res://menu/streaks.tscn" id="3_8kkv7"]
 [ext_resource type="PackedScene" uid="uid://bekmbyokqyu10" path="res://menu/main_menu.tscn" id="3_pptbb"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sokn3"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.5, 0.5, 0.5, 1)
-sky_energy_multiplier = 0.0
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0, 0, 0, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0qcnv"]
+sky_top_color = Color(0.893126, 0.20085, 0.640003, 1)
+sky_horizon_color = Color(0.0383972, 0.0383972, 0.0383971, 1)
+sky_curve = 1.81886
+ground_bottom_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_horizon_color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+ground_curve = 0.177532
 
 [sub_resource type="Sky" id="Sky_gsrwg"]
-sky_material = SubResource("ProceduralSkyMaterial_sokn3")
+sky_material = SubResource("ProceduralSkyMaterial_0qcnv")
 
-[sub_resource type="Environment" id="Environment_fs0pe"]
+[sub_resource type="Environment" id="Environment_iishi"]
 background_mode = 2
 sky = SubResource("Sky_gsrwg")
 tonemap_mode = 2
@@ -26,13 +27,11 @@ script = ExtResource("1_bum26")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -4.3, -1.87959e-07, 3.07773, 4.1752, 14.3217)
+visible = false
 material_override = ExtResource("1_qfo4x")
 flip_faces = true
 radius = 27.97
 height = 11.9872
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fs0pe")
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71061, -120.545)
@@ -49,5 +48,8 @@ wait_time = 2.0
 autostart = true
 
 [node name="MainMenu" parent="." instance=ExtResource("3_pptbb")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iishi")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
