@@ -516,6 +516,23 @@ offset_right = 111.0
 offset_bottom = 471.0
 text = "Ammo: 8/8"
 
+[node name="InstructionLabel" type="Label" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 527.0
+offset_top = 5.0
+offset_right = 627.0
+offset_bottom = 28.0
+scale = Vector2(0.96, 0.892754)
+text = "WASD: Move
+Space: Jump
+Mouse: Look
+LMB: Shoot
+E: Melee
+R: Reload
+"
+label_settings = SubResource("LabelSettings_iklbx")
+
 [node name="ColorRect" type="ColorRect" parent="Control"]
 visible = false
 layout_mode = 1

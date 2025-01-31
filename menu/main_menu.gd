@@ -36,3 +36,10 @@ func _on_files_pressed() -> void:
 	add_child(zip_files)
 	await zip_files.closed
 	zip_files.queue_free()
+
+
+func _on_controls_pressed() -> void:
+	var controls = preload("res://menu/controls.tscn").instantiate()
+	add_child(controls)
+	await controls.closed
+	controls.queue_free()
