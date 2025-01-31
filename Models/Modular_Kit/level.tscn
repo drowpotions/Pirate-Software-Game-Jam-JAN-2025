@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dmdt80l5jogt0"]
+[gd_scene load_steps=51 format=4 uid="uid://dmdt80l5jogt0"]
 
 [ext_resource type="MeshLibrary" uid="uid://b5d8i1n8441b0" path="res://Models/Modular_Kit/Modular_Kit.tres" id="1_y6brn"]
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="2_rmxxf"]
@@ -164,6 +164,96 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vmyi4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_corp2"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(0, 1200, 3000, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x1gb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_corp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfqu3"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(3000, 900, 3000, 1880)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lfj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfqu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eus8v"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(0, 3812, 3000, 728)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7i4t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eus8v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3g78"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(7, 2550, 3400, 1150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag4ha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3g78")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25bcm"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(7, 0, 3400, 1150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwp7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25bcm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30fld"]
+atlas = ExtResource("21_x2eyn")
+region = Rect2(3300, 0, 2700, 926)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57u6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30fld")
 }],
 "loop": true,
 "name": &"default",
@@ -2667,11 +2757,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.35108, 4.34985, -39.1608)
 [node name="ZIP_File8" parent="." instance=ExtResource("7_qsc3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.7894, -0.417391, 18.4126)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="Cerellum" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(-8.52372e-09, 0, -0.195, -0.0320466, 0.192349, 1.4008e-09, 0.192349, 0.0320466, -8.40783e-09, 23.9864, 2.0355, 3.28699)
 shaded = true
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_l8p24")
+
+[node name="Amygdala" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2.53394e-08, 2.80161e-09, 0.195, 0.0167614, 0.194278, -4.96931e-09, -0.194278, 0.0167614, 2.50048e-08, -11.9909, 2.0355, -9.71301)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_x1gb0")
+
+[node name="Seeker" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-4.23237e-08, -1.33628e-09, -0.195, 0.0167614, 0.194278, -4.96931e-09, 0.194278, -0.0167614, -4.20522e-08, -16.003, 2.0355, -9.71301)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7lfj4")
+
+[node name="Seeker3" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-4.23237e-08, -1.33628e-09, -0.195, 0.00589716, 0.194911, -2.61562e-09, 0.194911, -0.00589716, -4.22639e-08, 23.997, 6.26592, -31.5361)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7lfj4")
+
+[node name="meninges" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-4.23237e-08, -1.33628e-09, -0.195, 0.0167614, 0.194278, -4.96931e-09, 0.194278, -0.0167614, -4.20522e-08, -28.0031, 2.0355, -18.2415)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_q7i4t")
+
+[node name="Hippocampus" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2.52892e-08, 6.72648e-10, 0.195, 0.0266196, 0.193174, -4.1186e-09, -0.193174, 0.0266196, 2.49606e-08, -83.9901, 7.09269, -15.5459)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ag4ha")
+
+[node name="Temporal" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(2.52892e-08, 6.72648e-10, 0.195, 0.0266196, 0.193174, -4.1186e-09, -0.193174, 0.0266196, 2.49606e-08, -83.9901, 2.09269, -30.2347)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_lwp7j")
+
+[node name="Thalmus" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.193174, -0.0266196, -3.34843e-08, 0.0266196, 0.193174, -4.1186e-09, 3.37331e-08, -4.90934e-10, 0.195, -23.0971, 2.09269, -67.9985)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_57u6m")
+
+[node name="Seeker2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-0.188377, -0.0503908, 4.92459e-08, -0.0503908, 0.188377, 1.25484e-08, -5.08159e-08, -6.03611e-10, -0.195, -56.003, 2.0355, 7.99286)
+shaded = true
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_7lfj4")
 
 [connection signal="blue_key_found" from="BlueKey/Area3D" to="Blue_Door/Door_Trigger_Area3D" method="_on_area_3d_blue_key_found"]
 [connection signal="red_key_found" from="Red_Key/Area3D" to="Red_Door/Door_Trigger_Area3D" method="_on_area_3d_red_key_found"]
