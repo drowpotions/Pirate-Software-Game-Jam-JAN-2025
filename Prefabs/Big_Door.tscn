@@ -1,9 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://o0evi0fsos01"]
+[gd_scene load_steps=15 format=3 uid="uid://o0evi0fsos01"]
 
-[ext_resource type="Material" uid="uid://dbtwq7et2slrk" path="res://Dev_Textures/Dev_Orange.tres" id="1_8x3ct"]
 [ext_resource type="PackedScene" uid="uid://de4owkgjvd71i" path="res://Models/Door.fbx" id="1_qrwki"]
 [ext_resource type="Material" uid="uid://dtf03r46gr8eg" path="res://Models/DOOR_DEFAULT.tres" id="2_467iw"]
-[ext_resource type="Material" uid="uid://bvvtvff6knkxb" path="res://Dev_Textures/Dev_Black.tres" id="2_v24wp"]
 [ext_resource type="Script" path="res://Prefabs/Door.gd" id="3_ugdkk"]
 [ext_resource type="AudioStream" uid="uid://dq0p3dkibokeb" path="res://Prefabs/door_sound.wav" id="4_5gw1o"]
 
@@ -134,19 +132,6 @@ transform = Transform3D(-17, 0, 1.48619e-06, 0, 17, 0, -1.48619e-06, 0, -17, 0, 
 [node name="Door" parent="Door_Left/Door2" index="0"]
 material_override = ExtResource("2_467iw")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Door_Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.112931, -0.87525, 1.5, 0)
-visible = false
-material_override = ExtResource("1_8x3ct")
-use_collision = true
-size = Vector3(1.74414, 4, 0.15918)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Door_Left"]
-transform = Transform3D(0.84832, 0, 0, 0, 1, 0, 0, 0, 0.0291902, -0.579956, 1.12359, 0)
-visible = false
-size = Vector3(1, 3, 1)
-material = ExtResource("2_v24wp")
-
 [node name="Door_Right" type="Node3D" parent="."]
 
 [node name="Door" parent="Door_Right" instance=ExtResource("1_qrwki")]
@@ -154,19 +139,6 @@ transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
 
 [node name="Door" parent="Door_Right/Door" index="0"]
 material_override = ExtResource("2_467iw")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Door_Right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.113, 0.866157, 1.5, 0)
-visible = false
-material_override = ExtResource("1_8x3ct")
-use_collision = true
-size = Vector3(1.74023, 4, 0.15918)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Door_Right"]
-transform = Transform3D(0.84832, 0, 0, 0, 1, 0, 0, 0, 0.113, 0.572824, 1.12359, 0)
-visible = false
-size = Vector3(1, 3, 1)
-material = ExtResource("2_v24wp")
 
 [node name="Door_Trigger_Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true

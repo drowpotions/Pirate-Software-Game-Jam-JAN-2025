@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4ne7uuxh5sdx"
-path.s3tc="res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex"
-path.etc2="res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.etc2.ctex"
+path.s3tc="res://.godot/imported/modular_kit_normal_atlas.png-64d3881e9f68b2c40ef3fe1fbaa580d7.s3tc.ctex"
+path.etc2="res://.godot/imported/modular_kit_normal_atlas.png-64d3881e9f68b2c40ef3fe1fbaa580d7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png"
-dest_files=["res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.s3tc.ctex", "res://.godot/imported/Modular_Kit_NORMAL_ATLAS.png-a4a1672f4cdd9a7470d4a1a42ba10d51.etc2.ctex"]
+source_file="res://Models/Modular_Kit/modular_kit_normal_atlas.png"
+dest_files=["res://.godot/imported/modular_kit_normal_atlas.png-64d3881e9f68b2c40ef3fe1fbaa580d7.s3tc.ctex", "res://.godot/imported/modular_kit_normal_atlas.png-64d3881e9f68b2c40ef3fe1fbaa580d7.etc2.ctex"]
 
 [params]
 

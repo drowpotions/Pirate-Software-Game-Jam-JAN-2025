@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://exfpisg2fkss" path="res://Models/tileset_old/tileset_blue_metal_plate_diff_1k_n.jpg" id="2_mmb3k"]
 [ext_resource type="Texture2D" uid="uid://cw3piopeinph3" path="res://Models/tileset_old/tileset_corrugated_iron_02_diff_1k.jpg" id="3_diyf3"]
 [ext_resource type="Texture2D" uid="uid://dla5nppspmvx0" path="res://Models/tileset_old/tileset_corrugated_iron_02_diff_1k_n.jpg" id="4_1ljd8"]
-[ext_resource type="Texture2D" uid="uid://r5ign302aom5" path="res://Models/tileset_old/tileset_Concrete 256x256.jpg" id="5_06wm4"]
-[ext_resource type="Texture2D" uid="uid://mbxnvrhdx2vc" path="res://Models/tileset_old/tileset_Concrete 256x256_n.jpg" id="6_88v7g"]
-[ext_resource type="Texture2D" uid="uid://b0xqlnp4rs5we" path="res://Models/tileset_old/tileset_Gravel.jpg" id="7_shbqb"]
-[ext_resource type="Texture2D" uid="uid://dibbm6xyurn6t" path="res://Models/tileset_old/tileset_Gravel_n.jpg" id="8_5t5wm"]
-[ext_resource type="Texture2D" uid="uid://b0bejhnn316fj" path="res://Models/tileset_old/tileset_Brick256x256.jpg" id="9_h742r"]
-[ext_resource type="Texture2D" uid="uid://cmdky2w8dtpjn" path="res://Models/tileset_old/tileset_Brick_Normal256x256.jpg" id="10_g8l3e"]
+[ext_resource type="Texture2D" uid="uid://r5ign302aom5" path="res://Models/tileset_old/tileset_concrete_256x256.jpg" id="5_06wm4"]
+[ext_resource type="Texture2D" uid="uid://mbxnvrhdx2vc" path="res://Models/tileset_old/tileset_concrete_256x256_n.jpg" id="6_88v7g"]
+[ext_resource type="Texture2D" uid="uid://b0xqlnp4rs5we" path="res://Models/tileset_old/tileset_gravel.jpg" id="7_shbqb"]
+[ext_resource type="Texture2D" uid="uid://dibbm6xyurn6t" path="res://Models/tileset_old/tileset_gravel_n.jpg" id="8_5t5wm"]
+[ext_resource type="Texture2D" uid="uid://b0bejhnn316fj" path="res://Models/tileset_old/tileset_brick256x256.jpg" id="9_h742r"]
+[ext_resource type="Texture2D" uid="uid://cmdky2w8dtpjn" path="res://Models/tileset_old/tileset_brick_normal256x256.jpg" id="10_g8l3e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2jaiq"]
 resource_name = "standardSurface1"

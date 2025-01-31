@@ -1,13 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://j4ebwxuifcsd"]
+[gd_scene load_steps=4 format=3 uid="uid://j4ebwxuifcsd"]
 
 [ext_resource type="Script" path="res://pickups/Blue_Key.gd" id="1_ny12r"]
-[ext_resource type="Material" uid="uid://dlj5nacalp6v0" path="res://Dev_Textures/Dev_Purple.tres" id="2_k261v"]
 [ext_resource type="AudioStream" uid="uid://csu7ji8axfmaw" path="res://pickups/PH-pickup.wav" id="3_wkqnc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6exa"]
 size = Vector3(2.49438, 1.80859, 2.63574)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mkfbs"]
 
 [node name="BlueKey" type="Node3D"]
 
@@ -19,11 +16,6 @@ script = ExtResource("1_ny12r")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.404297, 0)
 shape = SubResource("BoxShape3D_i6exa")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.921858, 0.320484, -0.217871, -0.328372, 0.944548, 0, 0.205789, 0.0715427, 0.975978, 0, 1.01092, 0)
-material_override = ExtResource("2_k261v")
-mesh = SubResource("BoxMesh_mkfbs")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_wkqnc")

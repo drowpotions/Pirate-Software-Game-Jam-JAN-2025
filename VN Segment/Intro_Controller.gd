@@ -10,7 +10,7 @@ func _ready() -> void:
 	$"../../CanvasLayer/Control/AnimationPlayer".play("fade")
 	await $"../../CanvasLayer/Control/AnimationPlayer".animation_finished
 	
-	get_tree().change_scene_to_file("res://Models/Modular_Kit/level.tscn")
+	get_tree().change_scene_to_file("res://level.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

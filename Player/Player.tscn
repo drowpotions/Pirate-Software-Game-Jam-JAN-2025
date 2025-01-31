@@ -287,9 +287,6 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_g2ofn"]
-resource_name = "hud_testing"
-
 [sub_resource type="Animation" id="Animation_qi2fy"]
 resource_name = "fade out"
 length = 2.0
@@ -305,6 +302,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+
+[sub_resource type="Animation" id="Animation_g2ofn"]
+resource_name = "hud_testing"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yvc46"]
 _data = {

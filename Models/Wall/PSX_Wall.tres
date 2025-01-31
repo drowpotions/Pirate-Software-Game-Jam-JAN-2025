@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cfmrllmg1egxn"]
 
 [ext_resource type="Shader" path="res://PSX Shaders/spatial/standard_opaque.gdshader" id="1_5qcvs"]
-[ext_resource type="Texture2D" uid="uid://b8hlxxwhnrwpm" path="res://Models/Wall/Wall_brick_wall_006_diff_1k.jpg" id="2_aumak"]
+[ext_resource type="Texture2D" uid="uid://b8hlxxwhnrwpm" path="res://Models/Wall/wall_brick_wall_006_diff_1k.jpg" id="2_aumak"]
 
 [resource]
 render_priority = 0

@@ -20,7 +20,6 @@ radius = 15.9408
 [sub_resource type="CylinderMesh" id="CylinderMesh_5lwvn"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bo4l"]
-load_path = "res://.godot/imported/theboy2.png-2d34f6a49b71270be21aabb6dd09d832.s3tc.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ja3wt"]
 atlas = ExtResource("4_61nxu")

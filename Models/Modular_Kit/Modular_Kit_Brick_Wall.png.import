@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dejq41xu7k462"
-path.s3tc="res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.s3tc.ctex"
-path.etc2="res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.etc2.ctex"
+path.s3tc="res://.godot/imported/modular_kit_brick_wall.png-46f60efe5348a61e68ffe2f582d4d774.s3tc.ctex"
+path.etc2="res://.godot/imported/modular_kit_brick_wall.png-46f60efe5348a61e68ffe2f582d4d774.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Modular_Kit/Modular_Kit_Brick_Wall.png"
-dest_files=["res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.s3tc.ctex", "res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.etc2.ctex"]
+source_file="res://Models/Modular_Kit/modular_kit_brick_wall.png"
+dest_files=["res://.godot/imported/modular_kit_brick_wall.png-46f60efe5348a61e68ffe2f582d4d774.s3tc.ctex", "res://.godot/imported/modular_kit_brick_wall.png-46f60efe5348a61e68ffe2f582d4d774.etc2.ctex"]
 
 [params]
 

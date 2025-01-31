@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8hlxxwhnrwpm"
-path.s3tc="res://.godot/imported/Wall_brick_wall_006_diff_1k.jpg-7e0b3781762ca7add6fa31d4998f6d4e.s3tc.ctex"
-path.etc2="res://.godot/imported/Wall_brick_wall_006_diff_1k.jpg-7e0b3781762ca7add6fa31d4998f6d4e.etc2.ctex"
+path.s3tc="res://.godot/imported/wall_brick_wall_006_diff_1k.jpg-6860d37e379d39b6967f1dd674e67f48.s3tc.ctex"
+path.etc2="res://.godot/imported/wall_brick_wall_006_diff_1k.jpg-6860d37e379d39b6967f1dd674e67f48.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/Wall/Wall_brick_wall_006_diff_1k.jpg"
-dest_files=["res://.godot/imported/Wall_brick_wall_006_diff_1k.jpg-7e0b3781762ca7add6fa31d4998f6d4e.s3tc.ctex", "res://.godot/imported/Wall_brick_wall_006_diff_1k.jpg-7e0b3781762ca7add6fa31d4998f6d4e.etc2.ctex"]
+source_file="res://Models/Wall/wall_brick_wall_006_diff_1k.jpg"
+dest_files=["res://.godot/imported/wall_brick_wall_006_diff_1k.jpg-6860d37e379d39b6967f1dd674e67f48.s3tc.ctex", "res://.godot/imported/wall_brick_wall_006_diff_1k.jpg-6860d37e379d39b6967f1dd674e67f48.etc2.ctex"]
 
 [params]
 

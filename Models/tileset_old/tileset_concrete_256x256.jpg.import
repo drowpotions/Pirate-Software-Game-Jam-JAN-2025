@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://r5ign302aom5"
-path.s3tc="res://.godot/imported/tileset_Concrete 256x256.jpg-94bbb473309cd1b56f09636b7640aeff.s3tc.ctex"
-path.etc2="res://.godot/imported/tileset_Concrete 256x256.jpg-94bbb473309cd1b56f09636b7640aeff.etc2.ctex"
+path.s3tc="res://.godot/imported/tileset_concrete_256x256.jpg-cee7e601973d0efd18e117d22f316794.s3tc.ctex"
+path.etc2="res://.godot/imported/tileset_concrete_256x256.jpg-cee7e601973d0efd18e117d22f316794.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Models/tileset_old/tileset_Concrete 256x256.jpg"
-dest_files=["res://.godot/imported/tileset_Concrete 256x256.jpg-94bbb473309cd1b56f09636b7640aeff.s3tc.ctex", "res://.godot/imported/tileset_Concrete 256x256.jpg-94bbb473309cd1b56f09636b7640aeff.etc2.ctex"]
+source_file="res://Models/tileset_old/tileset_concrete_256x256.jpg"
+dest_files=["res://.godot/imported/tileset_concrete_256x256.jpg-cee7e601973d0efd18e117d22f316794.s3tc.ctex", "res://.godot/imported/tileset_concrete_256x256.jpg-cee7e601973d0efd18e117d22f316794.etc2.ctex"]
 
 [params]
 
