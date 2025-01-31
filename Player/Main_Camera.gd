@@ -7,6 +7,7 @@ extends Camera3D
 @onready var melee_spot: Marker3D = $"../../Weapon_Holder/MeleeSpot"
 
 @export var shooting = false
+@export var meleeing = false
 
 var ray_range = 2000
 
@@ -47,8 +48,8 @@ func _input(_event):
 			print("Ammo full!")
 	
 	
-	if Input.is_action_just_pressed("melee") and shooting == false:
-		shooting = true
+	if Input.is_action_just_pressed("melee") and meleeing == false:
+		meleeing = true
 		var melee: Node3D = preload("res://Player/melee.tscn").instantiate()
 		add_child(melee)
 		%Melee.show()
@@ -58,7 +59,7 @@ func _input(_event):
 		await get_tree().create_timer(.25).timeout
 		%Melee.hide()
 		await get_tree().create_timer(.75).timeout
-		shooting = false
+		meleeing = false
 		
 	jump_shake()
 
