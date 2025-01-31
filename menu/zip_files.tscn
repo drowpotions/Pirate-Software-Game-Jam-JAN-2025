@@ -106,14 +106,21 @@ visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Meow 4"
+text = "We’re running out of time. 
+We need to hasten our efforts. 
+[REDACTED] doesn’t care if anyone notices anymore. 
+Especially with [REDACTED] on our tails. 
+Victory to us is victory to all. Remember our Purpose."
 
 [node name="Contents5" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Meow 5"
+text = "The public is starting to become wise to the incidents. 
+We’re getting sloppy, lazy, messy. 
+It’s only a matter of time before we start getting investigated. 
+Though, that may not be a problem with him working for us."
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
