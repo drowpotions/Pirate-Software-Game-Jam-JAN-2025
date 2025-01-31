@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byxty5ogmdmvq"]
+[gd_scene load_steps=6 format=3 uid="uid://byxty5ogmdmvq"]
 
 [ext_resource type="PackedScene" uid="uid://c45jqnlxjoofy" path="res://Models/Modular_Kit/Modular_Kit.glb" id="1_1qapq"]
 
@@ -7,6 +7,9 @@ size = Vector3(2.01074, 2, 0.0830078)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sc16v"]
 size = Vector3(1.97754, 0.499693, 0.104187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0shu1"]
+size = Vector3(2, 0.007, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vy62u"]
 size = Vector3(2, 1.97565, 0.12915)
@@ -24,6 +27,9 @@ shape = SubResource("BoxShape3D_sc16v")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="window/StaticBody3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57312, 0.0459595)
 shape = SubResource("BoxShape3D_sc16v")
+
+[node name="CollisionShape3D" parent="floor/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_0shu1")
 
 [node name="CollisionShape3D" parent="wall_001/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00839, 0)
