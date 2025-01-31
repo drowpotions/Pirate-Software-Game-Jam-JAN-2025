@@ -19,9 +19,10 @@ var fading = true
 
 
 func _ready() -> void:
+	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 	await $"../../../AnimationPlayer".animation_finished
 	fading = false
-	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
+	
 
 
 func _input(_event):
