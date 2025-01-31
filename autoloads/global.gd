@@ -8,6 +8,10 @@ var zip_files := [false, false, false, false, false]   #defaults
 var data := {}
 var in_combat = 0
 
+var shocked = false
+var sad = false
+var default = true
+
 
 func _ready() -> void:
 	load_data()
