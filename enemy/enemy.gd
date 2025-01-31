@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 
 
 func hit(damage, type):
-	if player.player_camera.shooting == true:
+	if player.player_camera.shooting == true || player.player_camera.meleeing == true:
 		following = true
 		if sound_played == false:
 			aggro_sound()
@@ -89,6 +89,7 @@ func hit(damage, type):
 		look_at(player.global_position)
 		#show_hit_label(damage)
 		show_particles()
+		print("owie")
 		flash()
 		if type == "melee":
 			melee_sound()
