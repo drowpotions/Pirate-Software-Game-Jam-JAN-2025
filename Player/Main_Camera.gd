@@ -1,6 +1,5 @@
 extends Camera3D
 
-@onready var Hit_Label = $"../../../Control/Hit_Label"
 @onready var shoot_anim_sprite: AnimatedSprite3D = $"../../Weapon_Holder/AnimatedSprite3D"
 @onready var cam_anim = $"../../../AnimationPlayer"
 @onready var ammo_label: Label = $"../../../Control/AmmoLabel"
@@ -82,29 +81,18 @@ func get_camera_collision():
 	#check for collider
 	if result and result.has("collider"):
 		print(result.collider.name)
-		Hit_Label.show()
 		#if collider is a target, change its properties
 		if result.collider.is_in_group("target"):
-			Hit_Label.text = "Target Hit!"
 			result.collider.material.albedo_color = Color.GREEN
 			await get_tree().create_timer(3).timeout
 			result.collider.material.albedo_color = Color.RED
 		#if collider is an enemy, damage its health
 		elif result.collider.is_in_group("enemy"):
-			Hit_Label.text = "Enemy Hit!"
 			$"../../../Control/TextureRect".texture = load("res://Player/Crosshair_hit.png")
 			result.collider.hit(damage, "gun")
 			print("Enemy has " + str(result.collider.health) + " remaining")
-		#every other case
-		else:
-			Hit_Label.text = "Hit!"
 		await get_tree().create_timer(.5).timeout
 		$"../../../Control/TextureRect".texture = load("res://Player/Crosshair.png")
-		Hit_Label.hide()
-	else:
-		#no colliders
-		print("nothing")
-		Hit_Label.hide()
 
 
 #wait for shoot anim to finish before shooting again
