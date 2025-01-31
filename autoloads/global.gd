@@ -6,6 +6,7 @@ const SAVE_FILE := "user://savefile.dat"
 
 var zip_files := [false, false, false, false, false]   #defaults
 var data := {}
+var in_combat = 0
 
 
 func _ready() -> void:

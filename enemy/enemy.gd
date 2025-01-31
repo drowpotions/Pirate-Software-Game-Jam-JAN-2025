@@ -83,6 +83,7 @@ func hit(damage, type):
 	if player.player_camera.shooting == true || player.player_camera.meleeing == true:
 		following = true
 		if sound_played == false:
+			Global.in_combat += 1
 			aggro_sound()
 			sound_played = true
 		attacking = true
@@ -100,6 +101,7 @@ func hit(damage, type):
 			health -= damage
 		execute_check()
 		if health == 0:
+			Global.in_combat -= 1
 			dead = true
 			atk_timer.paused = true
 			death_sound()
@@ -223,6 +225,7 @@ func _on_los_timer_timeout() -> void:
 					if collider.is_in_group("player"):
 						los.debug_shape_custom_color = Color.GREEN
 						if sound_played == false:
+							Global.in_combat += 1
 							aggro_sound()
 							sound_played = true
 						following = true  

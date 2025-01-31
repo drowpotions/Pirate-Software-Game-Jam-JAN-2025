@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cg3hhcm4bnihs"]
+[gd_scene load_steps=41 format=3 uid="uid://cg3hhcm4bnihs"]
 
 [ext_resource type="Script" path="res://Player/Player_gutted.gd" id="1_4bpwi"]
 [ext_resource type="Script" path="res://Player/Main_Camera.gd" id="2_0mfow"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://tpjcuatc1sfu" path="res://Player/reload_frames/reload_3.png" id="11_advkt"]
 [ext_resource type="Texture2D" uid="uid://dc70xbcr28pbx" path="res://Player/reload_frames/reload_4.png" id="12_nwilu"]
 [ext_resource type="Texture2D" uid="uid://5w86k62gsppd" path="res://Player/reload_frames/reload_5.png" id="13_8muq4"]
+[ext_resource type="AudioStream" uid="uid://bg6ps533rjgiy" path="res://Player/music.wav" id="19_texey"]
+[ext_resource type="AudioStream" uid="uid://dccy83mct5qud" path="res://Player/combat_music.wav" id="20_c3oij"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.437873
@@ -561,6 +563,15 @@ z_index = 1000
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67956, 0)
 light_color = Color(0.494049, 0.425205, 0.455724, 1)
 omni_range = 3.14645
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_texey")
+volume_db = -20.0
+autoplay = true
+
+[node name="MusicCombat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_c3oij")
+autoplay = true
 
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]
 

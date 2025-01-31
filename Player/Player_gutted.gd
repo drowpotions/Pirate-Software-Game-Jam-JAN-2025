@@ -9,6 +9,9 @@ extends CharacterBody3D
 @onready var cam_holder = $"head/Camera Holder"
 @onready var pickup_radius: Area3D = $PickupRadius
 
+@onready var music: AudioStreamPlayer = $Music
+@onready var combat_music: AudioStreamPlayer = $MusicCombat
+
 
 var blue_key_have = false
 
@@ -57,6 +60,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # locks mouse movement, hides the mouse
 func _ready():
+	combat_music.volume_db = -80
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await $AnimationPlayer.animation_finished
 	fading = false
@@ -75,6 +79,15 @@ func _input(event):
 func _process(delta: float) -> void:
 	if health == 0:
 		death_state()  #death	
+	
+	if Global.in_combat == 0:
+		music.volume_db = -20
+		combat_music.volume_db = -80
+	elif Global.in_combat > 0:
+		music.volume_db = -80
+		combat_music.volume_db = -20
+	elif Global.in_combat < 0:
+		print("You should never see this!")
 		
 
 func _physics_process(delta):

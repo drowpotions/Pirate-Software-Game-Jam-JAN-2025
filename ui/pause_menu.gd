@@ -22,7 +22,7 @@ func _on_options_button_pressed() -> void:
 	
 
 func _on_quit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu/main_menu.tscn")
+	get_tree().change_scene_to_file("res://menu/Main_Menu_3D.tscn")
 
 
 func _on_canvas_layer_visibility_changed() -> void:

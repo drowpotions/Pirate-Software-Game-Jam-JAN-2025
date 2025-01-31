@@ -223,6 +223,45 @@ _data = {
 "fade": SubResource("Animation_3f0xd")
 }
 
+[sub_resource type="Animation" id="Animation_c1q2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Streaks2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.07773, 1.18436, -70.3633)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Streaks:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.07773, 1.18436, 52.6367)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/Streaks3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.07773, 1.07961, -85.3025)]
+}
+
 [sub_resource type="Animation" id="Animation_aie8y"]
 resource_name = "Streaks"
 length = 2.0
@@ -262,45 +301,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(3.07773, 1.07961, -85.3025), Vector3(3.07773, 1.07961, -85.3025), Vector3(3.07773, 1.07961, 90.7874), Vector3(3.07773, -13.7367, 81.8296), Vector3(3.07773, -12.3898, -76.0016), Vector3(3.07773, 1.07961, -85.3025), Vector3(3.07773, 1.07961, -85.3025)]
-}
-
-[sub_resource type="Animation" id="Animation_c1q2y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D/Streaks2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3.07773, 1.18436, -70.3633)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D/Streaks:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3.07773, 1.18436, 52.6367)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node3D/Streaks3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3.07773, 1.07961, -85.3025)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kj7s4"]
