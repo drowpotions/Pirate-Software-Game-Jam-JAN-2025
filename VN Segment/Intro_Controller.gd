@@ -5,6 +5,12 @@ extends Camera3D
 func _ready() -> void:
 	await get_tree().create_timer(10).timeout
 	DialogueManager.show_dialogue_balloon(load("res://VN Segment/dialogue.dialogue"), "start")
+	await DialogueManager.dialogue_ended
+	var i = 0
+	$"../../CanvasLayer/Control/AnimationPlayer".play("fade")
+	await $"../../CanvasLayer/Control/AnimationPlayer".animation_finished
+	
+	get_tree().change_scene_to_file("res://Models/Modular_Kit/level.tscn")
 
 func _input(_InputEvent) -> void:
 	if Input.is_action_pressed("esc"):
