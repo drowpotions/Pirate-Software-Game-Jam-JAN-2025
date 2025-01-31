@@ -218,7 +218,7 @@ func _on_pickup_radius_body_entered(body: Node3D) -> void:
 		player_camera.pickup_ammo(body.ammo_amt)
 		body.hide()
 	elif body.name.begins_with("Health"):
-		if health < 5:
+		if health < 10:
 			health += 1
 			body.hide()
 			update_health()
