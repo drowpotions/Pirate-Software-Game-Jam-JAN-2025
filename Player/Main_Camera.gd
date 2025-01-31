@@ -9,6 +9,7 @@ extends Camera3D
 @export var meleeing = false
 
 var ray_range = 2000
+var fading = true
 
 #weapon vars
 @export var fire_rate := 16.0
@@ -18,11 +19,13 @@ var ray_range = 2000
 
 
 func _ready() -> void:
+	await $"../../../AnimationPlayer".animation_finished
+	fading = false
 	ammo_label.text = "Ammo: " + str(curr_ammo) + "/" + str(max_ammo)
 
 
 func _input(_event):
-	if Input.is_action_just_pressed("Fire") and shooting == false:
+	if Input.is_action_just_pressed("Fire") and shooting == false and fading == false:
 		#weapon fires if ammo is not 0
 		if curr_ammo != 0:
 			shooting = true
@@ -40,14 +43,14 @@ func _input(_event):
 			print("This should never appear, if it does something is wrong")
 	
 	#manual reload input, only reload if ammo is not full
-	if Input.is_action_just_pressed("reload") and shooting == false:
+	if Input.is_action_just_pressed("reload") and shooting == false and fading == false:
 		if curr_ammo < 8:
 			reload_anim()
 		elif curr_ammo == 8:
 			print("Ammo full!")
 	
 	
-	if Input.is_action_just_pressed("melee") and meleeing == false:
+	if Input.is_action_just_pressed("melee") and meleeing == false and fading == false:
 		meleeing = true
 		var melee: Node3D = preload("res://Player/melee.tscn").instantiate()
 		add_child(melee)
