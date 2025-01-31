@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt36oxlgqnjtx"]
+[gd_scene load_steps=7 format=3 uid="uid://dt36oxlgqnjtx"]
 
 [ext_resource type="Script" path="res://pickups/health_pickup.gd" id="1_rwwna"]
 [ext_resource type="AudioStream" uid="uid://csu7ji8axfmaw" path="res://pickups/PH-pickup.wav" id="2_ul6jh"]
+[ext_resource type="Texture2D" uid="uid://t15icpgi0ovj" path="res://pickups/Health.png" id="3_y2nsu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccrgx"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -20,10 +21,17 @@ script = ExtResource("1_rwwna")
 shape = SubResource("BoxShape3D_ccrgx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 material_override = SubResource("StandardMaterial3D_82enp")
 mesh = SubResource("BoxMesh_ixduo")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_ul6jh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.270745, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_y2nsu")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

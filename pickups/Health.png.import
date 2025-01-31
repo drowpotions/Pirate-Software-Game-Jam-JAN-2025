@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpf8etjw34f17"
-path.s3tc="res://.godot/imported/Ammo.png-34fe78a6f283f4a51e4ec9f064f182ab.s3tc.ctex"
+uid="uid://t15icpgi0ovj"
+path.s3tc="res://.godot/imported/Health.png-a1d2e6dcc4b34cab11d77a9a2dd8fa34.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://pickups/Ammo.png"
-dest_files=["res://.godot/imported/Ammo.png-34fe78a6f283f4a51e4ec9f064f182ab.s3tc.ctex"]
+source_file="res://pickups/Health.png"
+dest_files=["res://.godot/imported/Health.png-a1d2e6dcc4b34cab11d77a9a2dd8fa34.s3tc.ctex"]
 
 [params]
 
