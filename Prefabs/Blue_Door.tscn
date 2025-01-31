@@ -170,8 +170,8 @@ node_connections = [&"Blend3", 0, &"Opening", &"Blend3", 1, &"Animation", &"Blen
 
 [node name="Door_Left" type="Node3D" parent="."]
 
-[node name="Door" type="MeshInstance3D" parent="Door_Left"]
-transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, -0.0056772)
+[node name="Door2" type="MeshInstance3D" parent="Door_Left"]
+transform = Transform3D(-17, 0, 1.48619e-06, 0, 17, 0, -1.48619e-06, 0, -17, 0, 0, -0.0056772)
 material_override = ExtResource("1_cuqkm")
 mesh = SubResource("ArrayMesh_7lwxj")
 skeleton = NodePath("")
@@ -192,8 +192,8 @@ material = ExtResource("2_2ugse")
 
 [node name="Door_Right" type="Node3D" parent="."]
 
-[node name="Door2" type="MeshInstance3D" parent="Door_Right"]
-transform = Transform3D(-17, 0, 1.48619e-06, 0, 17, 0, -1.48619e-06, 0, -17, 0, 0, -0.0056772)
+[node name="Door" type="MeshInstance3D" parent="Door_Right"]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, -0.0056772)
 material_override = ExtResource("1_cuqkm")
 mesh = SubResource("ArrayMesh_7lwxj")
 skeleton = NodePath("")
