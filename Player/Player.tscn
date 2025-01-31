@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dpei8qq81ryhb" path="res://Player/melee_frames/melee_01.png" id="4_tkn4t"]
 [ext_resource type="Texture2D" uid="uid://dsioao3oln5t4" path="res://Player/Shoot.png" id="5_7tyvd"]
 [ext_resource type="Texture2D" uid="uid://d1te35kkuhwan" path="res://Player/melee_frames/melee_02.png" id="5_l32kc"]
-[ext_resource type="Texture2D" uid="uid://bfeemk8l4rb1s" path="res://theboy.png" id="5_uj2am"]
 [ext_resource type="Texture2D" uid="uid://25ib3gmytv76" path="res://Player/Recoil.png" id="6_04ssg"]
 [ext_resource type="Texture2D" uid="uid://ramjvlcek62i" path="res://Player/melee_frames/melee_03.png" id="6_hv2ok"]
 [ext_resource type="PackedScene" uid="uid://clg0ktgnkra4a" path="res://ui/pause_menu.tscn" id="7_hs8yk"]
@@ -18,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://tpjcuatc1sfu" path="res://Player/reload_frames/reload_3.png" id="11_advkt"]
 [ext_resource type="Texture2D" uid="uid://dc70xbcr28pbx" path="res://Player/reload_frames/reload_4.png" id="12_nwilu"]
 [ext_resource type="Texture2D" uid="uid://5w86k62gsppd" path="res://Player/reload_frames/reload_5.png" id="13_8muq4"]
+[ext_resource type="Texture2D" uid="uid://b0e3fqwj4jbi3" path="res://ui/HUD.png" id="17_ilb74"]
 [ext_resource type="AudioStream" uid="uid://bg6ps533rjgiy" path="res://Player/music.wav" id="19_texey"]
 [ext_resource type="AudioStream" uid="uid://dccy83mct5qud" path="res://Player/combat_music.wav" id="20_c3oij"]
 
@@ -421,6 +421,7 @@ offset_bottom = 40.0
 mouse_filter = 2
 
 [node name="ColorRect3" type="ColorRect" parent="Control/Control2"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -456,6 +457,7 @@ mouse_filter = 2
 color = Color(0.804743, 0.804743, 0.804743, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Control/Control2"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -482,34 +484,34 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Control"]
-visible = false
 layout_mode = 0
-offset_left = -12.9756
-offset_top = 10.0317
-offset_right = 723.024
-offset_bottom = 874.032
-scale = Vector2(-0.0723096, -0.0723096)
+offset_left = -280.0
+offset_top = -22.0
+offset_right = 744.0
+offset_bottom = 1002.0
+rotation = -3.14159
+scale = Vector2(-0.146738, -0.146738)
 pivot_offset = Vector2(328.921, 412.224)
 mouse_filter = 2
-texture = ExtResource("5_uj2am")
+texture = ExtResource("17_ilb74")
 
 [node name="HealthLabel" type="Label" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 7.0
-offset_top = 417.0
-offset_right = 91.0
-offset_bottom = 440.0
+offset_left = 30.0
+offset_top = 415.0
+offset_right = 114.0
+offset_bottom = 438.0
 text = "/ / / / /"
 label_settings = SubResource("LabelSettings_iklbx")
 
 [node name="AmmoLabel" type="Label" parent="Control"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 7.0
-offset_top = 450.0
-offset_right = 92.0
-offset_bottom = 473.0
+offset_left = 26.0
+offset_top = 448.0
+offset_right = 111.0
+offset_bottom = 471.0
 text = "Ammo: 8/8"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
@@ -540,6 +542,7 @@ grow_vertical = 2
 text = "You Died!"
 
 [node name="ColorRect2" type="ColorRect" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
