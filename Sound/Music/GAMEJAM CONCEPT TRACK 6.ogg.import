@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cstujnxwfr4o8"
+path="res://.godot/imported/GAMEJAM CONCEPT TRACK 6.ogg-a62df94f826818633cc353de3ef9d177.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/Music/GAMEJAM CONCEPT TRACK 6.ogg"
+dest_files=["res://.godot/imported/GAMEJAM CONCEPT TRACK 6.ogg-a62df94f826818633cc353de3ef9d177.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
