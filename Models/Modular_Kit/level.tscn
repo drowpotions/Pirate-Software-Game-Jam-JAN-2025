@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://dmdt80l5jogt0"]
+[gd_scene load_steps=36 format=4 uid="uid://dmdt80l5jogt0"]
 
 [ext_resource type="MeshLibrary" uid="uid://b5d8i1n8441b0" path="res://Models/Modular_Kit/Modular_Kit.tres" id="1_y6brn"]
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="2_rmxxf"]
@@ -15,9 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cqci1p8mdso8j" path="res://Prefabs/Red_Door.tscn" id="12_7v3am"]
 [ext_resource type="PackedScene" uid="uid://d2io1o2upgnvy" path="res://Prefabs/Train.tscn" id="12_332e3"]
 [ext_resource type="Shader" path="res://PSX Shaders/spatial/standard_transparent.gdshader" id="13_m3gnu"]
+[ext_resource type="Texture2D" uid="uid://c1hf5urxd1ujm" path="res://pickups/Blue_Key Card.png" id="14_l5cqq"]
 [ext_resource type="Texture2D" uid="uid://7mct5s8b5jx1" path="res://Models/glass.png" id="14_yw22d"]
 [ext_resource type="Texture2D" uid="uid://b2d87fslm5hyj" path="res://Models/Modular_Kit/Modular_Kit_ATLAS.png" id="16_sc5ou"]
 [ext_resource type="Texture2D" uid="uid://4ne7uuxh5sdx" path="res://Models/Modular_Kit/Modular_Kit_NORMAL_ATLAS.png" id="17_y1g66"]
+[ext_resource type="Texture2D" uid="uid://d0xg4i1m2817x" path="res://pickups/Red_Keycard Sprite.png" id="18_bjccy"]
 [ext_resource type="AudioStream" uid="uid://cstujnxwfr4o8" path="res://Sound/Music/GAMEJAM CONCEPT TRACK 6.ogg" id="19_twf6s"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8v3so"]
@@ -827,12 +829,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5107, 1.67487, 9.13774)
 
 [node name="BlueKey" parent="." instance=ExtResource("5_wk2ju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.1775, 11.9872, 2.01087)
+
+[node name="MeshInstance3D" parent="BlueKey" index="1"]
 visible = false
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="BlueKey"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0396576, 1.03003, -0.22997)
 light_color = Color(0.69633, 0.326929, 0.621689, 1)
 omni_range = 4.03738
+
+[node name="Sprite3D" type="Sprite3D" parent="BlueKey"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1.34569, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("14_l5cqq")
 
 [node name="HealthPickup" parent="." instance=ExtResource("8_bdagb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.9958, 0.188977, -51.2479)
@@ -857,11 +867,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.925, 4.5405, 6.45331)
 [node name="Red_Key" parent="." instance=ExtResource("11_tdd7i")]
 transform = Transform3D(-0.471397, 0, -0.881921, 0, 1, 0, 0.881921, 0, -0.471397, 25.4347, 0, -65.9204)
 
+[node name="MeshInstance3D" parent="Red_Key" index="1"]
+visible = false
+
 [node name="OmniLight3D32" type="OmniLight3D" parent="Red_Key"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195694, 1.79466, 0.13455)
 light_color = Color(0.799193, 0.264233, 0, 1)
 light_energy = 1.565
 omni_range = 7.9445
+
+[node name="Sprite3D" type="Sprite3D" parent="Red_Key"]
+transform = Transform3D(0.665, 0, -5.96046e-08, 0, 0.665, 0, 5.96046e-08, 0, 0.665, -0.0454254, 1.071, -0.0849857)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("18_bjccy")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.93266, 2.07284, -41.8244)
@@ -877,6 +896,46 @@ omni_range = 3.30351
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7526, 3.48954, -49.8244)
 light_color = Color(0.717834, 0.343797, 0.260501, 1)
 omni_range = 5.48201
+
+[node name="OmniLight3D32" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.2787, 3.09017, -5.77384)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D33" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.4748, 7.82079, -9.76589)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D38" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.4748, 7.82079, -15.7659)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D39" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.4748, 7.82079, -0.765894)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D34" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0467, 11.4745, -10.4074)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D35" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0467, 11.4745, -0.40742)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D36" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0467, 15.4745, -14.395)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
+
+[node name="OmniLight3D37" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.0467, 15.4745, -4.39504)
+light_color = Color(0, 0.59859, 0.902417, 1)
+omni_range = 4.11896
 
 [node name="OmniLight3D14" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7526, 3.48954, -55.8244)
@@ -992,6 +1051,26 @@ omni_range = 2.97529
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3689, 2.28874, -13.3772)
 light_color = Color(0.968627, 0.709804, 0.556863, 1)
 omni_range = 2.97529
+
+[node name="OmniLight3D40" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0006, 3.40653, -1.60798)
+light_color = Color(0.968627, 0.709804, 0.556863, 1)
+omni_range = 3.10154
+
+[node name="OmniLight3D41" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0006, 3.40653, 5.39202)
+light_color = Color(0.968627, 0.709804, 0.556863, 1)
+omni_range = 3.10154
+
+[node name="OmniLight3D42" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0006, 3.40653, -27.608)
+light_color = Color(0.968627, 0.709804, 0.556863, 1)
+omni_range = 3.10154
+
+[node name="OmniLight3D43" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.0006, 3.40653, -34.608)
+light_color = Color(0.968627, 0.709804, 0.556863, 1)
+omni_range = 3.10154
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3689, 2.28874, -8.37723)
