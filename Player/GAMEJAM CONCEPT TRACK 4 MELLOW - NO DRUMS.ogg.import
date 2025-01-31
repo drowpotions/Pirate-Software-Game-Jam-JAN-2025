@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bb6gva4gp36p5"
+path="res://.godot/imported/GAMEJAM CONCEPT TRACK 4 MELLOW - NO DRUMS.ogg-26b343d3133bc474c884962094138195.oggvorbisstr"
+
+[deps]
+
+source_file="res://Player/GAMEJAM CONCEPT TRACK 4 MELLOW - NO DRUMS.ogg"
+dest_files=["res://.godot/imported/GAMEJAM CONCEPT TRACK 4 MELLOW - NO DRUMS.ogg-26b343d3133bc474c884962094138195.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

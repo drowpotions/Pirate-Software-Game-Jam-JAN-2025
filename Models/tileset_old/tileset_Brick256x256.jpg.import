@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0bejhnn316fj"
 path.s3tc="res://.godot/imported/tileset_Brick256x256.jpg-f87da6c0de9a00fc993bd064f366cbad.s3tc.ctex"
+path.etc2="res://.godot/imported/tileset_Brick256x256.jpg-f87da6c0de9a00fc993bd064f366cbad.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/tileset_old/tileset_Brick256x256.jpg"
-dest_files=["res://.godot/imported/tileset_Brick256x256.jpg-f87da6c0de9a00fc993bd064f366cbad.s3tc.ctex"]
+dest_files=["res://.godot/imported/tileset_Brick256x256.jpg-f87da6c0de9a00fc993bd064f366cbad.s3tc.ctex", "res://.godot/imported/tileset_Brick256x256.jpg-f87da6c0de9a00fc993bd064f366cbad.etc2.ctex"]
 
 [params]
 

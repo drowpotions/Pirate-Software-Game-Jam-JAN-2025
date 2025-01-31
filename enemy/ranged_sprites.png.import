@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxbfd2dgnogq5"
 path.s3tc="res://.godot/imported/ranged_sprites.png-92a5e6773623c1cc9ec4de5a5f5a965d.s3tc.ctex"
+path.etc2="res://.godot/imported/ranged_sprites.png-92a5e6773623c1cc9ec4de5a5f5a965d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://enemy/ranged_sprites.png"
-dest_files=["res://.godot/imported/ranged_sprites.png-92a5e6773623c1cc9ec4de5a5f5a965d.s3tc.ctex"]
+dest_files=["res://.godot/imported/ranged_sprites.png-92a5e6773623c1cc9ec4de5a5f5a965d.s3tc.ctex", "res://.godot/imported/ranged_sprites.png-92a5e6773623c1cc9ec4de5a5f5a965d.etc2.ctex"]
 
 [params]
 

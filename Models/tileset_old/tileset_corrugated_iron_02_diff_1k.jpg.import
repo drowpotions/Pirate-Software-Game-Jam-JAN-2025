@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw3piopeinph3"
 path.s3tc="res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-98efecbce1c3fe9fc0536120355b9451.s3tc.ctex"
+path.etc2="res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-98efecbce1c3fe9fc0536120355b9451.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/tileset_old/tileset_corrugated_iron_02_diff_1k.jpg"
-dest_files=["res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-98efecbce1c3fe9fc0536120355b9451.s3tc.ctex"]
+dest_files=["res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-98efecbce1c3fe9fc0536120355b9451.s3tc.ctex", "res://.godot/imported/tileset_corrugated_iron_02_diff_1k.jpg-98efecbce1c3fe9fc0536120355b9451.etc2.ctex"]
 
 [params]
 

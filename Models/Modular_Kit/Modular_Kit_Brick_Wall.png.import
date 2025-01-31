@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dejq41xu7k462"
 path.s3tc="res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.s3tc.ctex"
+path.etc2="res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/Modular_Kit/Modular_Kit_Brick_Wall.png"
-dest_files=["res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.s3tc.ctex", "res://.godot/imported/Modular_Kit_Brick_Wall.png-afee4a9d1f3905018d5d5bc6555893cc.etc2.ctex"]
 
 [params]
 

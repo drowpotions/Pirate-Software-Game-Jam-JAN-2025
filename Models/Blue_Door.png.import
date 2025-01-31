@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xy0vch1jue4j"
 path.s3tc="res://.godot/imported/Blue_Door.png-093d9d617f8b48e14215d810d6c7cab8.s3tc.ctex"
+path.etc2="res://.godot/imported/Blue_Door.png-093d9d617f8b48e14215d810d6c7cab8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Blue_Door.png"
-dest_files=["res://.godot/imported/Blue_Door.png-093d9d617f8b48e14215d810d6c7cab8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Blue_Door.png-093d9d617f8b48e14215d810d6c7cab8.s3tc.ctex", "res://.godot/imported/Blue_Door.png-093d9d617f8b48e14215d810d6c7cab8.etc2.ctex"]
 
 [params]
 

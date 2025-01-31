@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dmdt80l5jogt0"]
+[gd_scene load_steps=55 format=4 uid="uid://dmdt80l5jogt0"]
 
 [ext_resource type="MeshLibrary" uid="uid://b5d8i1n8441b0" path="res://Models/Modular_Kit/Modular_Kit.tres" id="1_y6brn"]
 [ext_resource type="PackedScene" uid="uid://cg3hhcm4bnihs" path="res://Player/Player.tscn" id="2_rmxxf"]
@@ -45,6 +45,16 @@ shader_parameter/uv_scroll_speed = Vector2(0, 0)
 shader_parameter/cull_distance_override = 660.0
 shader_parameter/convert_vertex_colors = false
 shader_parameter/albedo_texture = ExtResource("14_yw22d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ak4ma"]
+load_path = "res://.godot/imported/texture_08.png-f1a5a15cfd2094a658cbb580734c1fc3.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_harlg"]
+albedo_texture = SubResource("CompressedTexture2D_ak4ma")
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvewx"]
 shading_mode = 0
@@ -972,6 +982,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.281, -0.0557013, 5.40201)
 
 [node name="Intro Train3" parent="NavigationRegion3D" instance=ExtResource("12_332e3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.281, -0.0557013, -24.598)
+
+[node name="CSGBox3D" parent="NavigationRegion3D/Intro Train3/Meshes" index="0"]
+material_override = SubResource("StandardMaterial3D_harlg")
+
+[node name="CSGBox3D2" parent="NavigationRegion3D/Intro Train3/Meshes/CSGBox3D6" index="0"]
+material_override = SubResource("StandardMaterial3D_harlg")
+
+[node name="CSGBox3D3" parent="NavigationRegion3D/Intro Train3/Meshes/CSGBox3D6" index="1"]
+material_override = SubResource("StandardMaterial3D_harlg")
+
+[node name="CSGBox3D4" parent="NavigationRegion3D/Intro Train3/Meshes/CSGBox3D6" index="2"]
+material_override = SubResource("StandardMaterial3D_harlg")
+
+[node name="CSGBox3D5" parent="NavigationRegion3D/Intro Train3/Meshes/CSGBox3D6" index="3"]
+material_override = SubResource("StandardMaterial3D_harlg")
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="NavigationRegion3D/Intro Train3/Meshes/CSGBox3D6" index="10"]
 transform = Transform3D(0.93888, -0.344215, -0.00468667, 0.183495, 0.511926, -0.839203, 0.291265, 0.78705, 0.543799, 0.956301, -1.10414, -5.20945)

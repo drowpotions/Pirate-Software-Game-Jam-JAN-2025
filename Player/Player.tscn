@@ -18,8 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dc70xbcr28pbx" path="res://Player/reload_frames/reload_4.png" id="12_nwilu"]
 [ext_resource type="Texture2D" uid="uid://5w86k62gsppd" path="res://Player/reload_frames/reload_5.png" id="13_8muq4"]
 [ext_resource type="Texture2D" uid="uid://b0e3fqwj4jbi3" path="res://ui/HUD.png" id="17_ilb74"]
-[ext_resource type="AudioStream" uid="uid://bg6ps533rjgiy" path="res://Player/music.wav" id="19_texey"]
-[ext_resource type="AudioStream" uid="uid://dccy83mct5qud" path="res://Player/combat_music.wav" id="20_c3oij"]
+[ext_resource type="AudioStream" uid="uid://bb6gva4gp36p5" path="res://Player/GAMEJAM CONCEPT TRACK 4 MELLOW - NO DRUMS.ogg" id="19_t2dg5"]
+[ext_resource type="AudioStream" uid="uid://dh4dnbigk7jbl" path="res://Player/GAMEJAM CONCEPT TRACK 4 MELLOW - WITH DRUMS.ogg" id="20_jcaqi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hdt6b"]
 radius = 0.437873
@@ -632,12 +632,12 @@ light_color = Color(0.494049, 0.425205, 0.455724, 1)
 omni_range = 3.14645
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_texey")
+stream = ExtResource("19_t2dg5")
 volume_db = -20.0
 autoplay = true
 
 [node name="MusicCombat" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_c3oij")
+stream = ExtResource("20_jcaqi")
 autoplay = true
 
 [connection signal="body_entered" from="PickupRadius" to="." method="_on_pickup_radius_body_entered"]

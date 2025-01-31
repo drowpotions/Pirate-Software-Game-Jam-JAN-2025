@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c70pbq2smf48n"
 path.s3tc="res://.godot/imported/tileset_blue_metal_plate_diff_1k.jpg-d428e33a85ac76a51852cac619099e77.s3tc.ctex"
+path.etc2="res://.godot/imported/tileset_blue_metal_plate_diff_1k.jpg-d428e33a85ac76a51852cac619099e77.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/tileset_old/tileset_blue_metal_plate_diff_1k.jpg"
-dest_files=["res://.godot/imported/tileset_blue_metal_plate_diff_1k.jpg-d428e33a85ac76a51852cac619099e77.s3tc.ctex"]
+dest_files=["res://.godot/imported/tileset_blue_metal_plate_diff_1k.jpg-d428e33a85ac76a51852cac619099e77.s3tc.ctex", "res://.godot/imported/tileset_blue_metal_plate_diff_1k.jpg-d428e33a85ac76a51852cac619099e77.etc2.ctex"]
 
 [params]
 

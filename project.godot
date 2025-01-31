@@ -101,7 +101,7 @@ melee={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://VN Segment/dialogue.dialogue", "res://ZIP_1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://VN Segment/dialogue.dialogue")
 
 [physics]
 
@@ -111,6 +111,7 @@ common/physics_ticks_per_second=200
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
 
 [shader_globals]
 

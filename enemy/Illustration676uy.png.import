@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ndf75fjncfj4"
 path.s3tc="res://.godot/imported/Illustration676uy.png-57b7478864d5ab2f48bdde6e443eec83.s3tc.ctex"
+path.etc2="res://.godot/imported/Illustration676uy.png-57b7478864d5ab2f48bdde6e443eec83.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://enemy/Illustration676uy.png"
-dest_files=["res://.godot/imported/Illustration676uy.png-57b7478864d5ab2f48bdde6e443eec83.s3tc.ctex"]
+dest_files=["res://.godot/imported/Illustration676uy.png-57b7478864d5ab2f48bdde6e443eec83.s3tc.ctex", "res://.godot/imported/Illustration676uy.png-57b7478864d5ab2f48bdde6e443eec83.etc2.ctex"]
 
 [params]
 

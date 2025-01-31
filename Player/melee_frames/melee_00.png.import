@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqatj1w2sci3n"
 path.s3tc="res://.godot/imported/melee_00.png-886031f88b4558c9b83d6907c667cd82.s3tc.ctex"
+path.etc2="res://.godot/imported/melee_00.png-886031f88b4558c9b83d6907c667cd82.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Player/melee_frames/melee_00.png"
-dest_files=["res://.godot/imported/melee_00.png-886031f88b4558c9b83d6907c667cd82.s3tc.ctex"]
+dest_files=["res://.godot/imported/melee_00.png-886031f88b4558c9b83d6907c667cd82.s3tc.ctex", "res://.godot/imported/melee_00.png-886031f88b4558c9b83d6907c667cd82.etc2.ctex"]
 
 [params]
 

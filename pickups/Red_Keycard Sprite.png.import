@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0xg4i1m2817x"
 path.s3tc="res://.godot/imported/Red_Keycard Sprite.png-c5fd4b1214b289e64b92f3eacd568eb5.s3tc.ctex"
+path.etc2="res://.godot/imported/Red_Keycard Sprite.png-c5fd4b1214b289e64b92f3eacd568eb5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pickups/Red_Keycard Sprite.png"
-dest_files=["res://.godot/imported/Red_Keycard Sprite.png-c5fd4b1214b289e64b92f3eacd568eb5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Red_Keycard Sprite.png-c5fd4b1214b289e64b92f3eacd568eb5.s3tc.ctex", "res://.godot/imported/Red_Keycard Sprite.png-c5fd4b1214b289e64b92f3eacd568eb5.etc2.ctex"]
 
 [params]
 

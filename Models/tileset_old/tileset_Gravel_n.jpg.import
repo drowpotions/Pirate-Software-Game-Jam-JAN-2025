@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dibbm6xyurn6t"
 path.s3tc="res://.godot/imported/tileset_Gravel_n.jpg-00cff363977c80a226e506c589035be6.s3tc.ctex"
+path.etc2="res://.godot/imported/tileset_Gravel_n.jpg-00cff363977c80a226e506c589035be6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/tileset_old/tileset_Gravel_n.jpg"
-dest_files=["res://.godot/imported/tileset_Gravel_n.jpg-00cff363977c80a226e506c589035be6.s3tc.ctex"]
+dest_files=["res://.godot/imported/tileset_Gravel_n.jpg-00cff363977c80a226e506c589035be6.s3tc.ctex", "res://.godot/imported/tileset_Gravel_n.jpg-00cff363977c80a226e506c589035be6.etc2.ctex"]
 
 [params]
 

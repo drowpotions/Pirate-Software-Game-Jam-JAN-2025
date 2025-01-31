@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1hf5urxd1ujm"
 path.s3tc="res://.godot/imported/Blue_Key Card.png-e563eda59c7cbe4252de79b8d860008f.s3tc.ctex"
+path.etc2="res://.godot/imported/Blue_Key Card.png-e563eda59c7cbe4252de79b8d860008f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pickups/Blue_Key Card.png"
-dest_files=["res://.godot/imported/Blue_Key Card.png-e563eda59c7cbe4252de79b8d860008f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Blue_Key Card.png-e563eda59c7cbe4252de79b8d860008f.s3tc.ctex", "res://.godot/imported/Blue_Key Card.png-e563eda59c7cbe4252de79b8d860008f.etc2.ctex"]
 
 [params]
 

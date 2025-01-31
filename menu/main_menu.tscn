@@ -2,10 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="1_cldyn"]
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
-[ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://menu/Main Menu Demo.wav" id="2_rswmq"]
 [ext_resource type="Texture2D" uid="uid://cdctkanr4o3om" path="res://menu/theboi.png" id="3_8xavl"]
 [ext_resource type="Texture2D" uid="uid://dh85oihg0dyra" path="res://menu/remdive_logo2.png" id="4_663o4"]
 [ext_resource type="Script" path="res://menu/parallax_background.gd" id="4_vbhxg"]
+[ext_resource type="AudioStream" uid="uid://crplnsjxy0dwl" path="res://menu/GAMEJAM CONCEPT TRACK 3.ogg" id="6_3vvuy"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -110,7 +110,7 @@ grow_vertical = 2
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_rswmq")
+stream = ExtResource("6_3vvuy")
 volume_db = -25.0
 autoplay = true
 

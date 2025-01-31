@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://nkh5c6igsimd"
 path.s3tc="res://.godot/imported/projectile.png-4c4400193b2b1558127957eea91a8f20.s3tc.ctex"
+path.etc2="res://.godot/imported/projectile.png-4c4400193b2b1558127957eea91a8f20.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://enemy/projectile.png"
-dest_files=["res://.godot/imported/projectile.png-4c4400193b2b1558127957eea91a8f20.s3tc.ctex"]
+dest_files=["res://.godot/imported/projectile.png-4c4400193b2b1558127957eea91a8f20.s3tc.ctex", "res://.godot/imported/projectile.png-4c4400193b2b1558127957eea91a8f20.etc2.ctex"]
 
 [params]
 
