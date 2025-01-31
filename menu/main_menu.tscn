@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bekmbyokqyu10"]
+[gd_scene load_steps=7 format=3 uid="uid://bekmbyokqyu10"]
 
 [ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="1_cldyn"]
 [ext_resource type="Script" path="res://menu/main_menu.gd" id="1_pa5p5"]
-[ext_resource type="Texture2D" uid="uid://v8g0vmlg2mmw" path="res://grey2.png" id="2_0s6du"]
-[ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_ls86s"]
 [ext_resource type="AudioStream" uid="uid://bvkt05p3q7ib0" path="res://menu/Main Menu Demo.wav" id="2_rswmq"]
-[ext_resource type="Texture2D" uid="uid://cvbix4k5h2fjs" path="res://grey1.png" id="3_8nd4s"]
+[ext_resource type="Texture2D" uid="uid://cdctkanr4o3om" path="res://menu/theboi.png" id="3_8xavl"]
+[ext_resource type="Texture2D" uid="uid://dh85oihg0dyra" path="res://menu/remdive_logo2.png" id="4_663o4"]
 [ext_resource type="Script" path="res://menu/parallax_background.gd" id="4_vbhxg"]
 
 [node name="MainMenu" type="Control"]
@@ -18,74 +17,28 @@ grow_vertical = 2
 theme = ExtResource("1_cldyn")
 script = ExtResource("1_pa5p5")
 
-[node name="TextureRect3" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 321.0
-offset_right = 771.0
-offset_bottom = 742.0
-scale = Vector2(0.639343, 0.639343)
-texture = ExtResource("2_0s6du")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("4_vbhxg")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 307.0
-offset_right = 757.0
-offset_bottom = 742.0
-scale = Vector2(0.639343, 0.639343)
-texture = ExtResource("3_8nd4s")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 293.0
-offset_right = 743.0
-offset_bottom = 742.0
-scale = Vector2(0.639343, 0.639343)
-texture = ExtResource("2_ls86s")
+[node name="Theboi" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(468, 211)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_8xavl")
 
-[node name="LucyButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Lucy Greybox"
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.25, 1.25)
 
-[node name="CharlieButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -56.0
-offset_top = 22.0
-offset_right = 57.0
-offset_bottom = 53.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Charlie Greybox"
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.5, 1.5)
 
-[node name="WorldButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = 60.0
-offset_right = 66.5
-offset_bottom = 91.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Demo Scene"
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(330, 367)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_663o4")
 
 [node name="Intro" type="Button" parent="."]
 layout_mode = 1
@@ -94,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.0
-offset_top = 98.0
-offset_right = 67.0
-offset_bottom = 129.0
+offset_left = -275.5
+offset_top = -64.0
+offset_right = -143.5
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Intro
@@ -110,10 +63,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.5
-offset_top = 133.0
-offset_right = 22.5
-offset_bottom = 161.0
+offset_left = -247.0
+offset_top = -28.0
+offset_right = -174.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Zip Files
@@ -126,10 +78,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = 166.0
-offset_right = 36.0
-offset_bottom = 194.0
+offset_left = -246.5
+offset_top = 5.0
+offset_right = -174.5
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Options"
@@ -141,10 +93,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = 201.0
-offset_right = 66.5
-offset_bottom = 232.0
+offset_left = -276.0
+offset_top = 40.0
+offset_right = -144.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
@@ -154,55 +106,6 @@ stream = ExtResource("2_rswmq")
 volume_db = -25.0
 autoplay = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = ExtResource("4_vbhxg")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Label3" type="Label" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = 18.0
-offset_top = 32.0
-offset_right = 5492.0
-offset_bottom = 2845.0
-scale = Vector2(0.0472269, 0.0472269)
-theme_override_colors/font_color = Color(0.44291, 0.442911, 0.442911, 1)
-theme_override_font_sizes/font_size = 1031
-text = "P L A C E 
-H O L D E R"
-uppercase = true
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1.25, 1.25)
-
-[node name="Label2" type="Label" parent="ParallaxBackground/ParallaxLayer2"]
-offset_left = 21.0
-offset_top = 33.0
-offset_right = 5495.0
-offset_bottom = 2846.0
-scale = Vector2(0.0531993, 0.0531993)
-theme_override_colors/font_color = Color(0.678944, 0.678944, 0.678944, 1)
-theme_override_font_sizes/font_size = 1031
-text = "P L A C E 
-H O L D E R"
-uppercase = true
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(1.5, 1.5)
-
-[node name="Label" type="Label" parent="ParallaxBackground/ParallaxLayer3"]
-offset_left = 23.0
-offset_top = 34.0
-offset_right = 5497.0
-offset_bottom = 2847.0
-scale = Vector2(0.0581068, 0.0581068)
-theme_override_font_sizes/font_size = 1031
-text = "P L A C E 
-H O L D E R"
-uppercase = true
-
-[connection signal="pressed" from="LucyButton" to="." method="_on_lucy_button_pressed"]
-[connection signal="pressed" from="CharlieButton" to="." method="_on_charlie_button_pressed"]
-[connection signal="pressed" from="WorldButton" to="." method="_on_world_button_pressed"]
 [connection signal="pressed" from="Intro" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="Files" to="." method="_on_files_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]

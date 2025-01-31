@@ -76,23 +76,30 @@ layout_mode = 2
 [node name="Contents1" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Meow 1"
+offset_right = 496.0
+offset_bottom = 176.0
+text = "We’ve started progress on the ti- [REDACTED]. 
+Our divers are infiltrating the most potent candidates, hoping to
+find more [REDACTED] to use as fuel."
 
 [node name="Contents2" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Meow 2"
+text = "Our Divers are well-equipped to handle the neural threats that face 
+them in the human subconscious. Most of them are [REDACTED] and 
+haven’t asked any questions… 
+Those who have were… swiftly taken care of."
 
 [node name="Contents3" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Meow 3"
+text = "We need to spread our search thinner. 
+The more saturated and closer the targets, the more noticeable 
+the incidents will become."
 
 [node name="Contents4" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
