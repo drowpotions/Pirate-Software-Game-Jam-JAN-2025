@@ -79,17 +79,20 @@ layout_mode = 0
 offset_right = 496.0
 offset_bottom = 176.0
 text = "We’ve started progress on the ti- [REDACTED]. 
-Our divers are infiltrating the most potent candidates, hoping to
-find more [REDACTED] to use as fuel."
+Our divers are infiltrating the most potent candidates, 
+hoping to find more [REDACTED] to use as fuel."
 
 [node name="Contents2" type="Label" parent="HBoxContainer/ZipContents"]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Our Divers are well-equipped to handle the neural threats that face 
-them in the human subconscious. Most of them are [REDACTED] and 
+offset_right = 528.0
+offset_bottom = 101.0
+text = "Our Divers are well-equipped to handle the neural threats that 
+face them in the human subconscious. 
+
+Most of them are [REDACTED] and 
 haven’t asked any questions… 
+
 Those who have were… swiftly taken care of."
 
 [node name="Contents3" type="Label" parent="HBoxContainer/ZipContents"]

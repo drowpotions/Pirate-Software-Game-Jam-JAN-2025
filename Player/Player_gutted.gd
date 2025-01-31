@@ -218,6 +218,15 @@ func update_health():
 		$Control/HealthLabel.text += "/ "
 	
 
+func fade_out():
+	fading = true
+	$AnimationPlayer.play("fade out")
+	velocity = Vector3.ZERO
+	$Control/Label.show()
+	await $AnimationPlayer.animation_finished
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://menu/Main_Menu_3D.tscn")
+
 
 func _on_pickup_radius_body_entered(body: Node3D) -> void:
 	if body.name.begins_with("Ammo"):
