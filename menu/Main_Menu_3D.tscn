@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://menu/main_menu_3d.gd" id="1_bum26"]
 [ext_resource type="Material" uid="uid://ciymoy4qiyblb" path="res://VN Segment/black.tres" id="1_qfo4x"]
-[ext_resource type="PackedScene" uid="uid://brh6t6ytd0xb4" path="res://menu/streaks.tscn" id="3_8kkv7"]
+[ext_resource type="PackedScene" path="res://menu/streaks.tscn" id="3_8kkv7"]
 [ext_resource type="PackedScene" uid="uid://bekmbyokqyu10" path="res://menu/main_menu.tscn" id="3_pptbb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0qcnv"]
