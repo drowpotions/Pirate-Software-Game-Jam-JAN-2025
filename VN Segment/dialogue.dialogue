@@ -1,15 +1,14 @@
 ~ start
-protag: the salami lid
-???: (The salami lid) 
-protag: Ain't gon' fit
-???: (won't fit)
-protag: ...
-protag: so the salami lid
-???: won't fit
-protag: the
-???: (Salami lid)
-protag: Salami lid
-???: (ain't fit)
-protag: ain't gon fit
-protag: like that
+???: DIVEr, I know that you’re aware that this task is likely more high-profile than your previous tasks. Because of this, we expect the highest level of caution from you. Remember: failure of this task would bring unwanted attention to your work and ours.
+DIVE: ...Right. Standard procedure, as always. It’s no different than it ever is. I get it.
+???: You take this too lightly, DIVEr. Since this target is so high-profile, they’ve been trained in subconscious guarding. You’re familiar with REM-guarding, correct?
+DIVE: REM-guarding, yeah. Training your subconscious to reject external infiltration while asleep, yeah? It’s one of the earliest concepts in DIVEr training. Though, none of the targets we actually work with are well-trained enough for it to matter.
+???: Intel has suggested that this target is one of the most highly trained and highly guarded people in the country. We expect that you navigate carefully and guard yourself from the defenders.
+DIVE: ...!
+DIVE: If this target is so highly guarded, why is this job assigned to a Rank 3 DIVEr? Surely the Rank 1s can’t be that busy?
+???: Intel and management has suggested that your manifestation has a skillset that would be specially suited to excel in this infiltration. 
+DIVE: That being...?
+???: Not disclosed by way of company policy.
+???: Remember, this job will require you to make good use of the tools available to you. This task is high-risk, but we trust that you will follow through. Failure to perform at satisfactory levels will result in-
+protag: Termination. Yeah. Whatever, let’s get this over with.
 => END

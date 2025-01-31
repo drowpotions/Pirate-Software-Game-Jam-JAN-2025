@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://btky1srumgg6a"]
+[gd_scene load_steps=9 format=3 uid="uid://btky1srumgg6a"]
 
 [ext_resource type="Script" path="res://VN Segment/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Theme" uid="uid://dfgt1bgndhh1i" path="res://Theme.tres" id="2_d4s5b"]
-[ext_resource type="Texture2D" uid="uid://biee7aeo4a8pu" path="res://theboy2.png" id="2_i5xu0"]
+[ext_resource type="Texture2D" uid="uid://dl6vduucgrrf1" path="res://VN Segment/boss1.png" id="2_lfbmv"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://dfmv8gvf3w4wx" path="res://VN Segment/neutral.png" id="3_6008q"]
+[ext_resource type="Texture2D" uid="uid://cs1mt3vse73p7" path="res://VN Segment/sad.png" id="4_d8kd1"]
+[ext_resource type="Texture2D" uid="uid://c5irv6ck8s5a5" path="res://VN Segment/shock.png" id="5_33gyv"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -12,12 +15,36 @@ script = ExtResource("1_36de5")
 
 [node name="???" type="TextureRect" parent="."]
 visible = false
-offset_left = 6.0
-offset_top = 107.0
-offset_right = 456.0
-offset_bottom = 849.0
-scale = Vector2(0.470811, 0.470811)
-texture = ExtResource("2_i5xu0")
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 2310.0
+offset_bottom = 3488.0
+scale = Vector2(0.12337, 0.12337)
+texture = ExtResource("2_lfbmv")
+
+[node name="Default" type="TextureRect" parent="."]
+visible = false
+offset_top = 123.0
+offset_right = 755.0
+offset_bottom = 899.0
+scale = Vector2(0.311225, 0.311225)
+texture = ExtResource("3_6008q")
+
+[node name="Sad" type="TextureRect" parent="."]
+visible = false
+offset_top = 123.0
+offset_right = 755.0
+offset_bottom = 899.0
+scale = Vector2(0.311225, 0.311225)
+texture = ExtResource("4_d8kd1")
+
+[node name="Shocked" type="TextureRect" parent="."]
+visible = false
+offset_top = 123.0
+offset_right = 755.0
+offset_bottom = 899.0
+scale = Vector2(0.311225, 0.311225)
+texture = ExtResource("5_33gyv")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true

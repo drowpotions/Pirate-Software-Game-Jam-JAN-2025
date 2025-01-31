@@ -342,7 +342,7 @@ script = ExtResource("6_0e226")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0189819, 0)
-material_override = ExtResource("2_fdsk4")
+material_override = ExtResource("4_1wtc0")
 use_collision = true
 size = Vector3(2.80688, 0.0496826, 11.2256)
 
